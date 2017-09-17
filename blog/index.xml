@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Edwardcher Monreal</title>
+    <link>https://edwardcher.github.io/blog/</link>
+    <description>Recent content in Blogs on Edwardcher Monreal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 17 Sep 2017 17:13:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://edwardcher.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello</title>
+      <link>https://edwardcher.github.io/blog/hello/</link>
+      <pubDate>Sun, 17 Sep 2017 17:13:20 +0800</pubDate>
+      
+      <guid>https://edwardcher.github.io/blog/hello/</guid>
+      <description>Restarting my blog on GitHub Pages. I like the fact that everything is in markdown and I can use my favourite text editor(s) i.e. vim or emacs to create content. My content at typepad has stagnated largely due to my working environment.
+I am using Hugo and Markdown for my new blogging backend because it is more suited to my day to day workflow. Everybody that understands me know I prefer to live in the console/terminal :)</description>
+    </item>
+    
+  </channel>
+</rss>
