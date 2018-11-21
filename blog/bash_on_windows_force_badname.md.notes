@@ -1,0 +1,43 @@
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: emonreal
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+emonreal@win64-virtm:~$
+emonreal@win64-virtm:~$ sudo adduser --force-badname Edwardcher
+[sudo] password for emonreal:
+Allowing use of questionable username.
+Adding user `Edwardcher' ...
+Adding new group `Edwardcher' (1001) ...
+Adding new user `Edwardcher' (1001) with group `Edwardcher' ...
+Creating home directory `/home/Edwardcher' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for Edwardcher
+Enter the new value, or press ENTER for the default
+        Full Name []: Edwardcher Monreal
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+emonreal@win64-virtm:~$ sudo usermode -aG sudo Edwardcher
+sudo: usermode: command not found
+emonreal@win64-virtm:~$ sudo usermod -aG sudo Edwardcher
+emonreal@win64-virtm:~$
+
+C:\WINDOWS\system32>ubuntu config --default-user Edwardcher
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Edwardcher@win64-virtm:~$

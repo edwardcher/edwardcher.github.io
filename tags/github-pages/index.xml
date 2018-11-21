@@ -6,7 +6,7 @@
     <description>Recent content in Github Pages on Edwardcher Monreal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Sep 2017 17:13:20 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Sep 2017 17:13:00 +0800</lastBuildDate>
     
 	<atom:link href="https://edwardcher.github.io/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,11 @@
     <item>
       <title>Hello</title>
       <link>https://edwardcher.github.io/blog/hello/</link>
-      <pubDate>Sun, 17 Sep 2017 17:13:20 +0800</pubDate>
+      <pubDate>Sun, 17 Sep 2017 17:13:00 +0800</pubDate>
       
       <guid>https://edwardcher.github.io/blog/hello/</guid>
-      <description>Restarting my blog on GitHub Pages. I like the fact that everything is in markdown and I can use my favourite text editor(s) i.e. vim or emacs to create content. My content at typepad has stagnated largely due to my working environment.
-I am using Hugo and Markdown for my new blogging backend because it is more suited to my day to day workflow. Everybody that understands me know I prefer to live in the console/terminal :)</description>
+      <description>Restarting my blog on GitHub Pages. I like the fact that everything is in Markdown and I can use my favourite text editor(s) i.e. vim or emacs to create content. My content at typepad has stagnated largely due to my working environment.
+I am using Hugo and Markdown for my new blogging backend because it is more suited to my day to day workflow. Everybody that understands me know I prefer to live inside the console/terminal :)</description>
     </item>
     
   </channel>
