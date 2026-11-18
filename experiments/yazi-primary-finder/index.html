@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Why a fast, Vim-driven visual file manager has become my preferred way to move from finding a file to acting on it.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Yazi Became My Finder in the Terminal | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.github.io/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.github.io"><span class="brand-prompt">&gt;</span> edwardcher.dev<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.github.io">[ Home ]</a><a class="header-resume" href="https://edwardcher.github.io/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.github.io/experiments">← Back to collection</a>
+<div class="post-meta">Terminal / Yazi / <time datetime="2026-11-19">19 November 2026</time></div>
+<h1>Yazi Became My Finder in the Terminal<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why a fast, Vim-driven visual file manager has become my preferred way to move from finding a file to acting on it.</p>
+<div class="post-body"><p>I do not dislike Finder. It does its job on macOS, particularly when I need a graphical preview or a familiar drag-and-drop interaction. But for much of my daily work, the important part is not looking at a file. It is <strong>getting from the file to the next action</strong>.</p>
+<p>That is why <a rel="external" href="https://yazi-rs.github.io/">Yazi</a> has become my primary file manager in the terminal. It feels like a visual commander built for the keyboard: fast directory navigation, immediate previews, and familiar Vim-style movement. It gives me enough visual context to know where I am without pulling me away from the shell.</p>
+<h2 id="finding-is-only-the-first-half">Finding is only the first half</h2>
+<p>A conventional file manager often ends its job when I double-click something. In a terminal-first workflow, opening the file is usually the beginning of the next task. My Yazi workflow starts there. I have mapped file-opening actions so I can hand a document to the appropriate macOS application, open text in Helix, and use a shortcut to copy useful information to the Mac clipboard.</p>
+<p>That last detail matters more than it sounds. A path discovered in the terminal should be easy to paste into a chat, ticket, document, or Alfred prompt. It should not require a detour through another interface.</p>
+<p>I use the same mental model whether I am working with source code, notes, a PDF, or a downloaded file: <strong>navigate, inspect, act, return</strong>.</p>
+<h2 id="yazi-in-motion-a-short-workflow">Yazi in motion: a short workflow</h2>
+<p>This looping visual draft follows the same sequence I use in practice: find an architecture PDF in Yazi, open and read it in macOS Preview, return to the terminal, edit code in Helix, and copy a file path to the clipboard. The PDF and application windows are illustrative, not recordings of my actual setup. The point is the handoff: Yazi finds the file, and the appropriate application takes over.</p>
+<video autoplay muted loop playsinline controls preload="metadata" style="display:block;width:100%;height:auto;border:1px solid #315c47;border-radius:8px;background:#080d0d" aria-label="Terminal-themed Yazi workflow demonstration">
+  <source src="/videos/yazi-workflow-demo.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+<p><em>Illustrative demo · 18 seconds · autoplay and loop · muted · locally hosted</em></p>
+<h2 id="three-ordinary-examples">Three ordinary examples</h2>
+<p><strong>Preparing for a customer discussion.</strong> I open Yazi in a project directory, move through notes and architecture files using <code>j</code> and <code>k</code>, preview the likely document, and open the PDF in Preview when I need the finished layout. The terminal finds the artifact; macOS displays it where it makes sense.</p>
+<p><strong>Reviewing a code change.</strong> I locate the relevant Rust, Python, or Elixir file, open it in Helix, and return to the same directory context afterward. I can then run <code>rg</code>, tests, or <code>git diff</code> in the adjacent shell. I am not switching between a file browser, IDE project tree, and a separate command window just to complete a small change.</p>
+<p><strong>Sharing a reference.</strong> I find a file, copy its path with my Yazi clipboard mapping, and paste it into a message or terminal command. The mapping is a small convenience, but repeated dozens of times it removes meaningful friction. It is also one of those tiny integrations that makes the terminal feel like part of macOS rather than a separate environment.</p>
+<h2 id="a-few-building-blocks-not-a-configuration-manual">A few building blocks, not a configuration manual</h2>
+<p>On macOS, <code>open</code> already knows how to delegate to registered applications, and <code>pbcopy</code> writes to the system clipboard:</p>
+<pre><code data-lang="sh">open architecture.pdf
+printf &#39;%s&#39; &quot;$PWD/architecture.pdf&quot; | pbcopy
+hx README.md
+</code></pre>
+<p>These are illustrative shell equivalents of the behaviors I have mapped in Yazi; they are <strong>not</strong> a claim about the exact contents of my personal <code>keymap.toml</code> or <code>yazi.toml</code>. For a useful integration, the Yazi mapping must correctly quote paths and account for spaces in filenames.</p>
+<p>I also like that Yazi does not have to solve every problem itself. If I need to find text <em>inside</em> a hundred files, I can use <code>rg</code>. If I need a fuzzy selection, I can use <code>sk</code>. If I need to process a batch of files, I can use a shell pipeline or a short Python script. And if I need the native application, I can open it.</p>
+<p>That is the Unix principle in practice: a file manager is one component of a workflow, not the boundary of the workflow.</p>
+<h2 id="why-it-stuck">Why it stuck</h2>
+<p>Yazi is quick, its visual structure is easy to understand, and the Vim bindings are already in my hands. It gives me the convenience of a graphical file manager without making me leave my terminal workspace. I can keep my attention on the work rather than the mechanics of finding things.</p>
+<p>It also leads naturally to the next experiment. Once Yazi gets me to a file, <strong>what should editing feel like?</strong> After years of Vim and Emacs, I have been exploring <a href="https://edwardcher.github.io/experiments/helix-editing-api-workflow/">Helix as a fresh, deliberately simpler editing environment</a>.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.github.io/js/helix.js" defer></script>
+</body></html>

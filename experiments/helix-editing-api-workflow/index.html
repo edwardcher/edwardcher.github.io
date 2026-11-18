@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="After years with Vim and Emacs, exploring Helix for Rust, Python, Elixir, API experiments, and AI-assisted work—without leaving the shell behind.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Helix: Making Editing Fun Again | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.github.io/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.github.io"><span class="brand-prompt">&gt;</span> edwardcher.dev<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.github.io">[ Home ]</a><a class="header-resume" href="https://edwardcher.github.io/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.github.io/experiments">← Back to collection</a>
+<div class="post-meta">Terminal / Helix / <time datetime="2026-11-19">19 November 2026</time></div>
+<h1>Helix: Making Editing Fun Again<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">After years with Vim and Emacs, exploring Helix for Rust, Python, Elixir, API experiments, and AI-assisted work—without leaving the shell behind.</p>
+<div class="post-body"><p>I have used Vim and Emacs long enough that editing is mostly muscle memory. That is a good thing, but it can also make an editor feel like infrastructure: always present, rarely questioned. Exploring <a rel="external" href="https://helix-editor.com/">Helix</a> has reminded me that editing can still be enjoyable.</p>
+<p>Helix is a modal terminal editor with a <strong>selection-first</strong> approach. It is not Vim with a different theme, and it is not an attempt to recreate everything Emacs can do. I have had to adjust some habits. In return, common actions feel direct: select what I want to change, then act on that selection. Multiple selections, tree-sitter-powered syntax awareness, and language-server integration make the editor feel capable without requiring a large personal configuration project.</p>
+<h2 id="the-pleasure-of-a-smaller-surface">The pleasure of a smaller surface</h2>
+<p>For years I have valued the extensibility of Emacs and the precision of Vim. I am not abandoning either. But I do not always want to maintain an editor ecosystem before I can edit a file.</p>
+<p>My preferred loop now is often simple: use Yazi to locate a file, open it with <code>hx</code>, make a focused change, return to the shell, run the relevant check, and continue. Helix is the editing surface; the shell remains the execution environment.</p>
+<p>That distinction is why Helix fits my <a href="https://edwardcher.github.io/blog/terminal-first-philosophy/">terminal-first philosophy</a>. I do not need one tool to contain my entire workflow. I need the pieces to connect predictably.</p>
+<h2 id="rust-python-and-elixir-in-the-same-workspace">Rust, Python, and Elixir in the same workspace</h2>
+<p>Rust is a particularly comfortable fit: <code>rust-analyzer</code> can provide navigation, diagnostics, and completion when installed and configured. Python benefits from language servers such as basedpyright or pyright, with formatting and linting handled by tools I choose. Elixir can use ElixirLS for language intelligence, while <code>mix</code> remains the natural place to run tests and other project tasks.</p>
+<p>Helix includes language configurations, but language servers, formatters, and runtimes are separate dependencies. I check what is actually available rather than assuming a feature works because a file has syntax highlighting:</p>
+<pre><code data-lang="sh">hx --health rust
+hx --health python
+hx --health elixir
+</code></pre>
+<p>A normal session might look like this:</p>
+<pre><code data-lang="sh">hx src/main.rs
+cargo test
+
+hx scripts/check.py
+python3 -m pytest
+
+hx lib/my_app/application.ex
+mix test
+</code></pre>
+<p>Those are separate shell commands, not editor magic. The ability to move between them quickly is the point.</p>
+<h2 id="helix-as-part-of-an-api-client-workflow">Helix as part of an API client workflow</h2>
+<p>I often need to test an authentication flow or an API integration. Rather than switching to a heavy GUI client, I can edit a text request in Helix and execute it with <a rel="external" href="https://hurl.dev/">Hurl</a>, a command-line tool for HTTP requests and assertions.</p>
+<p>For example, a small <code>.hurl</code> file can describe a harmless local health check:</p>
+<pre><code data-lang="hurl">GET http://localhost:8080/health
+HTTP 200
+[Asserts]
+jsonpath &quot;$.status&quot; == &quot;ok&quot;
+</code></pre>
+<p>Then I edit and run it from the shell:</p>
+<pre><code data-lang="sh">hx tests/health.hurl
+hurl --test tests/health.hurl
+</code></pre>
+<p>This is an API-client workflow built around Helix, not an HTTP client embedded inside Helix. The editor does not need to become the HTTP client. Hurl performs the request and checks the response. For one-off exploration, <code>curl</code> or HTTPie may be sufficient; for repeatable tests, a checked-in Hurl file becomes a useful, reviewable artifact. Real authentication requests should use appropriate test environments and secret-handling practices—never hard-code production bearer tokens in files destined for Git.</p>
+<p>This is a good example of why I prefer text. The request, expected result, and test history can all live with the code. A colleague can review the change without reconstructing a sequence of GUI clicks.</p>
+<h2 id="ai-generation-belongs-in-the-same-loop">AI generation belongs in the same loop</h2>
+<p>I also use AI-assisted code generation, including Codex, as an accelerator. I treat its output as a proposed change, not an authority. The useful pattern is not to ask a model to take over the editor. It is to give it a bounded task, inspect the proposed patch, and verify the result with the same tools I already trust.</p>
+<p>For example, I might ask Codex to propose a Rust handler or generate a Python test, then inspect the diff in my terminal and use Helix for the final edits. An Elixir refactor still needs <code>mix test</code>; a Rust change still needs <code>cargo test</code>; a Python change still needs its test and lint checks. Generated code does not become trustworthy simply because it compiles.</p>
+<pre><code data-lang="sh">git diff --check
+git diff
+# Run the project-specific tests before committing
+</code></pre>
+<p>I keep credentials, customer data, and sensitive architecture details out of unapproved AI prompts. The boundary between generating code and executing code matters, especially when commands can touch files, networks, or privileged systems.</p>
+<h2 id="fall-back-to-the-shell-by-design">Fall back to the shell, by design</h2>
+<p>There are features I miss from Emacs. There are things Vim does differently. Helix has limitations and its own learning curve. None of that is a reason to build an elaborate workaround for every missing capability.</p>
+<p>If Helix does not do something elegantly, I can use the shell. <code>rg</code> searches, <code>fd</code> finds, <code>hurl</code> tests, <code>jq</code> transforms JSON, <code>git</code> shows what changed, and Yazi takes me to the next file. If I need a native macOS application, <code>open</code> is there too.</p>
+<p>That is what makes this experiment fun rather than frustrating. I am not choosing an editor to replace my computer. I am choosing an editor that makes the <em>editing part</em> feel good again.</p>
+<p>The wider story began with <a href="https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/">windowing and the return to tmux</a>, then <a href="https://edwardcher.github.io/experiments/yazi-primary-finder/">Yazi as my terminal Finder</a>. Helix completes the loop: navigate, edit, execute, inspect—and keep moving.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.github.io/js/helix.js" defer></script>
+</body></html>

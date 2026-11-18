@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Why the Unix philosophy still matters in a world of graphical applications, cloud platforms, and AI-assisted engineering.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Terminal First: An Old Philosophy for a New Computing Era | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.github.io/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.github.io"><span class="brand-prompt">&gt;</span> edwardcher.dev<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.github.io">[ Home ]</a><a class="header-resume" href="https://edwardcher.github.io/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.github.io/blog/">← All posts</a>
+<div class="post-meta">WRITING / <time datetime="2026-11-18">18 November 2026</time></div>
+<h1>Terminal First: An Old Philosophy for a New Computing Era<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why the Unix philosophy still matters in a world of graphical applications, cloud platforms, and AI-assisted engineering.</p>
+<div class="post-body"><h2 id="the-interface-is-not-the-philosophy">The interface is not the philosophy</h2>
+<p>I have spent much of my career moving between programming, integration, security, architecture, and conversations with people who do not need to know how the underlying systems work. Across those roles, one idea has remained remarkably durable: complex work becomes more manageable when its parts are understandable, composable, and under our control.</p>
+<p>That is why I remain terminal-first.</p>
+<p>Not because a black screen is inherently better than a graphical interface. Not because every task deserves a shell script. And certainly not because modern applications have no place in my workflow. The terminal is simply the most direct expression of a philosophy I inherited from Unix: use small, purposeful components; connect them through clear interfaces; and preserve the ability to inspect and change what happens.</p>
+<figure class="article-figure">
+  <img src="/assets/article/unix-composition.svg" alt="The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool." loading="lazy" width="1000" height="310">
+  <figcaption>The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool.</figcaption>
+</figure>
+<h2 id="what-unix-got-right">What Unix got right</h2>
+<p>Unix emerged in a very different computing environment, yet its ideas continue to scale beyond the machines and constraints that shaped it.</p>
+<p><strong>Do one thing well.</strong> A component with a clear responsibility is easier to understand, test, replace, and trust. Complexity belongs in the composition of parts, not in unnecessary complexity within every part.</p>
+<p><strong>Make programs work together.</strong> A tool becomes more valuable when its output can become another tool’s input. Interoperability should be a design property, not an afterthought.</p>
+<p><strong>Prefer text as a universal interface where it fits.</strong> Text can be read, searched, compared, transformed, versioned, and transmitted. It is not the right representation for everything, but it remains one of the most durable ways to express intent and exchange information.</p>
+<p><strong>Make behavior observable.</strong> A process that can be inspected is easier to diagnose. A process that can be repeated is easier to improve. Both matter when the work involves systems people depend on.</p>
+<p>These principles are bigger than the shell. They apply to APIs, infrastructure, identity systems, software architecture, and even the way we organize our own knowledge.</p>
+<h2 id="why-it-still-works-today">Why it still works today</h2>
+<p>Today’s computers have enormous processing power, polished interfaces, and an application for almost every task. Yet abundance has created another kind of friction: context switching, hidden state, incompatible formats, and workflows that are difficult to reproduce.</p>
+<p>The Unix mindset offers a counterweight. Instead of asking which application contains a task, I ask what the task actually requires: an input, a transformation, a decision, and an output. Once the work is expressed in those terms, the choice of interface becomes clearer.</p>
+<p>On macOS, this does not require abandoning the desktop. Unix foundations coexist with excellent native applications. A terminal can initiate an action, a native application can provide the best surface for reviewing it, and automation can connect the two. The point is not to eliminate interfaces. It is to avoid being confined by them.</p>
+<h2 id="text-is-an-asset-not-a-nostalgia-project">Text is an asset, not a nostalgia project</h2>
+<p>Text has an unusual longevity. A Markdown document can be opened years later without recreating the exact application that produced it. A command can be recorded alongside its result. A configuration can be reviewed as a change rather than remembered as a sequence of clicks.</p>
+<p>That durability matters to me as a programmer and security practitioner. If an action changes a system, I want to understand what changed. If a process works, I want to be able to reproduce it. If something fails, I want evidence rather than guesswork.</p>
+<p>Text is not automatically safe or correct. Scripts can be destructive, logs can expose secrets, and automation can amplify mistakes. But plain, inspectable artifacts give us a better starting point for review, version control, and controlled execution.</p>
+<h2 id="ai-changes-the-speed-not-the-foundation">AI changes the speed, not the foundation</h2>
+<p>AI-assisted coding makes this philosophy more relevant, not less.</p>
+<p>A model can help draft a script, explain an unfamiliar command, propose a refactor, or translate a requirement into a working starting point. It can reduce the cost of moving from an idea to an experiment. But generated output still needs a boundary between suggestion and execution.</p>
+<p>I want AI to augment judgment, not replace it. A generated command should be understandable before it runs. A code change should be reviewable as a diff. A workflow should be testable and repeatable. Secrets, privileges, and production access still require deliberate controls.</p>
+<p>The most useful AI workflow therefore remains grounded in text: describe the intent, inspect the proposed change, run bounded tests, observe the result, and retain the artifacts that matter. This is a modern extension of composability and observability, not a departure from them.</p>
+<h2 id="terminal-first-not-terminal-only">Terminal-first, not terminal-only</h2>
+<p>I still use graphical applications. Some work is genuinely better with visual context, rich layout, or direct manipulation. But I prefer to keep the <em>control plane</em> of my work close to the keyboard and the underlying artifacts close to open formats.</p>
+<p>That is the distinction: terminal-first is a choice about where work begins, how it connects, and how much control we retain. It is not a rule that everything must end in a terminal window.</p>
+<p>The Unix philosophy has survived because it is not really about old tools. It is about building systems and habits that remain useful when tools change.</p>
+<p>The next article turns that philosophy into five personal principles: <a href="https://edwardcher.github.io/blog/terminal-first-principle/">Terminal First: Five Principles Behind My Workflow</a>.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.github.io/js/helix.js" defer></script>
+</body></html>

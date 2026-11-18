@@ -1,0 +1,77 @@
+
+:root{color-scheme:dark;--bg:#0a0f12;--panel:#10191d;--line:#24383b;--text:#d9e5e2;--muted:#91a8a7;--accent:#8fe0b3}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:980px;margin:auto;padding:0 28px}header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#0a0f12ee;backdrop-filter:blur(12px);z-index:5}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:70px}.brand{font-size:14px;color:var(--accent);font-weight:700}.links{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}main{padding-bottom:70px}.hero{padding:95px 0 85px;border-bottom:1px solid var(--line)}.prompt,.eyebrow{font-size:12px;color:var(--accent);letter-spacing:.08em}.portrait{width:120px;height:120px;display:grid;place-items:center;border:1px solid var(--accent);border-radius:8px;margin:28px 0 26px;background:#152521;overflow:hidden}.portrait img{width:100%;height:100%;object-fit:cover}.portrait span{font-size:44px;color:var(--accent)}h1{font-size:clamp(36px,6vw,64px);line-height:1.12;letter-spacing:-.065em;margin:0 0 14px;font-family:system-ui,-apple-system,sans-serif}h2{font:600 25px/1.3 system-ui,sans-serif;letter-spacing:-.03em;margin:0 0 26px}h3{font-size:17px;margin:0 0 8px;color:var(--text)}.role{font-size:15px;color:var(--accent);margin:0 0 24px}.intro{max-width:730px;color:#b8c9c6;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{border:1px solid var(--line);padding:10px 17px;font-size:13px;border-radius:5px}.button.primary{border-color:var(--accent);color:var(--accent)}section{padding:70px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:15px}.section-head small{color:var(--muted)}.resume{display:grid;grid-template-columns:1.2fr 1fr;gap:45px}.muted{color:var(--muted)}.tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.tag{border:1px solid var(--line);border-radius:4px;padding:4px 9px;font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:25px;border-radius:7px}.card small{color:var(--accent)}.card p{color:var(--muted);font-size:14px;margin-bottom:0}.card a{color:var(--accent);font-size:13px}.article{display:none}.article.active{display:block}.back{background:none;color:var(--accent);border:0;font:inherit;cursor:pointer;padding:0 0 20px}.article h2{font-size:32px}.article p{max-width:740px}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px 0;color:var(--muted);font-size:12px}::selection{background:var(--accent);color:var(--bg)}@media(max-width:650px){.nav{align-items:flex-start;padding:16px 0;flex-direction:column}.links{gap:15px}.hero{padding:55px 0}.resume,.cards{grid-template-columns:1fr}section{padding:52px 0}}
+
+/* Zola extensions */
+.post-meta{font-size:12px;color:var(--accent);letter-spacing:.06em}.post-body{max-width:760px;color:#b8c9c6}.post-body h2{margin-top:40px;margin-bottom:14px}.post-body h3{margin-top:30px}.post-body p,.post-body li{line-height:1.85}.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.post-body pre{overflow-x:auto;background:#10191d;border:1px solid var(--line);border-radius:6px;padding:18px;font-size:13px}.post-body code{color:var(--accent)}.post-body pre code{color:var(--text)}.post-body blockquote{border-left:2px solid var(--accent);padding-left:20px;margin-left:0}.post-body img{max-width:100%;height:auto}.post-page{padding:72px 0}.post-page h1{font-size:clamp(32px,5vw,52px)}.post-page .summary{color:var(--muted);max-width:740px}.post-page .back-link{display:inline-block;color:var(--accent);margin-bottom:32px}.post-page time{color:var(--muted)}.card h3 a{color:var(--text);font-size:17px}.card h3 a:hover{color:var(--accent)}.footer a{color:var(--accent)}
+
+/* Identity helix + original desk photograph: progressive enhancement only */
+:root{--bg:#050708;--panel:#0b1214;--line:#1e3230}
+body{background:var(--bg)}header{background:#050708ee}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding-top:78px;padding-bottom:0}
+.hero-content{position:relative;z-index:2;max-width:690px;padding-bottom:28px}
+.hero-content .intro{max-width:620px}
+.hero-helix{position:absolute;right:-16px;top:0;width:42%;height:530px;z-index:1;pointer-events:none;opacity:.9;mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 80%,transparent)}
+.hero-helix canvas{width:100%;height:100%;display:block}
+.hero-photo{height:330px;position:relative;z-index:0;margin:0 -28px;background-image:linear-gradient(to bottom,#050708 0%,rgba(5,7,8,.25) 28%,rgba(5,7,8,0) 62%),url('../assets/cybersecurity-desk.webp');background-size:cover;background-position:center 66%;background-repeat:no-repeat}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(to right,#050708 0%,transparent 12%,transparent 88%,#050708 100%);pointer-events:none}
+@media(min-width:900px){.hero-content{max-width:64%}.hero-helix{width:40%}}
+@media(max-width:750px){.hero-helix{width:45%;height:410px;opacity:.35}.hero-content{max-width:100%}.hero-photo{height:235px;background-position:center bottom}}
+@media(max-width:480px){.hero-helix{opacity:.18}.hero-photo{height:175px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Reference-aligned homepage: presentation only; article content remains unchanged. */
+:root{--bg:#000;--panel:#050808;--line:#25302d;--text:#e1e2e5;--muted:#a6abae;--accent:#00ed8a}
+body{background:#000;color:var(--text)}header{background:rgba(0,0,0,.96);border-bottom:1px solid #282828}
+.wrap{max-width:1536px;padding-left:clamp(22px,3.35vw,52px);padding-right:clamp(22px,3.35vw,52px)}
+.nav{min-height:72px}.brand{font-size:20px;color:#e3e3e8;letter-spacing:-.05em}.brand-prompt{color:var(--accent);margin-right:8px}.brand-cursor,.cursor{display:inline-block;width:12px;height:19px;background:var(--accent);vertical-align:-3px;margin-left:7px}.links{gap:clamp(14px,2.6vw,40px);font-size:14px;color:#ddd}.links a:first-child{color:var(--accent)}
+.hero-reference{padding:0;border-bottom:1px solid #353535;min-height:750px;overflow:hidden}.hero-introduction{display:flex;align-items:center;gap:48px;padding:76px 30% 0 30px;position:relative;z-index:2;min-height:325px}.hero-introduction .portrait{width:196px;height:236px;flex:0 0 196px;margin:0;background:#060b0a;border-color:var(--accent);border-radius:14px}.hero-introduction .portrait span{font-size:56px}.hero-copy{min-width:0}.hero-copy .prompt{font-size:16px;letter-spacing:0;margin-bottom:8px}.hero-copy h1{font-size:clamp(32px,3vw,47px);letter-spacing:-.045em;white-space:nowrap;margin-bottom:10px}.hero-copy .role{color:#dedee1;font-size:17px;white-space:nowrap;margin-bottom:22px}.hero-copy .role strong{color:var(--accent);font-weight:500}.hero-copy .intro{font-size:16px;line-height:1.7;color:#d7d7db;max-width:690px;margin:0}.hero-actions{position:relative;z-index:3;margin:33px 0 0 30px;gap:20px}.hero-actions .button{border:0;padding:8px 5px;font-size:14px;color:#ddd}.hero-actions .button.primary{border:1px solid var(--accent);color:var(--accent);padding:8px 13px}.hero-actions .button:hover{color:var(--accent)}
+.hero-reference .hero-helix{top:0;right:0;width:31%;height:710px;opacity:1;z-index:1;mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 85%,transparent 100%)}
+.hero-reference .hero-photo{height:350px;margin:0 -1px;background-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.05) 26%,rgba(0,0,0,0) 70%),url('../assets/cybersecurity-desk.webp');background-size:cover;background-position:center 64%}.hero-reference .hero-photo:after{background:linear-gradient(to right,#000 0%,transparent 6%,transparent 94%,#000 100%)}
+.home-paths{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:24px 0 30px}.path-card{position:relative;display:grid;grid-template-columns:42px minmax(0,1fr);align-content:start;gap:18px;min-height:139px;padding:22px 18px;border:1px solid #008c55;border-radius:10px;background:#000}.path-card:hover{border-color:var(--accent);background:#03110b}.path-icon{color:var(--accent);font-size:32px;line-height:1}.path-card strong{display:block;font-size:15px;line-height:1.4;color:#e5e5e8;font-weight:600}.path-card small{display:block;font-size:12px;line-height:1.65;color:#c3c3c6;margin-top:10px}.path-arrow{position:absolute;right:17px;bottom:10px;color:var(--accent);font-size:23px}
+@media(max-width:1150px){.hero-introduction{padding-right:26%;gap:25px}.hero-introduction .portrait{width:145px;height:180px;flex-basis:145px}.hero-copy h1{font-size:clamp(27px,3vw,38px)}.hero-copy .role{white-space:normal}.hero-reference .hero-helix{width:33%}.home-paths{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.nav{align-items:flex-start}.brand{font-size:18px}.links{gap:12px;font-size:12px}.hero-reference{min-height:0}.hero-introduction{padding:48px 0 0;gap:22px;align-items:flex-start}.hero-introduction .portrait{width:110px;height:140px;flex-basis:110px}.hero-copy h1{font-size:clamp(26px,5vw,36px);white-space:normal}.hero-copy .intro{font-size:14px}.hero-copy .role{font-size:14px}.hero-reference .hero-helix{width:55%;opacity:.25}.hero-actions{margin:25px 0 0;gap:8px}.hero-reference .hero-photo{height:230px;background-position:center bottom}.home-paths{gap:12px}}
+@media(max-width:520px){.hero-introduction{display:block}.hero-introduction .portrait{margin:0 0 22px}.hero-reference .hero-helix{width:65%;opacity:.14}.hero-reference .hero-photo{height:160px}.home-paths{grid-template-columns:1fr}.path-card{min-height:105px}.hero-actions .button{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.brand-cursor,.cursor{animation:none}}
+
+/* Consistent stroke icons for the four homepage navigation cards */
+.path-icon{display:block;width:40px;height:40px;line-height:1}.path-icon svg{display:block;width:100%;height:100%}
+/* Separate, editable Unix manual-page résumé */
+.man-shell{max-width:1060px;margin:60px auto 85px;border:1px solid #21533c;border-radius:10px;overflow:hidden;background:#050908;box-shadow:0 24px 90px rgba(0,0,0,.5)}
+.man-toolbar{display:flex;align-items:center;gap:16px;background:#111a18;border-bottom:1px solid #254034;color:#9cb6aa;padding:10px 17px;font-size:12px}.man-leds{display:flex;gap:6px}.man-leds i{width:9px;height:9px;border-radius:50%;background:#547c68}.man-leds i:first-child{background:#ff695e}.man-leds i:nth-child(2){background:#ffbf4d}.man-leds i:nth-child(3){background:#3ccf83}.man-status{margin-left:auto}
+.man-paper{padding:clamp(20px,4.5vw,54px);font-size:14px;line-height:1.75}.man-topline,.man-bottomline{display:flex;justify-content:space-between;gap:12px;color:#7d9c8e;font-size:12px;letter-spacing:.04em}.man-command{margin:35px 0 38px;font-size:17px;color:#e0f6e9}.man-prompt{color:var(--accent);margin-right:12px}.man-caret{color:var(--accent);font-size:13px;margin-left:8px;animation:manblink 1.15s steps(1) infinite}@keyframes manblink{50%{opacity:0}}
+.man-content{max-width:840px;margin:0 auto}.man-content h2{font:700 17px/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--accent);margin:36px 0 13px}.man-content h2:first-child{margin-top:0}.man-content p{margin:0 0 14px;color:#d1ddd6}.man-content ul{padding-left:22px;margin:0 0 18px;color:#c8d7d0}.man-content li{margin:5px 0}.man-content strong{color:#f1f7f3}.man-content a{color:#72e8a7;text-decoration:underline;text-underline-offset:4px}.man-content pre{padding:17px 20px;border-left:2px solid #147b4b;background:#08120e;overflow-x:auto;color:#b9f5d0}.man-content code{font-size:.94em;color:#9be6b7}.man-content pre code{color:inherit}.man-content table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;margin:16px 0 24px}.man-content th,.man-content td{border-bottom:1px solid #193529;padding:9px 18px 9px 0;text-align:left;vertical-align:top}.man-content th{color:#8aefb8}.man-bottomline{margin-top:48px;border-top:1px solid #214533;padding-top:18px}.man-bottomline a{color:var(--accent)}
+@media(max-width:650px){.man-shell{margin:25px 0 50px}.man-topline span:nth-child(2),.man-topline span:last-child,.man-status{display:none}.man-paper{font-size:13px}.man-command{font-size:14px}.path-icon{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){.man-caret{animation:none}}
+
+/* Hero geometry correction: desk remains fully visible, helix labels stay in bounds. */
+.hero-reference{min-height:0;overflow:hidden;background:#000}
+.hero-reference .hero-photo{height:auto;aspect-ratio:1600 / 511;width:100%;margin:10px 0 0;background-image:url('../assets/cybersecurity-desk-hero.webp');background-size:contain;background-position:center bottom;background-repeat:no-repeat;background-color:#000}
+.hero-reference .hero-photo:after{background:linear-gradient(90deg,#000 0%,transparent 5%,transparent 95%,#000 100%);opacity:.45}
+.hero-reference .hero-helix{right:0;top:8px;width:clamp(300px,31%,450px);height:min(710px,100%);overflow:hidden;mask-image:linear-gradient(to bottom,transparent 0%,#000 7%,#000 88%,transparent 100%)}
+.hero-introduction{padding-right:34%;}
+.hero-copy h1{white-space:normal}
+@media(max-width:1150px){.hero-introduction{padding-right:34%}.hero-reference .hero-helix{width:32%}}
+@media(max-width:760px){.hero-introduction{padding-right:0}.hero-reference .hero-helix{top:180px;width:46%;height:420px;opacity:.18}.hero-reference .hero-photo{margin-top:20px}}
+@media(max-width:520px){.hero-reference .hero-helix{width:60%;opacity:.12}.hero-reference .hero-photo{height:auto;aspect-ratio:1600 / 511}}
+
+/* Blink only the name's terminal cursor; retain original shape and color. */
+.hero-copy h1 .cursor {
+  animation: name-cursor-blink 1s steps(1, end) infinite;
+}
+@keyframes name-cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy h1 .cursor { animation: none; }
+}
+
+/* First release: compact home navigation and prominent resume link */
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2.5vw,34px);white-space:nowrap}
+.header-actions a{font-size:14px;font-weight:600;line-height:1.3;transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+.header-home{color:#dedee1}
+.header-resume{color:var(--accent);border:1px solid var(--accent);padding:9px 14px;border-radius:5px}
+.header-actions a:hover,.header-actions a:focus-visible{color:var(--accent)}
+.header-resume:hover,.header-resume:focus-visible{background:rgba(0,230,138,.09)}
+@media(max-width:760px){.nav{flex-direction:row;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px}.header-actions{gap:12px}.header-actions a{font-size:12px}.header-resume{padding:8px 10px}}
+@media(max-width:420px){.brand{font-size:15px}.brand-prompt{margin-right:3px}.brand-cursor{width:8px;height:14px;margin-left:4px}.header-actions{gap:8px}.header-actions a{font-size:11px}.header-resume{padding:7px 7px}}

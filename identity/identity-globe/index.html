@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore the Identity Exposure Observatory: a live-source experiment in identity intelligence, evidence quality, and risk-based prioritization.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Identity Globe: From Threat Signals to Business Priorities | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.github.io/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.github.io"><span class="brand-prompt">&gt;</span> edwardcher.dev<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.github.io">[ Home ]</a><a class="header-resume" href="https://edwardcher.github.io/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.github.io/identity">← Back to collection</a>
+<div class="post-meta">Identity / experiments</div>
+<h1>Identity Globe: From Threat Signals to Business Priorities<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Explore the Identity Exposure Observatory: a live-source experiment in identity intelligence, evidence quality, and risk-based prioritization.</p>
+<div class="post-body"><p>A breach headline is a signal, not a risk assessment. A report about exposed credentials, stolen sessions, or extortion can be relevant to an enterprise long before its own incident response team has confirmed an impact. But <strong>volume is not severity</strong>, and a point on a map does not tell us whether our business is exposed.</p>
+<p>I built the <strong>Identity Exposure Observatory</strong> as an experiment in bringing external identity-related reports closer to the decisions architects, security operations teams, and business owners actually need to make. Instead of collecting another feed of alarming headlines, I want to ask: <em>Which signals should change what we investigate, protect, or fund next?</em></p>
+<h2 id="why-timely-intelligence-changes-priorities">Why timely intelligence changes priorities</h2>
+<p>A new report can alter the urgency of an existing weakness. A credential leak involving a supplier, a campaign targeting an authentication method we still support, or a breach affecting a platform used by our workforce can all change the order of work. That is especially important when remediation capacity is limited.</p>
+<p>The practical value emerges when intelligence is weighed against <strong>business context</strong>:</p>
+<ol>
+<li><strong>Exposure:</strong> Do we use the affected service, supplier, identity provider, or authentication pattern? Are our accounts, endpoints, or customers plausibly in scope?</li>
+<li><strong>Evidence:</strong> Is this a disclosed breach, an extortion claim, or a secondary catalogue entry? Has the reported credential type been confirmed, inferred, or left unknown?</li>
+<li><strong>Impact:</strong> Could the exposure enable account takeover, privileged access, disruption, fraud, or regulatory consequences? Which critical business processes depend on the affected identities?</li>
+<li><strong>Actionability:</strong> Can we revoke sessions, rotate exposed secrets, strengthen FIDO-based authentication, constrain privileges, investigate anomalous access, or contact a supplier now?</li>
+</ol>
+<pre><code data-lang="text">PUBLIC REPORTS     +     INTERNAL CONTEXT       =     DECISION SUPPORT
+---------------          ----------------          ----------------
+Breach catalogue         Asset / supplier map       Investigate first
+Extortion claim          Identity criticality       Reduce exposure
+Credential signal        Control coverage           Validate impact
+Source confidence        Business dependency        Allocate effort
+</code></pre>
+<p>The point is not to turn public reporting into an automatic risk score. It is to make <strong>evidence, uncertainty, and the next security decision</strong> visible together. A high-priority marker is a modeled signal for investigation, not proof that a company or country has suffered a confirmed compromise.</p>
+<h2 id="explore-the-identity-exposure-observatory">Explore the Identity Exposure Observatory</h2>
+<p>The working proof of concept below uses a standalone HTML and Canvas application. Its source selector includes <strong>Have I Been Pwned</strong>, <strong>MyRecon</strong>, and <strong>Ransomwhere</strong>, with an aggregate view. MyRecon can overlap with HIBP, while Ransomwhere includes extortion claims that are not necessarily independently verified. Availability depends on whether each external endpoint permits browser requests; the dashboard reports source status rather than fabricating live records.</p>
+<p>The Observatory is embedded at a width close to the article text for comfortable reading. The application can scroll within its frame when needed. For detailed analysis, use <strong>Open in new window</strong> or <strong>View full screen</strong> to give the globe and analyst panels more space.</p>
+<div class="identity-observatory-workspace" id="identity-observatory-workspace">
+  <div class="identity-observatory-toolbar" aria-label="Observatory display options">
+    <span class="identity-observatory-caption">IDENTITY EXPOSURE OBSERVATORY / LIVE PoC</span>
+    <div class="identity-observatory-actions">
+      <a class="identity-observatory-action" href="../../identity-globe/" target="_blank" rel="noopener noreferrer" title="Open Observatory in a separate browser tab">↗ Open in new window</a>
+      <button class="identity-observatory-action" type="button" onclick="(function(b){var p=b.closest('.identity-observatory-workspace');if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}})(this)" title="Toggle browser full screen">⛶ View full screen</button>
+    </div>
+  </div>
+  <iframe src="../../identity-globe/" title="Identity Exposure Observatory — interactive globe and intelligence workbench" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="no-referrer"></iframe>
+</div>
+<p class="identity-observatory-hint">The embedded preview is intentionally compact. Open it in a new window or full screen for a larger workspace. For smaller screens, the standalone window is recommended.</p>
+<p><em>Interactive proof of concept · Live public-source requests · No sensitive credentials ingested · Best experienced on desktop.</em></p>
+<h2 id="reading-the-signals-responsibly">Reading the signals responsibly</h2>
+<p>The globe’s geographic pins represent <strong>locations associated with reports</strong>, not the origin of an attack or the physical location of stolen data. The priority indicators are modeled rather than independently verified. The source cards can help explain a report, but an inferred credential category must not be presented as a confirmed exposure.</p>
+<p>For enterprise use, the next step would be to join these external observations to a controlled inventory of applications, suppliers, authentication methods, privileged identities, and business services. That correlation—not the visual intensity of a hotspot—is what makes prioritization defensible.</p>
+<p>This is also where the connection to <a href="https://edwardcher.github.io/identity/password-is-a-vulnerability/">The Password Is a Vulnerability. Cryptography Is the Patch.</a> becomes practical: public reports may help us identify where reusable secrets remain an urgent liability, while <strong>FIDO2 passkeys, device-bound authenticators, PKI, and sound credential lifecycle controls</strong> help reduce particular paths to compromise. None eliminates the need for detection, incident response, or careful validation.</p>
+<p><em>This application is an exploratory intelligence interface, not an authoritative incident database or an automated enterprise risk assessment.</em></p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.github.io/js/helix.js" defer></script>
+</body></html>

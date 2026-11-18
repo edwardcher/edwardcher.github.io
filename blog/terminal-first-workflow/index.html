@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A practical keyboard-centered macOS workflow connecting Unix tools, Alfred, AppleScript, native applications, and AI-assisted development.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Terminal First: My Practical Workflow | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.github.io/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.github.io/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.github.io"><span class="brand-prompt">&gt;</span> edwardcher.dev<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.github.io">[ Home ]</a><a class="header-resume" href="https://edwardcher.github.io/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.github.io/blog/">← All posts</a>
+<div class="post-meta">WRITING / <time datetime="2026-11-18">18 November 2026</time></div>
+<h1>Terminal First: My Practical Workflow<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">A practical keyboard-centered macOS workflow connecting Unix tools, Alfred, AppleScript, native applications, and AI-assisted development.</p>
+<div class="post-body"><p>The <a href="https://edwardcher.github.io/blog/terminal-first-philosophy/">Unix-inspired philosophy</a> explains why I favor simple, composable tools. The <a href="https://edwardcher.github.io/blog/terminal-first-principle/">five principles</a> explain what I expect to gain: productivity, acceleration, focus, automation, and canonicality.</p>
+<p>This is how I put those ideas into practice on a Mac. It is a description of the approach and representative examples, not a claim that everyone needs my exact configuration.</p>
+<figure class="article-figure">
+  <img src="/assets/article/mac-workflow.svg" alt="The terminal coordinates the workflow; native applications remain available when they are the better interface." loading="lazy" width="1000" height="310">
+  <figcaption>The terminal coordinates the workflow; native applications remain available when they are the better interface.</figcaption>
+</figure>
+<h2 id="one-keyboard-several-interfaces">One keyboard, several interfaces</h2>
+<p>My Mac is not a terminal-only machine. macOS gives me a Unix-based environment alongside well-integrated desktop applications. I use both, but I try to keep one consistent path from intention to action.</p>
+<p>The terminal is my primary workbench for text, code, inspection, and repeatable operations. <a rel="external" href="https://www.alfredapp.com/"><strong>Alfred</strong></a> is the fast entry point for launching applications, finding items, and triggering workflows. <strong>AppleScript</strong> and macOS automation bridge commands to applications that have their own useful native interfaces.</p>
+<p>That separation is important. The terminal does not need to recreate what an application already does well. It only needs to make the transition deliberate and efficient.</p>
+<h2 id="start-with-a-small-predictable-shell-environment">Start with a small, predictable shell environment</h2>
+<p>I use <code>zsh</code> on macOS and prefer a modest set of tools whose behavior I understand. A useful environment does not require an elaborate prompt or a large collection of plugins.</p>
+<p>For example, I can search a project, narrow the results, and open the relevant file without leaving the keyboard:</p>
+<pre><code data-lang="sh">rg -n &#39;authentication|passkey|certificate&#39; ~/work/notes
+fd &#39;\.md$&#39; ~/work/notes
+</code></pre>
+<p>I use tools such as <code>rg</code>, <code>fd</code>, and <code>sk</code> for searching and selecting, and a terminal file manager such as <code>yazi</code> when navigating a tree is more useful than typing paths. The exact utility is secondary to the pattern: locate, inspect, act.</p>
+<p>For longer-running local sessions, <code>zellij</code> helps organize terminal work; on remote systems I use <code>tmux</code>. These are ways of preserving working context, not ends in themselves.</p>
+<h2 id="editing-should-feel-immediate">Editing should feel immediate</h2>
+<p>I am comfortable with both Vim and Emacs keybindings. That fluency means I can move, select, and restructure text without continuously reaching for a pointing device.</p>
+<p>For quick edits in a terminal, I favor a lightweight editor such as Helix. For richer writing, literate work, and structured notes, I can use Emacs as a native macOS application. There is no contradiction: a graphical Emacs window can still be part of a terminal-first workflow.</p>
+<p>The practical goal is consistency in how I think about text. Whether I am editing Markdown, reviewing configuration, or working through code, the core motions are familiar.</p>
+<h2 id="alfred-is-the-front-door-not-another-silo">Alfred is the front door, not another silo</h2>
+<p>Alfred gives me an immediate prompt for launching actions. I can use it to open a working folder, invoke a shell-backed workflow, or move to a native app when that is the right place to finish a task.</p>
+<p>A useful Alfred workflow might accept a search phrase, pass it to a trusted local script, and open the matching document. Another might prompt for a project name and open the corresponding terminal workspace.</p>
+<p>I prefer a small number of memorable workflows over dozens of shortcuts I cannot recall. A launcher should reduce decisions, not create a second application catalog to maintain.</p>
+<h2 id="connect-unix-to-native-macos-applications">Connect Unix to native macOS applications</h2>
+<p>macOS automation makes the boundary between command-line and desktop work less rigid. The built-in <code>open</code> command can hand a file or URL to its appropriate application:</p>
+<pre><code data-lang="sh">open ~/work/notes/meeting-notes.md
+open -a Preview ~/work/reports/architecture.pdf
+</code></pre>
+<p>AppleScript can also ask supported applications to perform specific actions. For example, this opens a new draft in Mail without sending anything:</p>
+<pre><code data-lang="sh">osascript &lt;&lt;&#39;APPLESCRIPT&#39;
+tell application &quot;Mail&quot;
+    activate
+    make new outgoing message with properties {subject:&quot;Follow-up&quot;, content:&quot;Draft notes for review&quot;}
+end tell
+APPLESCRIPT
+</code></pre>
+<p>AppleScript support varies by application and version, and macOS may request Automation permissions. I grant access narrowly and avoid embedding credentials or confidential information in scripts. For applications without a useful scripting interface, Shortcuts, URL schemes, or an application’s own command-line integration may be better options.</p>
+<h2 id="ordinary-office-work-still-benefits">Ordinary office work still benefits</h2>
+<p>Consider a meeting follow-up. I can capture notes in Markdown, search related decisions, refine the summary, and keep the source under version control. If I need to send an email, I can move the final text into Mail. If I need a polished document, I can generate or open the appropriate output in a native application for final review.</p>
+<p>Or consider a technical briefing. I can keep the source material in text, track changes, generate a deliverable, and review its visual layout where it matters. The canonical source remains clear even when the audience receives a PDF, a slide deck, or a web page.</p>
+<p>This is where terminal-first becomes useful beyond programming: the workflow is connected without requiring every step to happen in the same interface.</p>
+<h2 id="use-text-as-the-source-then-publish">Use text as the source, then publish</h2>
+<p>My personal blog is an example. I write articles in Markdown, keep them with the site’s source, and let Zola turn them into web pages.</p>
+<p>A simple validation loop looks like this:</p>
+<pre><code data-lang="sh">zola check
+zola serve
+</code></pre>
+<p>The first command checks the site; the second provides a local preview. I can inspect a change before publishing it, and the Markdown remains usable even if I later change the presentation layer.</p>
+<p>The same approach applies to technical notes, procedures, and small knowledge bases. Separate the content from its rendering wherever practical.</p>
+<h2 id="add-ai-as-a-reviewable-collaborator">Add AI as a reviewable collaborator</h2>
+<p>AI-assisted coding and writing fit naturally into this workflow because the inputs and outputs are already text. I can describe a change, ask for a draft, compare the proposed result, and run tests without surrendering the underlying artifact.</p>
+<p>For code, I prefer a disciplined loop:</p>
+<ol>
+<li>State the intended behavior and constraints.</li>
+<li>Ask AI for a bounded proposal rather than unrestricted changes.</li>
+<li>Review the diff and check for unsafe assumptions.</li>
+<li>Run tests, linters, or local validation.</li>
+<li>Commit only the result I understand and accept.</li>
+</ol>
+<p>For sensitive environments, I also consider what data is sent to an AI service. Tokens, customer records, private keys, and internal architecture details should not be copied into prompts without the appropriate authorization and controls. Generated shell commands are suggestions, not trusted instructions.</p>
+<p>AI can accelerate the journey from idea to implementation. It should not bypass the engineering discipline that makes the result reliable.</p>
+<h2 id="keep-the-system-understandable">Keep the system understandable</h2>
+<p>I resist the temptation to automate everything. Each new integration creates another dependency, and each shortcut needs a name, a purpose, and occasionally maintenance.</p>
+<p>My test is simple: does this change remove friction while preserving clarity? Can I explain what it does? Can I recover when it fails? Does it preserve the correct source of truth?</p>
+<p>If the answer is no, a few direct keystrokes may be the better design.</p>
+<h2 id="the-outcome-matters-more-than-the-tools">The outcome matters more than the tools</h2>
+<p>A terminal-first workflow is not defined by the number of commands I know. It is defined by the continuity between thinking, acting, checking, and preserving the result.</p>
+<p>macOS gives me a useful combination: Unix foundations, native applications, AppleScript, Alfred, and increasingly capable AI assistance. I use those layers together rather than treating them as competing camps.</p>
+<p>The terminal remains the center of gravity. The keyboard remains my most consistent interface. And text remains the durable thread connecting the work.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.github.io/js/helix.js" defer></script>
+</body></html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc"><title id="title">Smart card as a FIDO2 authenticator</title><desc id="desc">Technical terminal illustration showing a card and reader with FIDO2 challenge-response status</desc><rect width="900" height="360" rx="10" fill="#0a1110"/><rect x="1" y="1" width="898" height="358" rx="9" fill="none" stroke="#2c5546" stroke-width="2"/><rect x="0" y="0" width="900" height="44" rx="9" fill="#12211c"/><circle cx="22" cy="22" r="5" fill="#53d99c"/><text x="40" y="28" fill="#a7c7b6" font-family="monospace" font-size="15">identity@terminal:~$ fido2 credential status</text><g font-family="monospace" font-size="17" fill="#d5e4dc"><text x="45" y="95" fill="#60dfa5">$</text><text x="65" y="95">authenticator --type card</text><text x="45" y="135">protocol:</text><text x="185" y="135" fill="#69e8ab">FIDO2 / CTAP2</text><text x="45" y="170">transport:</text><text x="185" y="170" fill="#d5e4dc">reader</text><text x="45" y="205">credential:</text><text x="185" y="205" fill="#d5e4dc">device-bound</text><text x="45" y="240">challenge:</text><text x="185" y="240" fill="#69e8ab">signed</text><text x="45" y="275">RP binding:</text><text x="185" y="275" fill="#69e8ab">verified</text><text x="45" y="325" fill="#60dfa5">&gt;</text><rect x="65" y="309" width="11" height="20" fill="#60dfa5"/></g><g transform="translate(532 72)">
+<!-- simplified OMNIKEY 5022 contactless desktop reader, not a product photograph -->
+<path d="M50 188 L268 188 Q283 188 290 201 L306 250 Q309 265 294 270 L30 270 Q14 266 19 251 L33 202 Q38 188 50 188Z" fill="#14241f" stroke="#79bd99" stroke-width="2"/>
+<path d="M48 194 L266 194 L284 246 L28 246Z" fill="#1e342a" stroke="#3b6b53" stroke-width="1.5"/>
+<rect x="76" y="208" width="159" height="26" rx="6" fill="#10221b" stroke="#4a8869"/>
+<text x="155" y="225" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#bce4cb">OMNIKEY 5022</text>
+<circle cx="259" cy="226" r="5" fill="#63e5a3"/>
+<!-- floating contactless card -->
+<g transform="rotate(-8 150 107)">
+<rect x="45" y="15" width="228" height="140" rx="9" fill="#152a21" stroke="#77d9a4" stroke-width="2"/>
+<rect x="62" y="35" width="34" height="26" rx="3" fill="none" stroke="#a3d1b4" stroke-width="1.7"/>
+<path d="M73 35v26m11-26v26m-22-13h34" stroke="#a3d1b4" stroke-width="1"/>
+<text x="64" y="92" font-family="monospace" font-size="16" font-weight="bold" fill="#d5e4dc">HID CRESCENDO</text>
+<text x="64" y="117" font-family="monospace" font-size="12" fill="#70dca2">FIDO2 SMART CARD</text>
+<path d="M230 41q14 14 0 28m8-36q23 22 0 44" stroke="#73d9a0" stroke-width="2" fill="none"/>
+</g>
+<path d="M155 161 Q155 177 155 187 M140 168 Q155 180 170 168 M128 159 Q155 186 182 159" stroke="#6cdaa1" stroke-width="2" stroke-dasharray="4 5" fill="none"/>
+<text x="155" y="296" text-anchor="middle" font-family="monospace" font-size="12" fill="#a4c9b3">CONTACTLESS / NFC READER</text>
+</g></svg>
