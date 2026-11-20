@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A terminal-first Java4Shell assessment for authorized pentesters: runtime inventory, AVX-512 prerequisites, identity-risk analysis and management-ready reporting.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Java4Shell Lab: JVM Exposure Triage and Executive Reporting | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.online/blog/">← All posts</a>
+<div class="post-meta">Security / Testing / <time datetime="2026-11-20">20 November 2026</time></div>
+<h1>Java4Shell Lab: JVM Exposure Triage and Executive Reporting<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">A terminal-first Java4Shell assessment for authorized pentesters: runtime inventory, AVX-512 prerequisites, identity-risk analysis and management-ready reporting.</p>
+<div class="post-body"><h2 id="objective">Objective</h2>
+<p>This is a <strong>local, read-only triage</strong>, not a remote exploit. It helps an authorized pentester or platform engineer determine whether a host has Java4Shell’s <strong>hardware prerequisites</strong>, capture the default Java runtime’s details, and produce a structured report. It deliberately avoids malformed Base64 payloads that could crash or corrupt a JVM.</p>
+<pre><code data-lang="text">$ python3 scripts/java4shell_assess.py --out java4shell-report
+Finding: assessed x86 path excluded / prerequisites found / review required
+Application risk: not determined (application not tested)
+Reports: java4shell-report.md, java4shell-report.json
+</code></pre>
+<h2 id="run-the-assessment">Run the assessment</h2>
+<p>From the blog source root, use Python 3.9+ (standard library only):</p>
+<pre><code data-lang="bash">python3 scripts/java4shell_assess.py --out java4shell-report
+python3 -m json.tool java4shell-report.json &gt;/dev/null
+cat java4shell-report.md
+</code></pre>
+<p>The full runnable script is included at <strong><code>scripts/java4shell_assess.py</code></strong> in the project archive. The updated script supports macOS (Intel and Apple Silicon), Windows 11, and Linux (including Ubuntu 24.04 and 26.04). On Windows x86-64, AVX-512 detection remains <code>UNKNOWN</code> unless separately corroborated; Apple Silicon is reported as not applicable to the x86 vector path. It also inspects <code>java -version</code> and relevant default JVM flags. It now provides a CPU-path applicability finding rather than always reporting <code>INVENTORY_ONLY</code>. It <strong>does not</strong> enumerate all deployed JVMs, establish patch status from the version alone, or determine application exploitability.</p>
+<h2 id="manual-checks-to-corroborate">Manual checks to corroborate</h2>
+<pre><code data-lang="bash"># Linux CPU prerequisites: all four flags are needed for the reported path
+grep -m1 &#39;^flags&#39; /proc/cpuinfo | tr &#39; &#39; &#39;\n&#39; | grep -E &#39;^(avx512f|avx512bw|avx512vbmi|bmi2)$&#39;
+
+# Default Java executable; actual application runtimes may differ
+command -v java
+java -version
+
+# Linux: list running Java processes (permissions may limit visibility)
+ps -eo pid,args | grep &#39;[j]ava&#39;
+
+# Java runtime flags (for an authorized process, with jcmd available)
+jcmd &lt;PID&gt; VM.flags
+</code></pre>
+<p>The <code>jcmd</code> command requires replacing <code>&lt;PID&gt;</code> with a real process ID. Use <code>jcmd &lt;PID&gt; VM.command_line</code> to identify the running JVM’s launch arguments when authorized. Do not confuse the host’s default Java version with the one embedded in an application container.</p>
+<h2 id="controlled-mitigation-validation">Controlled mitigation validation</h2>
+<ol>
+<li>Record the running JVM build, CPU capabilities, container image digest, and whether attacker-controlled Base64 reaches <code>java.util.Base64.Decoder</code>.</li>
+<li>In an isolated staging environment, patch to a vendor-confirmed fixed runtime and <strong>restart</strong> the service; rebuild images where necessary.</li>
+<li>When patching is temporarily unavailable, test <code>-XX:-UseBASE64Intrinsics</code> or the x86-only <code>-XX:UseAVX=2</code> workaround; confirm the running JVM accepted the setting and monitor performance.</li>
+<li>Verify that the authentication service still issues and rejects <strong>synthetic test tokens</strong> as expected; check that service accounts have minimum necessary permissions.</li>
+<li>Re-run the inventory script, attach the vendor build evidence and service test results, and document closure separately. <strong>A clean inventory report is not proof of exploit resistance.</strong></li>
+</ol>
+<h2 id="exploit-code-reference-and-safe-testing-boundary">Exploit-code reference and safe testing boundary</h2>
+<p>The <a rel="external" href="https://calif.io/java4shell/">Calif research publication</a> describes the heap-corruption mechanism and publicly discusses a proof of concept. The publicly described demonstration is not a universal RCE exploit. Review the research in an isolated environment; avoid sending crash-inducing malformed inputs to production identity systems. A generic remote HTTP probe is not a reliable Java4Shell detector because the vulnerable code path is application-dependent.</p>
+<h2 id="download-the-local-assessment-tool">Download the local assessment tool</h2>
+<p><a href="/downloads/java4shell_assess.py"><strong>⬇ Download Java4Shell Python assessor</strong></a> · <a href="/downloads/Java4ShellRuntimeProbe.java">Download companion JVM probe</a></p>
+<p>Save both files in the same directory, then run <code>python3 java4shell_assess.py</code>. The assessor runs the companion Java probe against the selected local JVM and generates Markdown and JSON reports. This is a non-exploitative prerequisite and runtime assessment, not a confirmation of application exploitability.</p>
+<h2 id="sample-output-apple-silicon-macos">Sample output: Apple Silicon macOS</h2>
+<p>The following is a <strong>representative terminal output</strong> for an Apple Silicon Mac, using the live JVM probe. The assessment is local and non-exploitative; a successful probe does not establish that the JVM or an application is free of vulnerabilities.</p>
+<pre><code data-lang="text">$ python3 java4shell_assess.py
+
+Java4Shell | Local Host Assessment
+───────────────────────────────────────────────────────
+Host              Darwin 27.2.0 (arm64)
+CPU applicability Not applicable to the x86-specific path
+Assessment scope  Local CPU/JVM prerequisite triage
+Finding           Assessed x86-specific CPU path not applicable
+Live JVM probe    NOT_AFFECTED_ARCHITECTURE (PASS)
+Application risk  Not determined (application not tested)
+Java runtime      /usr/bin/java
+───────────────────────────────────────────────────────
+Next step         Other application and JVM security issues are not ruled out.
+This is not an application exploitability or patch verification test.
+Reports:
+  Markdown  java4shell-report.md
+  JSON      java4shell-report.json
+</code></pre>
+<h3 id="sample-management-report">Sample management report</h3>
+<p>The accompanying management report uses the previously collected macOS evidence, including <strong>Temurin OpenJDK 21.0.3</strong>, and presents an executive summary, runtime evidence, conditional identity risk, and recommended actions. It is an <strong>example report</strong>, not proof of vulnerability or remediation.</p>
+<blockquote>
+<p><strong>⚠ Java4Shell | Local exposure assessment</strong><br />
+<strong>Host:</strong> Darwin 27.2.0 (ARM64)<br />
+<strong>CPU path:</strong> Not applicable to the assessed x86-specific path<br />
+<strong>Java runtime:</strong> Temurin OpenJDK 21.0.3<br />
+<strong>Application exploitability:</strong> Not tested</p>
+</blockquote>
+<p><a href="/reports/java4shell-macos-example.html"><strong>🛡 View the themed macOS management report</strong></a><br />
+<a href="/reports/java4shell-macos-example.md">Download sample Markdown report</a> · <a href="/reports/java4shell-macos-example.json">Download sample JSON evidence</a></p>
+<p>The sample management report was produced from an earlier inventory run, so its <code>INVENTORY_ONLY</code> wording is retained as historical evidence. The newer terminal example above demonstrates the additional live JVM probe. Running the current script produces fresh Markdown and JSON reports for the selected local JVM; it does not assess other JVMs or remotely deployed applications.</p>
+<p>Companion analysis: <a href="/identity/java4shell-identity-compromise/">Java4Shell: When a JVM Vulnerability Threatens Identity and Access</a>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a rel="external" href="https://calif.io/java4shell/">Original disclosure: Calif</a></li>
+<li><a rel="external" href="https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching">CISA patch guidance</a></li>
+<li><a rel="external" href="https://research.jfrog.com/post/java4shell-vulnerability/">JFrog applicability analysis</a></li>
+</ul>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+</body></html>

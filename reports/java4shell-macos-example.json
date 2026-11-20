@@ -1,0 +1,39 @@
+{
+  "cve": "CVE-2026-114938",
+  "example": true,
+  "example_notice": "Illustrative sample; not collected from a real Mac. Java runtime details are intentionally not asserted.",
+  "timestamp_utc": null,
+  "platform": {
+    "system": "Darwin",
+    "release": "macOS (example)",
+    "architecture": "arm64",
+    "hardware": "Apple Silicon (representative)"
+  },
+  "cpu_prerequisite": "NOT_APPLICABLE_TO_X86_PATH",
+  "required_cpu_flags": [
+    "avx512f",
+    "avx512bw",
+    "avx512vbmi",
+    "bmi2"
+  ],
+  "observed_cpu_flags": [],
+  "cpu_evidence": [
+    "platform.machine() = arm64 (illustrative)"
+  ],
+  "java_executable": null,
+  "java_version_output": "Not collected in illustrative sample",
+  "jvm_flag_observations": [],
+  "assessment": "INVENTORY_ONLY",
+  "vulnerability_status": "NOT_ASSESSED",
+  "limitations": [
+    "Illustrative sample, not a live host assessment.",
+    "Apple Silicon CPU applicability does not establish exposure of any remote or containerized x86-64 JVM.",
+    "No Java runtime build, decoder reachability, or vendor patch status was verified."
+  ],
+  "next_actions": [
+    "Run the script on the actual deployment host and inspect the running JVM.",
+    "Verify vendor build and fixed-version advisory.",
+    "Review untrusted Base64 input paths and workload identity privileges.",
+    "Patch and restart affected runtimes, then record retest evidence."
+  ]
+}

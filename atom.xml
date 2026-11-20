@@ -2,13 +2,492 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>Edwardcher Monreal | Identity, Systems &amp; Ideas</title>
     <subtitle>Edwardcher Monreal — Principal Solutions Architect, technologist and pragmatic programmer.</subtitle>
-    <link rel="self" type="application/atom+xml" href="https://edwardcher.github.io/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://edwardcher.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://edwardcher.online/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://edwardcher.online"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-19T00:00:00+00:00</updated>
-    <id>https://edwardcher.github.io/atom.xml</id>
+    <updated>2026-11-20T00:00:00+00:00</updated>
+    <id>https://edwardcher.online/atom.xml</id>
     <entry xml:lang="en">
-        <title>Helix: Making Editing Fun Again</title>
+        <title>Beyond the Terminal: Learning to Appreciate Mechanical Time</title>
+        <published>2026-11-20T00:00:00+00:00</published>
+        <updated>2026-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/beyond/mechanical-time/"/>
+        <id>https://edwardcher.online/beyond/mechanical-time/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/beyond/mechanical-time/">&lt;p&gt;I have spent more than 25 years in IT. I started out writing software, moved through integration and security work, and eventually into architecture. Much of that time has been spent figuring out why things fail, how to make them work together, and how to build something that will still make sense years later.&lt;/p&gt;
+&lt;p&gt;Somewhere along the way, I became interested in mechanical watches.&lt;/p&gt;
+&lt;p&gt;Not as a replacement for technology. My phone tells time far more accurately, and it does a hundred other things besides. I simply started paying attention to how a watch was made, and found there was more to appreciate than I expected.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/article/mechanical-time-workspace-v2.webp&quot; alt=&quot;A mechanical watch beside my terminal-first workspace&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;from-function-to-design&quot;&gt;From function to design&lt;/h2&gt;
+&lt;p&gt;Earlier in my career, I was mostly interested in whether something worked. Could the code run? Would the integration hold? Could a system recover when something went wrong?&lt;/p&gt;
+&lt;p&gt;Those questions still matter to me. But experience has changed the way I look at things. I now spend more time thinking about the decisions behind a design: why one approach is simpler to maintain, why a small detail matters, and whether the result is likely to last.&lt;/p&gt;
+&lt;p&gt;That is part of what draws me to watchmaking.&lt;/p&gt;
+&lt;p&gt;A mechanical movement is a collection of small parts that have to work together. The mainspring stores energy. The gear train transfers it. The escapement releases it in measured steps. None of this is necessary to know the time today, which is precisely why I find the care behind it interesting.&lt;/p&gt;
+&lt;p&gt;It is engineering with its workings close enough to see and, in some cases, feel.&lt;/p&gt;
+&lt;h2 id=&quot;the-details-grow-on-you&quot;&gt;The details grow on you&lt;/h2&gt;
+&lt;p&gt;My interest did not arrive all at once. At first I noticed the dial. Later I began to appreciate the proportions of the case, the way the hands were shaped, the feel of the crown, and the finishing on the movement.&lt;/p&gt;
+&lt;p&gt;The NOMOS Zürich Worldtimer in these photographs captures some of that appeal for me. Having worked with people across different time zones for years, its world-time function is something I can relate to. But what interests me most is how the watch makes a complicated mechanism feel so straightforward.&lt;/p&gt;
+&lt;p&gt;The Zürich is a good example of thoughtful mechanical design. A pusher advances the local-hour display and changes the city shown for the selected time zone, while a separate 24-hour display keeps track of home time. Underneath, the automatic movement has to coordinate those indications with the ordinary business of keeping time. It is a clever piece of engineering, but you don’t need to understand the mechanism to use it. That, to me, is the point of good design: the complexity is there when you want to appreciate it, not in your way when you don’t.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/article/mechanical-time-watch-and-terminal-v2.webp&quot; alt=&quot;NOMOS Zürich Worldtimer resting beside my MacBook and terminal&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I am not interested in turning every small interest into a technical analysis. Sometimes I just enjoy wearing a well-designed object. But I do find myself noticing the same qualities I look for in a good system: clarity, purpose, and attention to the parts most people never see.&lt;/p&gt;
+&lt;h2 id=&quot;a-different-way-of-looking-at-time&quot;&gt;A different way of looking at time&lt;/h2&gt;
+&lt;p&gt;IT is an industry that rarely stands still. There is always another release, another vulnerability, another platform, another urgent problem to solve. I still enjoy that pace, and I still like getting my hands dirty with code and tools.&lt;/p&gt;
+&lt;p&gt;After enough years, though, I have also learned to value things that do not need constant reinvention.&lt;/p&gt;
+&lt;p&gt;A mechanical watch needs care. It is not perfect, and it will never win a contest with a digital clock for accuracy. Yet a good movement can be maintained, repaired, and kept running for a very long time. I like that idea.&lt;/p&gt;
+&lt;p&gt;It reminds me that progress is not only about making things faster or adding more features. Sometimes it is about making thoughtful choices and doing the work properly.&lt;/p&gt;
+&lt;p&gt;This is a small detour from what I usually write about here. Most of this site will remain about trusted identity, security, systems, and the tools I use to build them. But mechanical watches have become one of the ways I appreciate engineering when I am away from the terminal.&lt;/p&gt;
+&lt;p&gt;And after a long working day, that is enough.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Terminal First: The Advantage of a Consistent Workflow</title>
+        <published>2026-11-20T00:00:00+00:00</published>
+        <updated>2026-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/blog/terminal-first-consistent-workflow/"/>
+        <id>https://edwardcher.online/blog/terminal-first-consistent-workflow/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-consistent-workflow/">&lt;p&gt;I have always preferred working with the keyboard whenever possible. Not because I dislike graphical interfaces, but because I find it easier to stay focused when I can navigate, search, edit and execute commands without constantly changing how I interact with my computer.&lt;/p&gt;
+&lt;p&gt;Over time, I have found that combining Vim-style keybindings, terminal applications, Alfred workflows and the Unix shell makes working on my Mac noticeably more efficient.&lt;/p&gt;
+&lt;p&gt;The interesting part is that none of these tools is particularly new. What makes the difference is how they complement one another.&lt;/p&gt;
+&lt;h2 id=&quot;consistency-matters-more-than-the-tool&quot;&gt;Consistency Matters More Than the Tool&lt;/h2&gt;
+&lt;p&gt;One of the reasons I appreciate Vim-style keybindings is their consistency.&lt;/p&gt;
+&lt;p&gt;Once you become familiar with keyboard-driven navigation, the same principles can be applied across different applications. Whether I am editing code, navigating directories, searching files or managing terminal sessions, I can rely on similar movements and interactions.&lt;/p&gt;
+&lt;p&gt;I use applications such as Helix, Yazi and other terminal tools that follow this philosophy. They do not necessarily implement Vim in exactly the same way, but they share enough familiar conventions to make moving between them intuitive.&lt;/p&gt;
+&lt;p&gt;This matters because every application introduces its own way of doing things. When navigation patterns are consistent, there is less mental effort spent remembering shortcuts and more attention available for the work itself.&lt;/p&gt;
+&lt;p&gt;The benefit is not simply typing faster. It is reducing the friction between tasks.&lt;/p&gt;
+&lt;h2 id=&quot;alfred-connects-the-mac-to-the-terminal&quot;&gt;Alfred Connects the Mac to the Terminal&lt;/h2&gt;
+&lt;p&gt;Of course, not everything I do happens inside a terminal.&lt;/p&gt;
+&lt;p&gt;macOS has excellent graphical applications, and I use them regularly. But I prefer not to navigate through multiple windows and menus just to reach something I already know I need.&lt;/p&gt;
+&lt;p&gt;Alfred provides that missing connection.&lt;/p&gt;
+&lt;p&gt;With a few keystrokes, I can launch an application, locate a file, open a project or trigger a custom workflow. Some of these workflows execute shell scripts, allowing me to bring command-line capabilities directly into the macOS desktop experience.&lt;/p&gt;
+&lt;p&gt;The shell remains the foundation for scripting and automation, while Alfred makes those capabilities accessible without having to open a terminal for every operation.&lt;/p&gt;
+&lt;p&gt;This is where the combination starts to make sense. I am not choosing between the GUI and the command line. I am using whichever provides the most efficient path to the task.&lt;/p&gt;
+&lt;h2 id=&quot;the-real-advantage-is-reducing-context-switching&quot;&gt;The Real Advantage Is Reducing Context Switching&lt;/h2&gt;
+&lt;p&gt;Consider how often we interrupt our work just to operate the computer.&lt;/p&gt;
+&lt;p&gt;We switch windows, find applications, navigate directories, locate files, return to an editor and open another terminal to execute something.&lt;/p&gt;
+&lt;p&gt;None of these actions is particularly difficult. But repeated throughout the day, they introduce small interruptions that can break concentration.&lt;/p&gt;
+&lt;p&gt;A consistent workflow helps reduce them.&lt;/p&gt;
+&lt;p&gt;Vim-style navigation makes interacting with different terminal applications familiar. Alfred reduces the effort of reaching applications and resources. The shell connects commands and allows repetitive operations to be automated.&lt;/p&gt;
+&lt;p&gt;Instead of treating each application as a separate environment, I can move between them with fewer changes in how I work.&lt;/p&gt;
+&lt;p&gt;For someone who regularly switches between writing code, troubleshooting systems, reviewing logs, testing APIs and preparing technical material, this consistency is particularly valuable.&lt;/p&gt;
+&lt;p&gt;The objective is not to perform every action without touching the mouse. It is to make common operations predictable and repeatable.&lt;/p&gt;
+&lt;h2 id=&quot;familiarity-creates-efficiency&quot;&gt;Familiarity Creates Efficiency&lt;/h2&gt;
+&lt;p&gt;There is an initial learning curve to keyboard-driven applications.&lt;/p&gt;
+&lt;p&gt;Remembering keybindings, developing muscle memory and configuring workflows takes time. In some cases, a graphical interface may even be faster for an unfamiliar task.&lt;/p&gt;
+&lt;p&gt;But frequently repeated operations are different.&lt;/p&gt;
+&lt;p&gt;Once the movements become familiar, the effort of navigating an application gradually disappears into the background. You spend less time thinking about how to perform an action and more time deciding what needs to be done.&lt;/p&gt;
+&lt;p&gt;This is also why I prefer building a small collection of tools that work well together rather than continually adopting new applications.&lt;/p&gt;
+&lt;p&gt;A tool does not need to be the newest or most feature-rich to be useful. It needs to fit the workflow, remain dependable and solve the problem without introducing unnecessary complexity.&lt;/p&gt;
+&lt;p&gt;The same principle applies to automation. A simple shell script triggered through Alfred can sometimes be more practical than a dedicated application with an elaborate interface.&lt;/p&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
+&lt;p&gt;Terminal-first computing is not simply about preferring a command prompt over a graphical interface.&lt;/p&gt;
+&lt;p&gt;It is about building a workflow where tools complement one another.&lt;/p&gt;
+&lt;p&gt;Vim-style bindings provide consistency. Alfred provides fast access across macOS. The shell provides flexibility and automation. Terminal applications bring these principles together.&lt;/p&gt;
+&lt;p&gt;The result is not necessarily fewer applications, but fewer interruptions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The goal is simple: spend less time operating the computer and more time getting things done.&lt;/strong&gt;&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Helix, Hurl, and Rust: A Terminal-First Approach to API Testing</title>
+        <published>2026-11-20T00:00:00+00:00</published>
+        <updated>2026-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/"/>
+        <id>https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Lab objective:&lt;/strong&gt; Authenticate an integration client, create a test user, create and bind a pending FIDO device, then verify the association. No password authenticator is created. &lt;strong&gt;A pending device is not an enrolled passkey.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;three-tools-one-repeatable-workflow&quot;&gt;Three tools, one repeatable workflow&lt;/h2&gt;
+&lt;p&gt;A terminal-first approach is not about avoiding graphical interfaces. It is about making the steps of an API test visible, reviewable, and repeatable. A collection of requests is useful; a project that another engineer can clone, run, and validate is better.&lt;/p&gt;
+&lt;p&gt;This experiment combines three focused tools:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Helix — edit.&lt;/strong&gt; Navigate and maintain plain-text API requests, Rust source, and project configuration without leaving the terminal.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hurl — test.&lt;/strong&gt; Send HTTP requests, capture response values, and assert expected behavior in readable &lt;code&gt;.hurl&lt;/code&gt; files.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rust — automate.&lt;/strong&gt; Prepare unique test identities and orchestrate the same test sequence without duplicating Hurl’s HTTP functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The test files can be committed to Git, reviewed as diffs, and reused in an authorized test environment. This builds on &lt;a href=&quot;/experiments/helix-editing-api-workflow/&quot;&gt;Helix: Making Editing Fun Again&lt;/a&gt; by moving from editing and isolated requests to a complete identity API lifecycle.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;$ hx tests/provision-fido.hurl   # edit the HTTP workflow
+$ cargo run                     # generate a unique test identity and run Hurl
+[+] Running HID provisioning test with unique lab identity: terminal-lab-...
+[+] SCIM FIDO pre-enrollment checks passed.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;The output illustrates a successful configured-tenant run; it is not a captured live HID result.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-test-case-identity-provisioning-with-hid&quot;&gt;The test case: identity provisioning with HID&lt;/h2&gt;
+&lt;p&gt;We will use HID Authentication Service to make the workflow concrete: obtain an OAuth access token, create a user using SCIM, prepare a pending FIDO device, bind it to the new user, and verify the association. This is a lifecycle &lt;strong&gt;API test&lt;/strong&gt;, not a simulation of the FIDO cryptographic ceremony.&lt;/p&gt;
+&lt;h2 id=&quot;why-hid-authentication-service&quot;&gt;Why HID Authentication Service?&lt;/h2&gt;
+&lt;p&gt;The HID Authentication Service exposes an OpenID Connect/OAuth token endpoint and SCIM APIs for user and device lifecycle management. Its FIDO integration uses &lt;code&gt;AT_FIDO&lt;/code&gt; for the authentication policy and &lt;code&gt;DT_FIDO&lt;/code&gt; for the device type. For a &lt;strong&gt;device-binding-required&lt;/strong&gt; workflow, a pending FIDO device can be created and assigned to a user before a genuine WebAuthn enrollment ceremony.&lt;/p&gt;
+&lt;p&gt;This distinction matters: &lt;strong&gt;we are preparing an identity for FIDO, not minting a security key through an API.&lt;/strong&gt; A private key must be generated and held by a FIDO authenticator during the actual registration process.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;[OAuth client_credentials] -&amp;gt; [SCIM Users POST]
+                                      |
+                                      v
+                              [internal user ID]
+                                      |
+[SCIM Device POST: DT_FIDO/PENDING] -&amp;gt; [device ID]
+                                      |
+                                      v
+                           [SCIM Device PUT: owner]
+                                      |
+                                      v
+                          [SCIM Device GET: verify]
+                                      |
+                         [IdP WebAuthn enrollment]
+                              (separate ceremony)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;project-layout&quot;&gt;Project layout&lt;/h2&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;examples/hid-fido-hurl-lab/
+├── Cargo.toml
+├── src/main.rs
+├── tests/provision-fido.hurl
+├── .env.example
+├── .gitignore
+└── README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The complete runnable files are included in the blog source under &lt;code&gt;examples/hid-fido-hurl-lab/&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;install-and-configure&quot;&gt;Install and configure&lt;/h2&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;brew install helix hurl rustup
+rustup default stable
+
+cd examples/hid-fido-hurl-lab
+mkdir -p .secrets
+cp .env.example .secrets/hurl.env
+chmod 600 .secrets/hurl.env
+hx .secrets/hurl.env
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fill in the HID tenant host, tenant identifier, client ID and client secret. Use a &lt;strong&gt;test tenant&lt;/strong&gt; and an API client explicitly authorized for user/device lifecycle operations. The client-credentials token endpoint is &lt;code&gt;/idp/{tenant}/authn/token&lt;/code&gt;; the SCIM endpoints are under &lt;code&gt;/scim/{tenant}/v2/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The secrets file is excluded from Git. Do not paste tokens into logs or enable verbose HTTP tracing when working with live credentials.&lt;/p&gt;
+&lt;h2 id=&quot;the-hurl-collection-documented-and-readable&quot;&gt;The Hurl collection — documented and readable&lt;/h2&gt;
+&lt;p&gt;The sequence deliberately uses the &lt;strong&gt;Device&lt;/strong&gt; API for the pending FIDO device rather than pretending that a generic &lt;code&gt;AT_FIDO&lt;/code&gt; authenticator POST registers a security key. The expected &lt;code&gt;HTTP 200&lt;/code&gt; on device creation and binding follows HID’s published FIDO integration examples; the user creation uses the SCIM &lt;code&gt;HTTP 201&lt;/code&gt; expectation.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;hurl&quot;&gt;# HID Authentication Service — FIDO device pre-enrollment lab
+# Run ONLY against a test tenant with a privileged API client.
+# Client secrets live in .secrets/hurl.env (mode 0600), never in Git.
+# Each run uses a unique test_username and device_external_id from Rust.
+# A pending device is NOT an enrolled passkey or usable FIDO credential.
+
+# 01 / Machine-to-machine OAuth token (HID OpenID token endpoint)
+POST {{base_url}}/idp/{{tenant}}/authn/token
+Content-Type: application/x-www-form-urlencoded
+[BasicAuth]
+{{client_id}}: {{client_secret}}
+[Form]
+grant_type: client_credentials
+
+HTTP 200
+[Captures]
+access_token: jsonpath &amp;quot;$.access_token&amp;quot;
+[Asserts]
+jsonpath &amp;quot;$.access_token&amp;quot; exists
+jsonpath &amp;quot;$.token_type&amp;quot; == &amp;quot;Bearer&amp;quot;
+
+# 02 / Provision an isolated test identity through SCIM
+POST {{base_url}}/scim/{{tenant}}/v2/Users?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &amp;quot;schemas&amp;quot;: [&amp;quot;urn:ietf:params:scim:schemas:core:2.0:User&amp;quot;],
+  &amp;quot;userName&amp;quot;: &amp;quot;{{test_username}}&amp;quot;,
+  &amp;quot;name&amp;quot;: {&amp;quot;givenName&amp;quot;: &amp;quot;Terminal&amp;quot;, &amp;quot;familyName&amp;quot;: &amp;quot;Lab&amp;quot;},
+  &amp;quot;active&amp;quot;: true
+}
+
+HTTP 201
+[Captures]
+user_id: jsonpath &amp;quot;$.id&amp;quot;
+[Asserts]
+jsonpath &amp;quot;$.id&amp;quot; exists
+jsonpath &amp;quot;$.userName&amp;quot; == &amp;quot;{{test_username}}&amp;quot;
+
+# 03 / Create a pending FIDO device; this does NOT generate a private key
+# HID FIDO integration documentation shows HTTP 200 for Device creation.
+POST {{base_url}}/scim/{{tenant}}/v2/Device?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &amp;quot;schemas&amp;quot;: [&amp;quot;urn:hid:scim:api:idp:2.0:Device&amp;quot;],
+  &amp;quot;externalId&amp;quot;: &amp;quot;{{device_external_id}}&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;DT_FIDO&amp;quot;,
+  &amp;quot;status&amp;quot;: {&amp;quot;status&amp;quot;: &amp;quot;PENDING&amp;quot;, &amp;quot;neverExpires&amp;quot;: true}
+}
+
+HTTP 200
+[Captures]
+device_id: jsonpath &amp;quot;$.id&amp;quot;
+[Asserts]
+jsonpath &amp;quot;$.id&amp;quot; exists
+jsonpath &amp;quot;$.type&amp;quot; == &amp;quot;DT_FIDO&amp;quot;
+jsonpath &amp;quot;$.status.status&amp;quot; == &amp;quot;PENDING&amp;quot;
+
+# 04 / Bind the pending device to the newly created SCIM user
+# This follows HID&amp;#39;s documented PUT /Device/{id} assignment operation.
+PUT {{base_url}}/scim/{{tenant}}/v2/Device/{{device_id}}?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &amp;quot;schemas&amp;quot;: [&amp;quot;urn:hid:scim:api:idp:2.0:Device&amp;quot;],
+  &amp;quot;id&amp;quot;: &amp;quot;{{device_id}}&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;DT_FIDO&amp;quot;,
+  &amp;quot;status&amp;quot;: {&amp;quot;status&amp;quot;: &amp;quot;PENDING&amp;quot;, &amp;quot;active&amp;quot;: false},
+  &amp;quot;owner&amp;quot;: {&amp;quot;value&amp;quot;: &amp;quot;{{user_id}}&amp;quot;}
+}
+
+HTTP 200
+[Asserts]
+jsonpath &amp;quot;$.id&amp;quot; == &amp;quot;{{device_id}}&amp;quot;
+jsonpath &amp;quot;$.owner.value&amp;quot; == &amp;quot;{{user_id}}&amp;quot;
+jsonpath &amp;quot;$.status.status&amp;quot; == &amp;quot;PENDING&amp;quot;
+
+# 05 / Read back the binding to verify persistence
+GET {{base_url}}/scim/{{tenant}}/v2/Device/{{device_id}}?api-version=11
+Authorization: Bearer {{access_token}}
+Accept: application/scim+json
+
+HTTP 200
+[Asserts]
+jsonpath &amp;quot;$.id&amp;quot; == &amp;quot;{{device_id}}&amp;quot;
+jsonpath &amp;quot;$.owner.value&amp;quot; == &amp;quot;{{user_id}}&amp;quot;
+jsonpath &amp;quot;$.type&amp;quot; == &amp;quot;DT_FIDO&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hurl’s &lt;code&gt;[Captures]&lt;/code&gt; blocks carry the access token, user ID and device ID to later requests. &lt;code&gt;[Asserts]&lt;/code&gt; stop the test when the response does not match the expected resource state. If an assertion fails, inspect the tenant’s API version and permissions rather than weakening the check to accept any HTTP response.&lt;/p&gt;
+&lt;h2 id=&quot;rust-as-the-thin-runner&quot;&gt;Rust as the thin runner&lt;/h2&gt;
+&lt;p&gt;I do not need another HTTP framework for this experiment. Rust simply gives each run a unique identity and launches Hurl. That avoids conflicts from repeatedly creating the same SCIM username.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;rust&quot;&gt;use std::{env, path::Path, process::{Command, ExitCode}, time::{SystemTime, UNIX_EPOCH}};
+
+fn main() -&amp;gt; ExitCode {
+    let config = Path::new(&amp;quot;.secrets/hurl.env&amp;quot;);
+    if !config.is_file() {
+        eprintln!(&amp;quot;Missing .secrets/hurl.env; copy .env.example and edit it.&amp;quot;);
+        return ExitCode::FAILURE;
+    }
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).expect(&amp;quot;clock&amp;quot;).as_millis();
+    let suffix = format!(&amp;quot;{}-{}&amp;quot;, now, std::process::id());
+    let username = format!(&amp;quot;terminal-lab-{}&amp;quot;, suffix);
+    let device = format!(&amp;quot;fido-lab-{}&amp;quot;, suffix);
+    println!(&amp;quot;[+] Running HID provisioning test with unique lab identity: {username}&amp;quot;);
+    println!(&amp;quot;[!] This creates persistent resources. No automatic deletion.&amp;quot;);
+    let status = Command::new(&amp;quot;hurl&amp;quot;)
+        .args([&amp;quot;--test&amp;quot;, &amp;quot;--variables-file&amp;quot;, &amp;quot;.secrets/hurl.env&amp;quot;,
+               &amp;quot;--variable&amp;quot;, &amp;amp;format!(&amp;quot;test_username={username}&amp;quot;),
+               &amp;quot;--variable&amp;quot;, &amp;amp;format!(&amp;quot;device_external_id={device}&amp;quot;),
+               &amp;quot;tests/provision-fido.hurl&amp;quot;])
+        .status();
+    match status {
+        Ok(s) if s.success() =&amp;gt; { println!(&amp;quot;[+] SCIM FIDO pre-enrollment checks passed.&amp;quot;); ExitCode::SUCCESS }
+        Ok(s) =&amp;gt; { eprintln!(&amp;quot;[-] Hurl failed: {s}&amp;quot;); ExitCode::FAILURE }
+        Err(e) =&amp;gt; { eprintln!(&amp;quot;[-] Could not execute hurl: {e}&amp;quot;); ExitCode::FAILURE }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run the project:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;hx tests/provision-fido.hurl
+cargo run
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each invocation creates persistent lab resources. &lt;strong&gt;There is no automatic deletion&lt;/strong&gt;; record the test user and device identifiers from your authorized tenant’s audit trail and apply its cleanup policy.&lt;/p&gt;
+&lt;h2 id=&quot;finish-with-an-actual-fido-security-key&quot;&gt;Finish with an actual FIDO security key&lt;/h2&gt;
+&lt;p&gt;At the end of this test, the device remains &lt;code&gt;PENDING&lt;/code&gt;. A tenant administrator must have configured the HID IdP’s FIDO enrollment workflow, including its enrollment-protection mechanism. The user then completes the browser-based WebAuthn ceremony with a physical security key or supported passkey. The server verifies the registration and stores the corresponding public-key credential.&lt;/p&gt;
+&lt;p&gt;For device-bound assurance, consider &lt;code&gt;deviceBinding: required&lt;/code&gt;, user verification, allowed AAGUIDs, and verified attestation &lt;strong&gt;as appropriate to the deployed HID workflow and authenticator capabilities&lt;/strong&gt;. Do not claim a user is FIDO-enrolled merely because the SCIM device has an owner.&lt;/p&gt;
+&lt;h2 id=&quot;the-productivity-gain-fewer-hidden-steps&quot;&gt;The productivity gain: fewer hidden steps&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Helix keeps the source readable. Hurl makes expectations executable. Rust makes the sequence repeatable.&lt;/strong&gt; Together they turn one-off requests into an integration test that can be reviewed in Git and rerun by another engineer.&lt;/p&gt;
+&lt;p&gt;A failed assertion points to the exact lifecycle step that needs investigation. Unique usernames avoid SCIM conflicts between runs. Explicit configuration separates the test logic from tenant credentials. The same files can later be incorporated into CI, provided that secrets, test-tenant permissions, cleanup, and reporting are handled appropriately.&lt;/p&gt;
+&lt;p&gt;This is not a claim that a terminal replaces every API tool. It is a practical way to reduce context switching and hidden state while preserving the HTTP requests as plain text. For identity systems, where authorization, auditability, and reproducibility matter, that is a meaningful productivity improvement.&lt;/p&gt;
+&lt;h2 id=&quot;closing-thoughts-the-shell-brings-it-together&quot;&gt;Closing thoughts: the shell brings it together&lt;/h2&gt;
+&lt;p&gt;What I like about this approach is that each tool does one job well. &lt;strong&gt;Helix&lt;/strong&gt; keeps me close to the files I am editing. &lt;strong&gt;Hurl&lt;/strong&gt; turns readable HTTP requests into tests with explicit expectations. &lt;strong&gt;Rust&lt;/strong&gt; handles the small amount of orchestration needed to make each run consistent. And the &lt;strong&gt;shell&lt;/strong&gt; ties everything together without another layer of clicking through screens.&lt;/p&gt;
+&lt;p&gt;The real advantage is not replacing Postman for the sake of it. It is having a project I can open, understand, change, and run again. Requests and assertions live in plain text, changes are visible in Git, and a failed step is easier to investigate. There is less to remember between sessions—and less hidden configuration for the next engineer to discover.&lt;/p&gt;
+&lt;p&gt;HID Authentication Service makes a useful example because an identity lifecycle involves more than a single API call: obtaining a token, creating a user, assigning a pending FIDO device, and checking the result. But the same pattern applies to other APIs: payment integrations, provisioning services, inventory systems, internal platforms, or a small service I am developing myself. The endpoints change; the workflow stays familiar.&lt;/p&gt;
+&lt;p&gt;For me, that is what &lt;strong&gt;terminal-first productivity&lt;/strong&gt; means. Use simple tools that work together, keep the test readable, and make it easy to repeat the work tomorrow.&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://docs.hidglobal.com/dev/auth-service/api/token-endpoint.htm&quot;&gt;HID OpenID token endpoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://docs.hidglobal.com/dev/auth-service/api/users-rest-api.htm&quot;&gt;HID SCIM Users REST API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://docs.hidglobal.com/dev/auth-service/api/device-rest-api.htm&quot;&gt;HID SCIM Device REST API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://docs.hidglobal.com/dev/auth-service/integration/user-authentication-with-fido.htm&quot;&gt;HID User Authentication with FIDO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://hurl.dev/docs/samples.html&quot;&gt;Hurl documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Java4Shell Lab: JVM Exposure Triage and Executive Reporting</title>
+        <published>2026-11-20T00:00:00+00:00</published>
+        <updated>2026-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/java4shell-identity-exposure-lab/"/>
+        <id>https://edwardcher.online/experiments/java4shell-identity-exposure-lab/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/experiments/java4shell-identity-exposure-lab/">&lt;h2 id=&quot;objective&quot;&gt;Objective&lt;/h2&gt;
+&lt;p&gt;This is a &lt;strong&gt;local, read-only triage&lt;/strong&gt;, not a remote exploit. It helps an authorized pentester or platform engineer determine whether a host has Java4Shell’s &lt;strong&gt;hardware prerequisites&lt;/strong&gt;, capture the default Java runtime’s details, and produce a structured report. It deliberately avoids malformed Base64 payloads that could crash or corrupt a JVM.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;$ python3 scripts/java4shell_assess.py --out java4shell-report
+Finding: assessed x86 path excluded / prerequisites found / review required
+Application risk: not determined (application not tested)
+Reports: java4shell-report.md, java4shell-report.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;run-the-assessment&quot;&gt;Run the assessment&lt;/h2&gt;
+&lt;p&gt;From the blog source root, use Python 3.9+ (standard library only):&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;bash&quot;&gt;python3 scripts/java4shell_assess.py --out java4shell-report
+python3 -m json.tool java4shell-report.json &amp;gt;/dev/null
+cat java4shell-report.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The full runnable script is included at &lt;strong&gt;&lt;code&gt;scripts/java4shell_assess.py&lt;/code&gt;&lt;/strong&gt; in the project archive. The updated script supports macOS (Intel and Apple Silicon), Windows 11, and Linux (including Ubuntu 24.04 and 26.04). On Windows x86-64, AVX-512 detection remains &lt;code&gt;UNKNOWN&lt;/code&gt; unless separately corroborated; Apple Silicon is reported as not applicable to the x86 vector path. It also inspects &lt;code&gt;java -version&lt;/code&gt; and relevant default JVM flags. It now provides a CPU-path applicability finding rather than always reporting &lt;code&gt;INVENTORY_ONLY&lt;/code&gt;. It &lt;strong&gt;does not&lt;/strong&gt; enumerate all deployed JVMs, establish patch status from the version alone, or determine application exploitability.&lt;/p&gt;
+&lt;h2 id=&quot;manual-checks-to-corroborate&quot;&gt;Manual checks to corroborate&lt;/h2&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;bash&quot;&gt;# Linux CPU prerequisites: all four flags are needed for the reported path
+grep -m1 &amp;#39;^flags&amp;#39; /proc/cpuinfo | tr &amp;#39; &amp;#39; &amp;#39;\n&amp;#39; | grep -E &amp;#39;^(avx512f|avx512bw|avx512vbmi|bmi2)$&amp;#39;
+
+# Default Java executable; actual application runtimes may differ
+command -v java
+java -version
+
+# Linux: list running Java processes (permissions may limit visibility)
+ps -eo pid,args | grep &amp;#39;[j]ava&amp;#39;
+
+# Java runtime flags (for an authorized process, with jcmd available)
+jcmd &amp;lt;PID&amp;gt; VM.flags
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;jcmd&lt;/code&gt; command requires replacing &lt;code&gt;&amp;lt;PID&amp;gt;&lt;/code&gt; with a real process ID. Use &lt;code&gt;jcmd &amp;lt;PID&amp;gt; VM.command_line&lt;/code&gt; to identify the running JVM’s launch arguments when authorized. Do not confuse the host’s default Java version with the one embedded in an application container.&lt;/p&gt;
+&lt;h2 id=&quot;controlled-mitigation-validation&quot;&gt;Controlled mitigation validation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Record the running JVM build, CPU capabilities, container image digest, and whether attacker-controlled Base64 reaches &lt;code&gt;java.util.Base64.Decoder&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;In an isolated staging environment, patch to a vendor-confirmed fixed runtime and &lt;strong&gt;restart&lt;/strong&gt; the service; rebuild images where necessary.&lt;/li&gt;
+&lt;li&gt;When patching is temporarily unavailable, test &lt;code&gt;-XX:-UseBASE64Intrinsics&lt;/code&gt; or the x86-only &lt;code&gt;-XX:UseAVX=2&lt;/code&gt; workaround; confirm the running JVM accepted the setting and monitor performance.&lt;/li&gt;
+&lt;li&gt;Verify that the authentication service still issues and rejects &lt;strong&gt;synthetic test tokens&lt;/strong&gt; as expected; check that service accounts have minimum necessary permissions.&lt;/li&gt;
+&lt;li&gt;Re-run the inventory script, attach the vendor build evidence and service test results, and document closure separately. &lt;strong&gt;A clean inventory report is not proof of exploit resistance.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;exploit-code-reference-and-safe-testing-boundary&quot;&gt;Exploit-code reference and safe testing boundary&lt;/h2&gt;
+&lt;p&gt;The &lt;a rel=&quot;external&quot; href=&quot;https://calif.io/java4shell/&quot;&gt;Calif research publication&lt;/a&gt; describes the heap-corruption mechanism and publicly discusses a proof of concept. The publicly described demonstration is not a universal RCE exploit. Review the research in an isolated environment; avoid sending crash-inducing malformed inputs to production identity systems. A generic remote HTTP probe is not a reliable Java4Shell detector because the vulnerable code path is application-dependent.&lt;/p&gt;
+&lt;h2 id=&quot;download-the-local-assessment-tool&quot;&gt;Download the local assessment tool&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/downloads/java4shell_assess.py&quot;&gt;&lt;strong&gt;⬇ Download Java4Shell Python assessor&lt;/strong&gt;&lt;/a&gt; · &lt;a href=&quot;/downloads/Java4ShellRuntimeProbe.java&quot;&gt;Download companion JVM probe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Save both files in the same directory, then run &lt;code&gt;python3 java4shell_assess.py&lt;/code&gt;. The assessor runs the companion Java probe against the selected local JVM and generates Markdown and JSON reports. This is a non-exploitative prerequisite and runtime assessment, not a confirmation of application exploitability.&lt;/p&gt;
+&lt;h2 id=&quot;sample-output-apple-silicon-macos&quot;&gt;Sample output: Apple Silicon macOS&lt;/h2&gt;
+&lt;p&gt;The following is a &lt;strong&gt;representative terminal output&lt;/strong&gt; for an Apple Silicon Mac, using the live JVM probe. The assessment is local and non-exploitative; a successful probe does not establish that the JVM or an application is free of vulnerabilities.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;$ python3 java4shell_assess.py
+
+Java4Shell | Local Host Assessment
+───────────────────────────────────────────────────────
+Host              Darwin 27.2.0 (arm64)
+CPU applicability Not applicable to the x86-specific path
+Assessment scope  Local CPU/JVM prerequisite triage
+Finding           Assessed x86-specific CPU path not applicable
+Live JVM probe    NOT_AFFECTED_ARCHITECTURE (PASS)
+Application risk  Not determined (application not tested)
+Java runtime      /usr/bin/java
+───────────────────────────────────────────────────────
+Next step         Other application and JVM security issues are not ruled out.
+This is not an application exploitability or patch verification test.
+Reports:
+  Markdown  java4shell-report.md
+  JSON      java4shell-report.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;sample-management-report&quot;&gt;Sample management report&lt;/h3&gt;
+&lt;p&gt;The accompanying management report uses the previously collected macOS evidence, including &lt;strong&gt;Temurin OpenJDK 21.0.3&lt;/strong&gt;, and presents an executive summary, runtime evidence, conditional identity risk, and recommended actions. It is an &lt;strong&gt;example report&lt;/strong&gt;, not proof of vulnerability or remediation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⚠ Java4Shell | Local exposure assessment&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Host:&lt;/strong&gt; Darwin 27.2.0 (ARM64)&lt;br /&gt;
+&lt;strong&gt;CPU path:&lt;/strong&gt; Not applicable to the assessed x86-specific path&lt;br /&gt;
+&lt;strong&gt;Java runtime:&lt;/strong&gt; Temurin OpenJDK 21.0.3&lt;br /&gt;
+&lt;strong&gt;Application exploitability:&lt;/strong&gt; Not tested&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;/reports/java4shell-macos-example.html&quot;&gt;&lt;strong&gt;🛡 View the themed macOS management report&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/reports/java4shell-macos-example.md&quot;&gt;Download sample Markdown report&lt;/a&gt; · &lt;a href=&quot;/reports/java4shell-macos-example.json&quot;&gt;Download sample JSON evidence&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The sample management report was produced from an earlier inventory run, so its &lt;code&gt;INVENTORY_ONLY&lt;/code&gt; wording is retained as historical evidence. The newer terminal example above demonstrates the additional live JVM probe. Running the current script produces fresh Markdown and JSON reports for the selected local JVM; it does not assess other JVMs or remotely deployed applications.&lt;/p&gt;
+&lt;p&gt;Companion analysis: &lt;a href=&quot;/identity/java4shell-identity-compromise/&quot;&gt;Java4Shell: When a JVM Vulnerability Threatens Identity and Access&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://calif.io/java4shell/&quot;&gt;Original disclosure: Calif&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching&quot;&gt;CISA patch guidance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://research.jfrog.com/post/java4shell-vulnerability/&quot;&gt;JFrog applicability analysis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Java4Shell: When a JVM Vulnerability Threatens Identity and Access</title>
+        <published>2026-11-20T00:00:00+00:00</published>
+        <updated>2026-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/identity/java4shell-identity-compromise/"/>
+        <id>https://edwardcher.online/identity/java4shell-identity-compromise/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/identity/java4shell-identity-compromise/">&lt;h2 id=&quot;the-authentication-boundary-starts-inside-the-runtime&quot;&gt;The authentication boundary starts inside the runtime&lt;/h2&gt;
+&lt;p&gt;Java4Shell (&lt;strong&gt;CVE-2026-114938&lt;/strong&gt;) was disclosed in November 2026. Unlike the 2022 Spring4Shell data-binding vulnerability, this flaw is in the &lt;strong&gt;OpenJDK HotSpot JVM’s accelerated Base64 decoder&lt;/strong&gt;. The reported bug is an out-of-bounds heap write involving an AVX-512 VBMI optimized decoding path. Exploitability requires an affected runtime, suitable x86-64 hardware, and a reachable decoding path. A Java installation alone is not proof of exposure.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;[unauthenticated request]
+          |
+          v
+[Base64-bearing input: auth header / token / encoded payload]
+          |
+          v
+[application calls Java Base64 decoder]
+          |
+          v
+[affected HotSpot + AVX-512 VBMI path]
+          |
+          v
+[potential memory corruption]
+          |
+          +----&amp;gt; [service failure / possible information disclosure]
+          |
+          +----&amp;gt; [possible code execution, target-dependent]
+                       |
+                       v
+              [application privileges]
+                       |
+             +---------+----------+
+             |                    |
+       [service tokens]    [secrets / sessions]
+             |                    |
+             +---------+----------+
+                       v
+             [downstream access risk]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;why-identity-systems-matter&quot;&gt;Why identity systems matter&lt;/h2&gt;
+&lt;p&gt;Base64 is a common encoding, not encryption. It appears in HTTP Basic authentication, token-processing paths, and some identity integrations. &lt;strong&gt;Not every JWT, SAML, or Basic-auth endpoint is exploitable&lt;/strong&gt;: the actual Java decoder path, runtime and hardware must be established. Nevertheless, identity providers and gateways deserve priority because they may process unauthenticated input and hold authority over downstream services.&lt;/p&gt;
+&lt;p&gt;If application compromise becomes possible, the attacker may inherit the process’s ability to access service credentials, signing-related configuration, sessions, or downstream APIs. &lt;strong&gt;Credential theft is a potential consequence of a successful compromise, not an automatic feature of Java4Shell.&lt;/strong&gt; FIDO2 and passkeys remain valuable for user authentication, but do not by themselves protect an already compromised workload’s bearer tokens.&lt;/p&gt;
+&lt;h2 id=&quot;remediation-is-a-trust-decision&quot;&gt;Remediation is a trust decision&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Inventory &lt;strong&gt;running&lt;/strong&gt; JVMs, vendor builds, bundled runtimes, containers, and appliances—not just the &lt;code&gt;java&lt;/code&gt; binary on a workstation.&lt;/li&gt;
+&lt;li&gt;Determine whether the host has the requisite AVX-512 VBMI support and whether untrusted Base64 reaches the relevant decoder.&lt;/li&gt;
+&lt;li&gt;Apply the vendor’s November 2026 fixed build, restart affected processes, and rebuild affected images.&lt;/li&gt;
+&lt;li&gt;Where patching is delayed, consider &lt;code&gt;-XX:-UseBASE64Intrinsics&lt;/code&gt; or, on supported x86-64 deployments, &lt;code&gt;-XX:UseAVX=2&lt;/code&gt;; validate operational effects.&lt;/li&gt;
+&lt;li&gt;Review workload identity privileges, accessible secrets, token audiences, and anomalous downstream token usage.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The executive question is not only &lt;em&gt;Is the CVE present?&lt;/em&gt; but &lt;em&gt;Which identity-bearing services are exposed, what authority do they possess, and what evidence confirms the risk is contained?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;See the companion &lt;a href=&quot;/experiments/java4shell-identity-exposure-lab/&quot;&gt;Java4Shell local assessment and reporting lab&lt;/a&gt; for a reproducible, non-destructive triage workflow and management report.&lt;/p&gt;
+&lt;h2 id=&quot;sources-and-technical-references&quot;&gt;Sources and technical references&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://calif.io/java4shell/&quot;&gt;Calif original Java4Shell research and proof-of-concept discussion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching&quot;&gt;CISA: Critical Java Vulnerability Requires Immediate Patching&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://research.jfrog.com/post/java4shell-vulnerability/&quot;&gt;JFrog: Java4Shell vulnerability analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability&quot;&gt;Tenable: Java4Shell FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Security-Key-First WebAuthn Lab</title>
         <published>2026-11-19T00:00:00+00:00</published>
         <updated>2026-11-19T00:00:00+00:00</updated>
         
@@ -16,15 +495,121 @@
           <name>Unknown</name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/experiments/helix-editing-api-workflow/"/>
-        <id>https://edwardcher.github.io/experiments/helix-editing-api-workflow/</id>
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/security-key-first-webauthn-lab/"/>
+        <id>https://edwardcher.online/experiments/security-key-first-webauthn-lab/</id>
         
-        <content type="html" xml:base="https://edwardcher.github.io/experiments/helix-editing-api-workflow/">&lt;p&gt;I have used Vim and Emacs long enough that editing is mostly muscle memory. That is a good thing, but it can also make an editor feel like infrastructure: always present, rarely questioned. Exploring &lt;a rel=&quot;external&quot; href=&quot;https://helix-editor.com/&quot;&gt;Helix&lt;/a&gt; has reminded me that editing can still be enjoyable.&lt;/p&gt;
+        <content type="html" xml:base="https://edwardcher.online/experiments/security-key-first-webauthn-lab/">&lt;p&gt;This is a hands-on companion to &lt;a href=&quot;/identity/security-key-enrollment-browser-ux/&quot;&gt;Making Security-Key Enrollment Less Painful in Modern Browsers&lt;/a&gt;. The objective is to measure how much of a physical security-key journey can be simplified &lt;strong&gt;without bypassing browser or authenticator security controls&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The experiment runs as a standalone HTML page on HTTPS GitHub Pages. It creates real WebAuthn credentials on supported authenticators and verifies subsequent signed assertions locally using the Web Crypto API. No server, account service or external dependency is required.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New in the updated lab:&lt;/strong&gt; an external-security-key preference switch, discoverable/passwordless authentication, browser capability inspection, and live ceremony progress. Safari and Chrome may render different browser-owned prompts, and a FIDO2-enabled smart card may need PIN and user-presence confirmation.&lt;/p&gt;
+&lt;p&gt;For the most reliable experience, &lt;strong&gt;&lt;a href=&quot;/security-key-lab/&quot;&gt;launch the standalone security-key lab&lt;/a&gt;&lt;/strong&gt;. Embedded WebAuthn may be restricted by browser policies, especially in Safari. Enroll and authenticate on the same origin and browser profile; the local credential registry is not synchronized between Safari and Chrome.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; This is a local cryptographic demonstration, &lt;strong&gt;not production authentication&lt;/strong&gt;. Credentials and public keys are stored in this browser’s local storage, registration attestation is not verified by a trusted server, and challenges are generated client-side. Browser-local state can be altered by anyone controlling the browser. Do not use the demo to protect an account, issue trusted credentials or establish enterprise assurance.&lt;/p&gt;
+&lt;div class=&quot;security-key-lab-embed&quot;&gt;
+  &lt;iframe title=&quot;Security-Key-First WebAuthn Lab&quot; src=&quot;/security-key-lab/&quot; loading=&quot;lazy&quot; allow=&quot;publickey-credentials-create *; publickey-credentials-get *&quot; style=&quot;display:block;width:100%;min-height:720px;border:1px solid rgba(76,208,170,.35);border-radius:12px;background:#090f13&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;/security-key-lab/&quot;&gt;&lt;strong&gt;Open the lab in its own window&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;test-plan&quot;&gt;Test plan&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the standalone lab on HTTPS (or &lt;code&gt;http://localhost&lt;/code&gt; for local development).&lt;/li&gt;
+&lt;li&gt;Insert a FIDO2 security key or a compatible smart card and reader; choose a test username.&lt;/li&gt;
+&lt;li&gt;Choose &lt;strong&gt;Enroll security key&lt;/strong&gt; and complete the browser’s prompts.&lt;/li&gt;
+&lt;li&gt;Choose &lt;strong&gt;Authenticate&lt;/strong&gt; to produce and locally verify a signed assertion using the enrolled public key.&lt;/li&gt;
+&lt;li&gt;Compare Safari with Chrome or Edge on the same authenticator, noting how the browser interprets the security-key hint and cross-platform selection.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The default configuration prefers a security key, cross-platform attachment, and optional PIN/UV (&lt;code&gt;preferred&lt;/code&gt;). Turn on &lt;strong&gt;Require PIN / user verification&lt;/strong&gt; when testing a higher-assurance policy. Requiring discoverable credentials is also optional because many cards have limited resident credential storage.&lt;/p&gt;
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+&lt;p&gt;The browser chooses its own dialogs. A smart card needs a functioning FIDO2 application and reader path; PIV/PKI alone is insufficient. The demo cannot attest that a particular physical card model was used. Clearing browser storage removes the local registration record but &lt;strong&gt;does not erase the credential from the security key&lt;/strong&gt;.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Making Security-Key Enrollment Less Painful in Modern Browsers</title>
+        <published>2026-11-19T00:00:00+00:00</published>
+        <updated>2026-11-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/identity/security-key-enrollment-browser-ux/"/>
+        <id>https://edwardcher.online/identity/security-key-enrollment-browser-ux/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/identity/security-key-enrollment-browser-ux/">&lt;p&gt;A physical FIDO2 security key is one of the strongest ways to establish device-bound authentication. Yet enrolling one in a modern browser can feel unnecessarily complicated. A user selects &lt;strong&gt;Add passkey&lt;/strong&gt;, sees a choice of credential providers, perhaps a phone or QR-code prompt, and only eventually finds the physical key they already have in hand.&lt;/p&gt;
+&lt;p&gt;The security ceremony is important. The maze of choices is not.&lt;/p&gt;
+&lt;p&gt;My interest is in making the registration journey more predictable, especially when the intended authenticator is already known: an enterprise-issued security key or a FIDO2-enabled smart card inserted into a compatible reader.&lt;/p&gt;
+&lt;h2 id=&quot;the-browser-does-not-know-the-enterprise-s-intent&quot;&gt;The browser does not know the enterprise’s intent&lt;/h2&gt;
+&lt;p&gt;Passkeys serve several legitimate use cases: synchronized credentials, built-in platform authenticators, hybrid phone authentication and removable security keys. Browser interfaces are designed to accommodate all of them. That flexibility becomes friction when an enterprise is deliberately enrolling a particular physical credential.&lt;/p&gt;
+&lt;p&gt;A user should not have to discover the right path through several dialogs. The relying party can express its intent before the browser starts the ceremony.&lt;/p&gt;
+&lt;h2 id=&quot;a-security-key-first-request&quot;&gt;A security-key-first request&lt;/h2&gt;
+&lt;p&gt;WebAuthn Level 3 defines &lt;strong&gt;client hints&lt;/strong&gt;, including &lt;code&gt;&quot;security-key&quot;&lt;/code&gt;, to express a preferred authenticator experience. In registration, &lt;code&gt;authenticatorAttachment: &quot;cross-platform&quot;&lt;/code&gt; provides a useful compatibility signal for older implementations. They are not the same thing: hints are UI preferences, while attachment selection constrains authenticator categories; neither identifies a particular smart card or proves enterprise issuance.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;javascript&quot;&gt;const credential = await navigator.credentials.create({
+  publicKey: {
+    challenge, // fresh challenge from the relying party
+    rp: { id: location.hostname, name: &amp;quot;Example RP&amp;quot; },
+    user: { id: userHandle, name: username, displayName: username },
+    pubKeyCredParams: [{ type: &amp;quot;public-key&amp;quot;, alg: -7 },
+                       { type: &amp;quot;public-key&amp;quot;, alg: -257 }],
+    hints: [&amp;quot;security-key&amp;quot;],
+    authenticatorSelection: {
+      authenticatorAttachment: &amp;quot;cross-platform&amp;quot;,
+      residentKey: &amp;quot;preferred&amp;quot;,
+      userVerification: &amp;quot;preferred&amp;quot;
+    },
+    extensions: { credProps: true },
+    attestation: &amp;quot;none&amp;quot;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The example expresses a preference rather than an assurance policy. For enterprise deployment, decide whether discoverable credentials, user verification, and verified authenticator attestation are mandatory. &lt;code&gt;residentKey: &quot;required&quot;&lt;/code&gt; can consume scarce authenticator storage; &lt;code&gt;&quot;preferred&quot;&lt;/code&gt; is more flexible when a username-first flow and credential IDs are available. Likewise, &lt;code&gt;userVerification: &quot;required&quot;&lt;/code&gt; is appropriate when policy requires PIN or another UV mechanism, but it adds interaction and can exclude older devices.&lt;/p&gt;
+&lt;p&gt;Client hints are not a guaranteed Safari shortcut. WebKit’s public issue tracker still lists implementation work for WebAuthn hints; test the actual installed Safari version rather than promising that a particular dialog disappears. Chrome and other browsers may render different choices from the same options.&lt;/p&gt;
+&lt;h2 id=&quot;safari-as-a-useful-reference-point&quot;&gt;Safari as a useful reference point&lt;/h2&gt;
+&lt;p&gt;Safari 26.4 adds CTAP PIN/UV Auth Protocol 2 support and improves the handling of &lt;code&gt;excludeCredentials&lt;/code&gt; when exactly one credential is excluded. Both matter for physical authenticators: modern PIN flows need interoperability, and exclusion lists should prevent redundant registrations. Neither change gives a website permission to suppress PIN entry, authenticator touch, or browser-controlled consent.&lt;/p&gt;
+&lt;p&gt;For a smart card, WebAuthn communicates with the &lt;strong&gt;FIDO2 authenticator application&lt;/strong&gt;, not with its PIV/PKI or physical-access applets. The card must expose a supported FIDO2 transport through its reader and middleware path. A card that supports PKI alone will not become a WebAuthn security key because of a browser hint.&lt;/p&gt;
+&lt;h2 id=&quot;reduce-decisions-not-security-controls&quot;&gt;Reduce decisions, not security controls&lt;/h2&gt;
+&lt;p&gt;The optimized journey should be simple: &lt;strong&gt;Register security key → present card or key → verify with PIN if required → touch or confirm → done.&lt;/strong&gt; This is a target experience, not a promise of exactly five screens on every browser.&lt;/p&gt;
+&lt;p&gt;There are practical improvements beyond the options object:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use a dedicated &lt;strong&gt;Register security key&lt;/strong&gt; action rather than a generic &lt;strong&gt;Add passkey&lt;/strong&gt; entry point.&lt;/li&gt;
+&lt;li&gt;Provision the card and its PIN before enrollment when managed issuance permits it.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;excludeCredentials&lt;/code&gt; to prevent registering the same credential twice, without treating it as a complete account-duplication control.&lt;/li&gt;
+&lt;li&gt;Avoid unnecessary application-side confirmation screens; let the browser own the protected authenticator interaction.&lt;/li&gt;
+&lt;li&gt;Capture browser, operating system, reader, transport, user verification and registration outcomes during testing. Optimize the number of &lt;strong&gt;decisions&lt;/strong&gt; and the median completion time, not merely the number of clicks.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;the-assurance-boundary-still-matters&quot;&gt;The assurance boundary still matters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;hints: [&quot;security-key&quot;]&lt;/code&gt; does &lt;strong&gt;not&lt;/strong&gt; prove that a hardware-bound, enterprise-approved credential was used. Cross-platform authentication can include hybrid mechanisms. For managed FIDO deployments, the relying party needs an enrollment policy, verified attestation where appropriate, device issuance records, credential lifecycle management and reliable server-side WebAuthn verification.&lt;/p&gt;
+&lt;p&gt;The browser cannot silently create a credential on a physical smart card, bypass a required PIN, or authorize an unattended touch. Those are deliberate security boundaries, not defects in the user experience.&lt;/p&gt;
+&lt;h2 id=&quot;try-the-experiment&quot;&gt;Try the experiment&lt;/h2&gt;
+&lt;p&gt;I built a &lt;a href=&quot;/experiments/security-key-first-webauthn-lab/&quot;&gt;Security-Key-First WebAuthn Lab&lt;/a&gt; to explore these choices on a real browser and authenticator. It supports registration and subsequent assertion verification using browser cryptography, with no backend required for the &lt;strong&gt;local demonstration&lt;/strong&gt;. It is not an identity provider and must not be used as an authentication service for real accounts.&lt;/p&gt;
+&lt;p&gt;The experiment deliberately keeps the same three user-facing concepts: &lt;strong&gt;identity&lt;/strong&gt;, &lt;strong&gt;enroll&lt;/strong&gt;, &lt;strong&gt;authenticate&lt;/strong&gt;. It exposes the relevant WebAuthn policy settings without hiding the authenticator’s security prompts.&lt;/p&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
+&lt;p&gt;Hardware-backed authentication should be strong without being needlessly confusing. The opportunity is not to remove the security ceremony; it is to remove everything around it that does not contribute to assurance.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A better security-key experience is one where the user knows what to do, the browser knows what to prefer, and the relying party knows what it can actually trust.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.w3.org/TR/webauthn-3/&quot;&gt;W3C WebAuthn Level 3 — client hints&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://webkit.org/blog/17862/webkit-features-for-safari-26-4/&quot;&gt;WebKit — Safari 26.4 Web Authentication updates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API&quot;&gt;MDN — Web Authentication API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Helix: Making Editing Fun Again</title>
+        <published>2026-11-17T00:00:00+00:00</published>
+        <updated>2026-11-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/helix-editing-api-workflow/"/>
+        <id>https://edwardcher.online/experiments/helix-editing-api-workflow/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/experiments/helix-editing-api-workflow/">&lt;p&gt;I have used Vim and Emacs long enough that editing is mostly muscle memory. That is a good thing, but it can also make an editor feel like infrastructure: always present, rarely questioned. Exploring &lt;a rel=&quot;external&quot; href=&quot;https://helix-editor.com/&quot;&gt;Helix&lt;/a&gt; has reminded me that editing can still be enjoyable.&lt;/p&gt;
 &lt;p&gt;Helix is a modal terminal editor with a &lt;strong&gt;selection-first&lt;/strong&gt; approach. It is not Vim with a different theme, and it is not an attempt to recreate everything Emacs can do. I have had to adjust some habits. In return, common actions feel direct: select what I want to change, then act on that selection. Multiple selections, tree-sitter-powered syntax awareness, and language-server integration make the editor feel capable without requiring a large personal configuration project.&lt;/p&gt;
 &lt;h2 id=&quot;the-pleasure-of-a-smaller-surface&quot;&gt;The pleasure of a smaller surface&lt;/h2&gt;
 &lt;p&gt;For years I have valued the extensibility of Emacs and the precision of Vim. I am not abandoning either. But I do not always want to maintain an editor ecosystem before I can edit a file.&lt;/p&gt;
 &lt;p&gt;My preferred loop now is often simple: use Yazi to locate a file, open it with &lt;code&gt;hx&lt;/code&gt;, make a focused change, return to the shell, run the relevant check, and continue. Helix is the editing surface; the shell remains the execution environment.&lt;/p&gt;
-&lt;p&gt;That distinction is why Helix fits my &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-philosophy/&quot;&gt;terminal-first philosophy&lt;/a&gt;. I do not need one tool to contain my entire workflow. I need the pieces to connect predictably.&lt;/p&gt;
+&lt;p&gt;That distinction is why Helix fits my &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-philosophy/&quot;&gt;terminal-first philosophy&lt;/a&gt;. I do not need one tool to contain my entire workflow. I need the pieces to connect predictably.&lt;/p&gt;
 &lt;h2 id=&quot;rust-python-and-elixir-in-the-same-workspace&quot;&gt;Rust, Python, and Elixir in the same workspace&lt;/h2&gt;
 &lt;p&gt;Rust is a particularly comfortable fit: &lt;code&gt;rust-analyzer&lt;/code&gt; can provide navigation, diagnostics, and completion when installed and configured. Python benefits from language servers such as basedpyright or pyright, with formatting and linting handled by tools I choose. Elixir can use ElixirLS for language intelligence, while &lt;code&gt;mix&lt;/code&gt; remains the natural place to run tests and other project tasks.&lt;/p&gt;
 &lt;p&gt;Helix includes language configurations, but language servers, formatters, and runtimes are separate dependencies. I check what is actually available rather than assuming a feature works because a file has syntax highlighting:&lt;/p&gt;
@@ -69,67 +654,23 @@ git diff
 &lt;p&gt;There are features I miss from Emacs. There are things Vim does differently. Helix has limitations and its own learning curve. None of that is a reason to build an elaborate workaround for every missing capability.&lt;/p&gt;
 &lt;p&gt;If Helix does not do something elegantly, I can use the shell. &lt;code&gt;rg&lt;/code&gt; searches, &lt;code&gt;fd&lt;/code&gt; finds, &lt;code&gt;hurl&lt;/code&gt; tests, &lt;code&gt;jq&lt;/code&gt; transforms JSON, &lt;code&gt;git&lt;/code&gt; shows what changed, and Yazi takes me to the next file. If I need a native macOS application, &lt;code&gt;open&lt;/code&gt; is there too.&lt;/p&gt;
 &lt;p&gt;That is what makes this experiment fun rather than frustrating. I am not choosing an editor to replace my computer. I am choosing an editor that makes the &lt;em&gt;editing part&lt;/em&gt; feel good again.&lt;/p&gt;
-&lt;p&gt;The wider story began with &lt;a href=&quot;https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/&quot;&gt;windowing and the return to tmux&lt;/a&gt;, then &lt;a href=&quot;https://edwardcher.github.io/experiments/yazi-primary-finder/&quot;&gt;Yazi as my terminal Finder&lt;/a&gt;. Helix completes the loop: navigate, edit, execute, inspect—and keep moving.&lt;/p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Windows Within Windows: Emacs, Zellij, and Why I Returned to tmux</title>
-        <published>2026-11-19T00:00:00+00:00</published>
-        <updated>2026-11-19T00:00:00+00:00</updated>
-        
-        <author>
-          <name>Unknown</name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/"/>
-        <id>https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/</id>
-        
-        <content type="html" xml:base="https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/">&lt;p&gt;I have spent enough time inside terminals to appreciate a peculiar problem: eventually, the terminal becomes a desktop of its own. There are shells, editors, logs, remote machines, and experiments running at once. The question stops being &lt;em&gt;which terminal should I open?&lt;/em&gt; and becomes &lt;em&gt;how do I keep my working context intact?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I have used Emacs for years, learned to navigate with Vim keybindings, and experimented with both Zellij and tmux. All three can organize work, but they are not interchangeable. What I wanted was not the cleverest layout. I wanted to move between tasks without having to think about the window manager.&lt;/p&gt;
-&lt;h2 id=&quot;three-approaches-to-the-same-problem&quot;&gt;Three approaches to the same problem&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Emacs&lt;/strong&gt; approaches windowing from inside the editor. Buffers are not files, windows are views onto buffers, and frames can act as separate application windows. That is powerful when editing, documentation, and interactive shells are part of one Emacs-centered environment. I still appreciate how much work it can hold together, especially in its native macOS GUI.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Zellij&lt;/strong&gt; approaches the problem as a modern terminal workspace. Discoverable keybindings, layouts, floating panes, and session management make it welcoming. I liked being able to see what was happening without memorizing every command first. For a while, it felt like the natural next step.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is less concerned with being discoverable. It is a long-established terminal multiplexer built around sessions, windows, and panes. It can be terse, but that simplicity becomes an advantage once the keybindings are familiar. Sessions persist independently of a particular terminal client, making tmux particularly useful on remote hosts. That persistence matters more to me than decorative pane layouts.&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;What matters to me&lt;/th&gt;&lt;th&gt;Emacs&lt;/th&gt;&lt;th&gt;Zellij&lt;/th&gt;&lt;th&gt;tmux&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;Center of gravity&lt;/td&gt;&lt;td&gt;Editor and buffers&lt;/td&gt;&lt;td&gt;Terminal workspace&lt;/td&gt;&lt;td&gt;Persistent terminal sessions&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Learning experience&lt;/td&gt;&lt;td&gt;Deep, customizable&lt;/td&gt;&lt;td&gt;Friendly, discoverable&lt;/td&gt;&lt;td&gt;Spare, keyboard-driven&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Remote work&lt;/td&gt;&lt;td&gt;Via Emacs tools / shells&lt;/td&gt;&lt;td&gt;Works in terminals&lt;/td&gt;&lt;td&gt;Excellent fit for SSH sessions&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;macOS GUI integration&lt;/td&gt;&lt;td&gt;Native Emacs GUI&lt;/td&gt;&lt;td&gt;Terminal-hosted interface&lt;/td&gt;&lt;td&gt;iTerm2 tmux integration&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;This is a comparison of how they fit &lt;em&gt;my&lt;/em&gt; work, not a universal ranking.&lt;/p&gt;
-&lt;h2 id=&quot;why-i-returned-to-tmux&quot;&gt;Why I returned to tmux&lt;/h2&gt;
-&lt;p&gt;The deciding factor was &lt;a rel=&quot;external&quot; href=&quot;https://iterm2.com/documentation-tmux-integration.html&quot;&gt;iTerm2’s tmux integration&lt;/a&gt;. With tmux &lt;strong&gt;control mode&lt;/strong&gt;, iTerm2 can present tmux windows and panes as native iTerm2 windows and split panes. That matters on a Mac where I already value native window management and keyboard navigation.&lt;/p&gt;
-&lt;p&gt;There is an important technical distinction: tmux does &lt;strong&gt;not&lt;/strong&gt; magically add graphics support. iTerm2’s image and terminal features, the terminal protocol in use, and the application rendering the output all influence what can be displayed. My preference is for the &lt;em&gt;integration experience&lt;/em&gt;—not a claim that tmux itself renders graphics better than Zellij.&lt;/p&gt;
-&lt;p&gt;For example, I can attach a tmux session through iTerm2’s integration:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;# Run inside iTerm2, with tmux installed
-tmux -CC new -A -s work
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And when I connect to a remote server from an ordinary terminal, the same tmux vocabulary still works:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;ssh devbox
-tmux new -A -s investigation
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first workflow depends on iTerm2’s control-mode support; the second is ordinary tmux. That portability is part of the appeal. I do not need a separate philosophy for local and remote sessions.&lt;/p&gt;
-&lt;h2 id=&quot;a-working-day-not-a-dashboard&quot;&gt;A working day, not a dashboard&lt;/h2&gt;
-&lt;p&gt;One pane might hold a Rust service, another its logs, and a third an HTTP request or a test run. I can leave a long-running task in one pane while inspecting its output in another, without rebuilding the workspace each time. When an interruption arrives, I switch sessions rather than rearrange the entire desktop. The session holds the context until I return.&lt;/p&gt;
-&lt;p&gt;I am not trying to fit every application into a grid of panes. Emacs still has a place. Zellij remains an interesting alternative. But tmux gives me a small, dependable layer between my shell and my terminal application, and iTerm2 makes that layer feel natural on macOS.&lt;/p&gt;
-&lt;p&gt;The next question is more mundane—and arguably more important: once I have a good workspace, &lt;strong&gt;how do I find and open things quickly?&lt;/strong&gt; That is where &lt;a href=&quot;https://edwardcher.github.io/experiments/yazi-primary-finder/&quot;&gt;Yazi became my primary terminal file manager&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The wider story began with &lt;a href=&quot;https://edwardcher.online/experiments/windowing-emacs-tmux-zellij/&quot;&gt;windowing and the return to tmux&lt;/a&gt;, then &lt;a href=&quot;https://edwardcher.online/experiments/yazi-primary-finder/&quot;&gt;Yazi as my terminal Finder&lt;/a&gt;. Helix completes the loop: navigate, edit, execute, inspect—and keep moving.&lt;/p&gt;
 </content>
         
     </entry>
     <entry xml:lang="en">
         <title>Yazi Became My Finder in the Terminal</title>
-        <published>2026-11-19T00:00:00+00:00</published>
-        <updated>2026-11-19T00:00:00+00:00</updated>
+        <published>2026-11-16T00:00:00+00:00</published>
+        <updated>2026-11-16T00:00:00+00:00</updated>
         
         <author>
           <name>Unknown</name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/experiments/yazi-primary-finder/"/>
-        <id>https://edwardcher.github.io/experiments/yazi-primary-finder/</id>
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/yazi-primary-finder/"/>
+        <id>https://edwardcher.online/experiments/yazi-primary-finder/</id>
         
-        <content type="html" xml:base="https://edwardcher.github.io/experiments/yazi-primary-finder/">&lt;p&gt;I do not dislike Finder. It does its job on macOS, particularly when I need a graphical preview or a familiar drag-and-drop interaction. But for much of my daily work, the important part is not looking at a file. It is &lt;strong&gt;getting from the file to the next action&lt;/strong&gt;.&lt;/p&gt;
+        <content type="html" xml:base="https://edwardcher.online/experiments/yazi-primary-finder/">&lt;p&gt;I do not dislike Finder. It does its job on macOS, particularly when I need a graphical preview or a familiar drag-and-drop interaction. But for much of my daily work, the important part is not looking at a file. It is &lt;strong&gt;getting from the file to the next action&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;That is why &lt;a rel=&quot;external&quot; href=&quot;https://yazi-rs.github.io/&quot;&gt;Yazi&lt;/a&gt; has become my primary file manager in the terminal. It feels like a visual commander built for the keyboard: fast directory navigation, immediate previews, and familiar Vim-style movement. It gives me enough visual context to know where I am without pulling me away from the shell.&lt;/p&gt;
 &lt;h2 id=&quot;finding-is-only-the-first-half&quot;&gt;Finding is only the first half&lt;/h2&gt;
 &lt;p&gt;A conventional file manager often ends its job when I double-click something. In a terminal-first workflow, opening the file is usually the beginning of the next task. My Yazi workflow starts there. I have mapped file-opening actions so I can hand a document to the appropriate macOS application, open text in Helix, and use a shortcut to copy useful information to the Mac clipboard.&lt;/p&gt;
@@ -157,123 +698,67 @@ hx README.md
 &lt;p&gt;That is the Unix principle in practice: a file manager is one component of a workflow, not the boundary of the workflow.&lt;/p&gt;
 &lt;h2 id=&quot;why-it-stuck&quot;&gt;Why it stuck&lt;/h2&gt;
 &lt;p&gt;Yazi is quick, its visual structure is easy to understand, and the Vim bindings are already in my hands. It gives me the convenience of a graphical file manager without making me leave my terminal workspace. I can keep my attention on the work rather than the mechanics of finding things.&lt;/p&gt;
-&lt;p&gt;It also leads naturally to the next experiment. Once Yazi gets me to a file, &lt;strong&gt;what should editing feel like?&lt;/strong&gt; After years of Vim and Emacs, I have been exploring &lt;a href=&quot;https://edwardcher.github.io/experiments/helix-editing-api-workflow/&quot;&gt;Helix as a fresh, deliberately simpler editing environment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It also leads naturally to the next experiment. Once Yazi gets me to a file, &lt;strong&gt;what should editing feel like?&lt;/strong&gt; After years of Vim and Emacs, I have been exploring &lt;a href=&quot;https://edwardcher.online/experiments/helix-editing-api-workflow/&quot;&gt;Helix as a fresh, deliberately simpler editing environment&lt;/a&gt;.&lt;/p&gt;
 </content>
         
     </entry>
     <entry xml:lang="en">
-        <title>Terminal First: An Old Philosophy for a New Computing Era</title>
-        <published>2026-11-18T00:00:00+00:00</published>
-        <updated>2026-11-18T00:00:00+00:00</updated>
+        <title>Windows Within Windows: Emacs, Zellij, and Why I Returned to tmux</title>
+        <published>2026-11-15T00:00:00+00:00</published>
+        <updated>2026-11-15T00:00:00+00:00</updated>
         
         <author>
           <name>Unknown</name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/blog/terminal-first-philosophy/"/>
-        <id>https://edwardcher.github.io/blog/terminal-first-philosophy/</id>
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/experiments/windowing-emacs-tmux-zellij/"/>
+        <id>https://edwardcher.online/experiments/windowing-emacs-tmux-zellij/</id>
         
-        <content type="html" xml:base="https://edwardcher.github.io/blog/terminal-first-philosophy/">&lt;h2 id=&quot;the-interface-is-not-the-philosophy&quot;&gt;The interface is not the philosophy&lt;/h2&gt;
-&lt;p&gt;I have spent much of my career moving between programming, integration, security, architecture, and conversations with people who do not need to know how the underlying systems work. Across those roles, one idea has remained remarkably durable: complex work becomes more manageable when its parts are understandable, composable, and under our control.&lt;/p&gt;
-&lt;p&gt;That is why I remain terminal-first.&lt;/p&gt;
-&lt;p&gt;Not because a black screen is inherently better than a graphical interface. Not because every task deserves a shell script. And certainly not because modern applications have no place in my workflow. The terminal is simply the most direct expression of a philosophy I inherited from Unix: use small, purposeful components; connect them through clear interfaces; and preserve the ability to inspect and change what happens.&lt;/p&gt;
-&lt;figure class=&quot;article-figure&quot;&gt;
-  &lt;img src=&quot;/assets/article/unix-composition.svg&quot; alt=&quot;The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool.&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;310&quot;&gt;
-  &lt;figcaption&gt;The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2 id=&quot;what-unix-got-right&quot;&gt;What Unix got right&lt;/h2&gt;
-&lt;p&gt;Unix emerged in a very different computing environment, yet its ideas continue to scale beyond the machines and constraints that shaped it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Do one thing well.&lt;/strong&gt; A component with a clear responsibility is easier to understand, test, replace, and trust. Complexity belongs in the composition of parts, not in unnecessary complexity within every part.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Make programs work together.&lt;/strong&gt; A tool becomes more valuable when its output can become another tool’s input. Interoperability should be a design property, not an afterthought.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Prefer text as a universal interface where it fits.&lt;/strong&gt; Text can be read, searched, compared, transformed, versioned, and transmitted. It is not the right representation for everything, but it remains one of the most durable ways to express intent and exchange information.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Make behavior observable.&lt;/strong&gt; A process that can be inspected is easier to diagnose. A process that can be repeated is easier to improve. Both matter when the work involves systems people depend on.&lt;/p&gt;
-&lt;p&gt;These principles are bigger than the shell. They apply to APIs, infrastructure, identity systems, software architecture, and even the way we organize our own knowledge.&lt;/p&gt;
-&lt;h2 id=&quot;why-it-still-works-today&quot;&gt;Why it still works today&lt;/h2&gt;
-&lt;p&gt;Today’s computers have enormous processing power, polished interfaces, and an application for almost every task. Yet abundance has created another kind of friction: context switching, hidden state, incompatible formats, and workflows that are difficult to reproduce.&lt;/p&gt;
-&lt;p&gt;The Unix mindset offers a counterweight. Instead of asking which application contains a task, I ask what the task actually requires: an input, a transformation, a decision, and an output. Once the work is expressed in those terms, the choice of interface becomes clearer.&lt;/p&gt;
-&lt;p&gt;On macOS, this does not require abandoning the desktop. Unix foundations coexist with excellent native applications. A terminal can initiate an action, a native application can provide the best surface for reviewing it, and automation can connect the two. The point is not to eliminate interfaces. It is to avoid being confined by them.&lt;/p&gt;
-&lt;h2 id=&quot;text-is-an-asset-not-a-nostalgia-project&quot;&gt;Text is an asset, not a nostalgia project&lt;/h2&gt;
-&lt;p&gt;Text has an unusual longevity. A Markdown document can be opened years later without recreating the exact application that produced it. A command can be recorded alongside its result. A configuration can be reviewed as a change rather than remembered as a sequence of clicks.&lt;/p&gt;
-&lt;p&gt;That durability matters to me as a programmer and security practitioner. If an action changes a system, I want to understand what changed. If a process works, I want to be able to reproduce it. If something fails, I want evidence rather than guesswork.&lt;/p&gt;
-&lt;p&gt;Text is not automatically safe or correct. Scripts can be destructive, logs can expose secrets, and automation can amplify mistakes. But plain, inspectable artifacts give us a better starting point for review, version control, and controlled execution.&lt;/p&gt;
-&lt;h2 id=&quot;ai-changes-the-speed-not-the-foundation&quot;&gt;AI changes the speed, not the foundation&lt;/h2&gt;
-&lt;p&gt;AI-assisted coding makes this philosophy more relevant, not less.&lt;/p&gt;
-&lt;p&gt;A model can help draft a script, explain an unfamiliar command, propose a refactor, or translate a requirement into a working starting point. It can reduce the cost of moving from an idea to an experiment. But generated output still needs a boundary between suggestion and execution.&lt;/p&gt;
-&lt;p&gt;I want AI to augment judgment, not replace it. A generated command should be understandable before it runs. A code change should be reviewable as a diff. A workflow should be testable and repeatable. Secrets, privileges, and production access still require deliberate controls.&lt;/p&gt;
-&lt;p&gt;The most useful AI workflow therefore remains grounded in text: describe the intent, inspect the proposed change, run bounded tests, observe the result, and retain the artifacts that matter. This is a modern extension of composability and observability, not a departure from them.&lt;/p&gt;
-&lt;h2 id=&quot;terminal-first-not-terminal-only&quot;&gt;Terminal-first, not terminal-only&lt;/h2&gt;
-&lt;p&gt;I still use graphical applications. Some work is genuinely better with visual context, rich layout, or direct manipulation. But I prefer to keep the &lt;em&gt;control plane&lt;/em&gt; of my work close to the keyboard and the underlying artifacts close to open formats.&lt;/p&gt;
-&lt;p&gt;That is the distinction: terminal-first is a choice about where work begins, how it connects, and how much control we retain. It is not a rule that everything must end in a terminal window.&lt;/p&gt;
-&lt;p&gt;The Unix philosophy has survived because it is not really about old tools. It is about building systems and habits that remain useful when tools change.&lt;/p&gt;
-&lt;p&gt;The next article turns that philosophy into five personal principles: &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-principle/&quot;&gt;Terminal First: Five Principles Behind My Workflow&lt;/a&gt;.&lt;/p&gt;
+        <content type="html" xml:base="https://edwardcher.online/experiments/windowing-emacs-tmux-zellij/">&lt;p&gt;I have spent enough time inside terminals to appreciate a peculiar problem: eventually, the terminal becomes a desktop of its own. There are shells, editors, logs, remote machines, and experiments running at once. The question stops being &lt;em&gt;which terminal should I open?&lt;/em&gt; and becomes &lt;em&gt;how do I keep my working context intact?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I have used Emacs for years, learned to navigate with Vim keybindings, and experimented with both Zellij and tmux. All three can organize work, but they are not interchangeable. What I wanted was not the cleverest layout. I wanted to move between tasks without having to think about the window manager.&lt;/p&gt;
+&lt;h2 id=&quot;three-approaches-to-the-same-problem&quot;&gt;Three approaches to the same problem&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Emacs&lt;/strong&gt; approaches windowing from inside the editor. Buffers are not files, windows are views onto buffers, and frames can act as separate application windows. That is powerful when editing, documentation, and interactive shells are part of one Emacs-centered environment. I still appreciate how much work it can hold together, especially in its native macOS GUI.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Zellij&lt;/strong&gt; approaches the problem as a modern terminal workspace. Discoverable keybindings, layouts, floating panes, and session management make it welcoming. I liked being able to see what was happening without memorizing every command first. For a while, it felt like the natural next step.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is less concerned with being discoverable. It is a long-established terminal multiplexer built around sessions, windows, and panes. It can be terse, but that simplicity becomes an advantage once the keybindings are familiar. Sessions persist independently of a particular terminal client, making tmux particularly useful on remote hosts. That persistence matters more to me than decorative pane layouts.&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;What matters to me&lt;/th&gt;&lt;th&gt;Emacs&lt;/th&gt;&lt;th&gt;Zellij&lt;/th&gt;&lt;th&gt;tmux&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Center of gravity&lt;/td&gt;&lt;td&gt;Editor and buffers&lt;/td&gt;&lt;td&gt;Terminal workspace&lt;/td&gt;&lt;td&gt;Persistent terminal sessions&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Learning experience&lt;/td&gt;&lt;td&gt;Deep, customizable&lt;/td&gt;&lt;td&gt;Friendly, discoverable&lt;/td&gt;&lt;td&gt;Spare, keyboard-driven&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Remote work&lt;/td&gt;&lt;td&gt;Via Emacs tools / shells&lt;/td&gt;&lt;td&gt;Works in terminals&lt;/td&gt;&lt;td&gt;Excellent fit for SSH sessions&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;macOS GUI integration&lt;/td&gt;&lt;td&gt;Native Emacs GUI&lt;/td&gt;&lt;td&gt;Terminal-hosted interface&lt;/td&gt;&lt;td&gt;iTerm2 tmux integration&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;This is a comparison of how they fit &lt;em&gt;my&lt;/em&gt; work, not a universal ranking.&lt;/p&gt;
+&lt;h2 id=&quot;why-i-returned-to-tmux&quot;&gt;Why I returned to tmux&lt;/h2&gt;
+&lt;p&gt;The deciding factor was &lt;a rel=&quot;external&quot; href=&quot;https://iterm2.com/documentation-tmux-integration.html&quot;&gt;iTerm2’s tmux integration&lt;/a&gt;. With tmux &lt;strong&gt;control mode&lt;/strong&gt;, iTerm2 can present tmux windows and panes as native iTerm2 windows and split panes. That matters on a Mac where I already value native window management and keyboard navigation.&lt;/p&gt;
+&lt;p&gt;There is an important technical distinction: tmux does &lt;strong&gt;not&lt;/strong&gt; magically add graphics support. iTerm2’s image and terminal features, the terminal protocol in use, and the application rendering the output all influence what can be displayed. My preference is for the &lt;em&gt;integration experience&lt;/em&gt;—not a claim that tmux itself renders graphics better than Zellij.&lt;/p&gt;
+&lt;p&gt;For example, I can attach a tmux session through iTerm2’s integration:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;# Run inside iTerm2, with tmux installed
+tmux -CC new -A -s work
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And when I connect to a remote server from an ordinary terminal, the same tmux vocabulary still works:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;ssh devbox
+tmux new -A -s investigation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first workflow depends on iTerm2’s control-mode support; the second is ordinary tmux. That portability is part of the appeal. I do not need a separate philosophy for local and remote sessions.&lt;/p&gt;
+&lt;h2 id=&quot;a-working-day-not-a-dashboard&quot;&gt;A working day, not a dashboard&lt;/h2&gt;
+&lt;p&gt;One pane might hold a Rust service, another its logs, and a third an HTTP request or a test run. I can leave a long-running task in one pane while inspecting its output in another, without rebuilding the workspace each time. When an interruption arrives, I switch sessions rather than rearrange the entire desktop. The session holds the context until I return.&lt;/p&gt;
+&lt;p&gt;I am not trying to fit every application into a grid of panes. Emacs still has a place. Zellij remains an interesting alternative. But tmux gives me a small, dependable layer between my shell and my terminal application, and iTerm2 makes that layer feel natural on macOS.&lt;/p&gt;
+&lt;p&gt;The next question is more mundane—and arguably more important: once I have a good workspace, &lt;strong&gt;how do I find and open things quickly?&lt;/strong&gt; That is where &lt;a href=&quot;https://edwardcher.online/experiments/yazi-primary-finder/&quot;&gt;Yazi became my primary terminal file manager&lt;/a&gt;.&lt;/p&gt;
 </content>
         
     </entry>
     <entry xml:lang="en">
-        <title>Terminal First: Five Principles Behind My Workflow</title>
-        <published>2026-11-18T00:00:00+00:00</published>
-        <updated>2026-11-18T00:00:00+00:00</updated>
+        <title>Terminal First: Basic Workflows</title>
+        <published>2026-11-10T00:00:00+00:00</published>
+        <updated>2026-11-10T00:00:00+00:00</updated>
         
         <author>
           <name>Unknown</name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/blog/terminal-first-principle/"/>
-        <id>https://edwardcher.github.io/blog/terminal-first-principle/</id>
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/blog/terminal-first-workflow/"/>
+        <id>https://edwardcher.online/blog/terminal-first-workflow/</id>
         
-        <content type="html" xml:base="https://edwardcher.github.io/blog/terminal-first-principle/">&lt;p&gt;In &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-philosophy/&quot;&gt;the philosophy behind terminal-first computing&lt;/a&gt;, I described why the Unix ideas of simplicity, composability, and inspectable text still matter. This article is more personal: why do I choose to work this way even when the task is ordinary office work rather than software engineering?&lt;/p&gt;
-&lt;p&gt;My answer comes down to five principles. None requires everyone to use the same editor, shell, or computer. They are about reducing friction between intention and outcome.&lt;/p&gt;
-&lt;figure class=&quot;article-figure&quot;&gt;
-  &lt;img src=&quot;/assets/article/five-principles.svg&quot; alt=&quot;Five principles connect daily efficiency to long-term reuse and a reliable source of truth.&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;310&quot;&gt;
-  &lt;figcaption&gt;Five principles connect daily efficiency to long-term reuse and a reliable source of truth.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2 id=&quot;1-productivity-fewer-steps-between-thought-and-action&quot;&gt;1. Productivity: fewer steps between thought and action&lt;/h2&gt;
-&lt;p&gt;Productivity is not measured by how many windows I can keep open or how quickly I can click through them. It is the amount of useful work I can complete without unnecessary overhead.&lt;/p&gt;
-&lt;p&gt;When an action can be expressed directly, I do not need to navigate a hierarchy of menus before starting it. I can move from finding information to changing it to sharing the result with fewer interruptions.&lt;/p&gt;
-&lt;p&gt;I keep my hands on the keyboard because the keyboard provides a consistent way to navigate, select, transform, and execute. Having mastered Vim and Emacs keybindings, movement through text has become an extension of thought rather than a separate mechanical task.&lt;/p&gt;
-&lt;p&gt;The objective is not to avoid the mouse at any cost. It is to avoid making every small action a new interaction problem.&lt;/p&gt;
-&lt;h2 id=&quot;2-acceleration-compound-the-value-of-what-i-learn&quot;&gt;2. Acceleration: compound the value of what I learn&lt;/h2&gt;
-&lt;p&gt;Speed is useful, but acceleration is more important. A fast one-off action saves seconds. A reusable way of working saves time every time the task returns.&lt;/p&gt;
-&lt;p&gt;The first time I solve a problem, I may need to explore. The second time, I should be able to reuse what I learned. By the third time, the process should be simpler, clearer, or partially automated.&lt;/p&gt;
-&lt;p&gt;Keyboard fluency, command history, reusable patterns, and plain-text knowledge all compound. The investment in learning is front-loaded; the benefit continues across different tasks and applications.&lt;/p&gt;
-&lt;p&gt;Acceleration is therefore not about rushing. It is about making each completed task improve the next one.&lt;/p&gt;
-&lt;h2 id=&quot;3-focus-protect-the-continuity-of-thought&quot;&gt;3. Focus: protect the continuity of thought&lt;/h2&gt;
-&lt;p&gt;Modern desktop computing is remarkably capable, but it can also fragment attention. Every application switch introduces a small decision: where was I, what was I doing, and what must I do next?&lt;/p&gt;
-&lt;p&gt;A terminal-first approach helps me maintain a consistent working context. I can read, search, write, and act without repeatedly changing interaction models. The fewer transitions I need to manage, the more attention remains for the problem itself.&lt;/p&gt;
-&lt;p&gt;This matters especially in architecture and security work. Understanding dependencies, evaluating trade-offs, and tracing causes require sustained thought. The best interface is often the one that gets out of the way.&lt;/p&gt;
-&lt;p&gt;Focus does not mean working in isolation from useful applications. It means choosing when to change context rather than allowing the workflow to dictate every change.&lt;/p&gt;
-&lt;h2 id=&quot;4-automation-make-repeatability-a-default&quot;&gt;4. Automation: make repeatability a default&lt;/h2&gt;
-&lt;p&gt;If a task is repeated, it deserves to be examined. Does it require human judgment every time, or only at specific decision points?&lt;/p&gt;
-&lt;p&gt;Automation begins with a process that can be described clearly. It does not need to start with a sophisticated platform. Even a small, reliable sequence can eliminate avoidable errors and free attention for work that genuinely requires judgment.&lt;/p&gt;
-&lt;p&gt;I value automation because it creates consistency. A documented process can be inspected, improved, and handed to someone else. In security-sensitive work, it can also establish clearer boundaries around inputs, permissions, and evidence.&lt;/p&gt;
-&lt;p&gt;Not every action should run unattended. High-impact changes still deserve confirmation, validation, and an appropriate rollback path. Good automation removes repetitive effort without removing accountability.&lt;/p&gt;
-&lt;h2 id=&quot;5-canonicality-know-where-the-source-of-truth-lives&quot;&gt;5. Canonicality: know where the source of truth lives&lt;/h2&gt;
-&lt;p&gt;This may be the most underrated principle.&lt;/p&gt;
-&lt;p&gt;When the same information exists in multiple applications, copies begin to diverge. Which version is current? Which one was approved? Which one should be updated? The time spent reconciling duplicates can exceed the time saved by a convenient interface.&lt;/p&gt;
-&lt;p&gt;I prefer to maintain a canonical artifact wherever practical: one authoritative source that can be transformed into other forms. A text document might become a web article, a formatted report, or presentation material, without requiring separate edits to each output.&lt;/p&gt;
-&lt;p&gt;Canonicality is not the claim that every document must be plain text. Some formats and collaborative systems must remain authoritative in their native environment. The principle is to decide deliberately where truth resides, and treat everything else as a view, export, or derived artifact.&lt;/p&gt;
-&lt;p&gt;This is also a security principle. Clear ownership, traceable changes, and controlled propagation reduce ambiguity and make review more meaningful.&lt;/p&gt;
-&lt;h2 id=&quot;the-keyboard-is-the-common-thread&quot;&gt;The keyboard is the common thread&lt;/h2&gt;
-&lt;p&gt;These five principles reinforce each other. Productivity reduces needless interaction. Acceleration makes learning cumulative. Focus preserves attention. Automation makes repeatable work dependable. Canonicality prevents information from fragmenting.&lt;/p&gt;
-&lt;p&gt;Keyboard-first navigation ties them together. Vim and Emacs have given me different but complementary ways to develop fluency in editing and movement. The specific keystrokes matter less than the ability to move through work without breaking concentration.&lt;/p&gt;
-&lt;p&gt;I do not consider terminal-first a contest to see who can avoid graphical interfaces the longest. It is a practical decision to make the computer respond to my intent with as little friction as possible.&lt;/p&gt;
-&lt;p&gt;The final article makes these principles concrete: &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-workflow/&quot;&gt;Terminal First on macOS: My Practical Workflow&lt;/a&gt;.&lt;/p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Terminal First: My Practical Workflow</title>
-        <published>2026-11-18T00:00:00+00:00</published>
-        <updated>2026-11-18T00:00:00+00:00</updated>
-        
-        <author>
-          <name>Unknown</name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://edwardcher.github.io/blog/terminal-first-workflow/"/>
-        <id>https://edwardcher.github.io/blog/terminal-first-workflow/</id>
-        
-        <content type="html" xml:base="https://edwardcher.github.io/blog/terminal-first-workflow/">&lt;p&gt;The &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-philosophy/&quot;&gt;Unix-inspired philosophy&lt;/a&gt; explains why I favor simple, composable tools. The &lt;a href=&quot;https://edwardcher.github.io/blog/terminal-first-principle/&quot;&gt;five principles&lt;/a&gt; explain what I expect to gain: productivity, acceleration, focus, automation, and canonicality.&lt;/p&gt;
+        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-workflow/">&lt;p&gt;The &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-philosophy/&quot;&gt;Unix-inspired philosophy&lt;/a&gt; explains why I favor simple, composable tools. The &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-principle/&quot;&gt;five principles&lt;/a&gt; explain what I expect to gain: productivity, acceleration, focus, automation, and canonicality.&lt;/p&gt;
 &lt;p&gt;This is how I put those ideas into practice on a Mac. It is a description of the approach and representative examples, not a claim that everyone needs my exact configuration.&lt;/p&gt;
 &lt;figure class=&quot;article-figure&quot;&gt;
   &lt;img src=&quot;/assets/article/mac-workflow.svg&quot; alt=&quot;The terminal coordinates the workflow; native applications remain available when they are the better interface.&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;310&quot;&gt;
@@ -345,6 +830,106 @@ zola serve
 &lt;p&gt;A terminal-first workflow is not defined by the number of commands I know. It is defined by the continuity between thinking, acting, checking, and preserving the result.&lt;/p&gt;
 &lt;p&gt;macOS gives me a useful combination: Unix foundations, native applications, AppleScript, Alfred, and increasingly capable AI assistance. I use those layers together rather than treating them as competing camps.&lt;/p&gt;
 &lt;p&gt;The terminal remains the center of gravity. The keyboard remains my most consistent interface. And text remains the durable thread connecting the work.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Terminal First: Five Principles to Follow</title>
+        <published>2026-11-09T00:00:00+00:00</published>
+        <updated>2026-11-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/blog/terminal-first-principle/"/>
+        <id>https://edwardcher.online/blog/terminal-first-principle/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-principle/">&lt;p&gt;In &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-philosophy/&quot;&gt;the philosophy behind terminal-first computing&lt;/a&gt;, I described why the Unix ideas of simplicity, composability, and inspectable text still matter. This article is more personal: why do I choose to work this way even when the task is ordinary office work rather than software engineering?&lt;/p&gt;
+&lt;p&gt;My answer comes down to five principles. None requires everyone to use the same editor, shell, or computer. They are about reducing friction between intention and outcome.&lt;/p&gt;
+&lt;figure class=&quot;article-figure&quot;&gt;
+  &lt;img src=&quot;/assets/article/five-principles.svg&quot; alt=&quot;Five principles connect daily efficiency to long-term reuse and a reliable source of truth.&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;310&quot;&gt;
+  &lt;figcaption&gt;Five principles connect daily efficiency to long-term reuse and a reliable source of truth.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;1-productivity-fewer-steps-between-thought-and-action&quot;&gt;1. Productivity: fewer steps between thought and action&lt;/h2&gt;
+&lt;p&gt;Productivity is not measured by how many windows I can keep open or how quickly I can click through them. It is the amount of useful work I can complete without unnecessary overhead.&lt;/p&gt;
+&lt;p&gt;When an action can be expressed directly, I do not need to navigate a hierarchy of menus before starting it. I can move from finding information to changing it to sharing the result with fewer interruptions.&lt;/p&gt;
+&lt;p&gt;I keep my hands on the keyboard because the keyboard provides a consistent way to navigate, select, transform, and execute. Having mastered Vim and Emacs keybindings, movement through text has become an extension of thought rather than a separate mechanical task.&lt;/p&gt;
+&lt;p&gt;The objective is not to avoid the mouse at any cost. It is to avoid making every small action a new interaction problem.&lt;/p&gt;
+&lt;h2 id=&quot;2-acceleration-compound-the-value-of-what-i-learn&quot;&gt;2. Acceleration: compound the value of what I learn&lt;/h2&gt;
+&lt;p&gt;Speed is useful, but acceleration is more important. A fast one-off action saves seconds. A reusable way of working saves time every time the task returns.&lt;/p&gt;
+&lt;p&gt;The first time I solve a problem, I may need to explore. The second time, I should be able to reuse what I learned. By the third time, the process should be simpler, clearer, or partially automated.&lt;/p&gt;
+&lt;p&gt;Keyboard fluency, command history, reusable patterns, and plain-text knowledge all compound. The investment in learning is front-loaded; the benefit continues across different tasks and applications.&lt;/p&gt;
+&lt;p&gt;Acceleration is therefore not about rushing. It is about making each completed task improve the next one.&lt;/p&gt;
+&lt;h2 id=&quot;3-focus-protect-the-continuity-of-thought&quot;&gt;3. Focus: protect the continuity of thought&lt;/h2&gt;
+&lt;p&gt;Modern desktop computing is remarkably capable, but it can also fragment attention. Every application switch introduces a small decision: where was I, what was I doing, and what must I do next?&lt;/p&gt;
+&lt;p&gt;A terminal-first approach helps me maintain a consistent working context. I can read, search, write, and act without repeatedly changing interaction models. The fewer transitions I need to manage, the more attention remains for the problem itself.&lt;/p&gt;
+&lt;p&gt;This matters especially in architecture and security work. Understanding dependencies, evaluating trade-offs, and tracing causes require sustained thought. The best interface is often the one that gets out of the way.&lt;/p&gt;
+&lt;p&gt;Focus does not mean working in isolation from useful applications. It means choosing when to change context rather than allowing the workflow to dictate every change.&lt;/p&gt;
+&lt;h2 id=&quot;4-automation-make-repeatability-a-default&quot;&gt;4. Automation: make repeatability a default&lt;/h2&gt;
+&lt;p&gt;If a task is repeated, it deserves to be examined. Does it require human judgment every time, or only at specific decision points?&lt;/p&gt;
+&lt;p&gt;Automation begins with a process that can be described clearly. It does not need to start with a sophisticated platform. Even a small, reliable sequence can eliminate avoidable errors and free attention for work that genuinely requires judgment.&lt;/p&gt;
+&lt;p&gt;I value automation because it creates consistency. A documented process can be inspected, improved, and handed to someone else. In security-sensitive work, it can also establish clearer boundaries around inputs, permissions, and evidence.&lt;/p&gt;
+&lt;p&gt;Not every action should run unattended. High-impact changes still deserve confirmation, validation, and an appropriate rollback path. Good automation removes repetitive effort without removing accountability.&lt;/p&gt;
+&lt;h2 id=&quot;5-canonicality-know-where-the-source-of-truth-lives&quot;&gt;5. Canonicality: know where the source of truth lives&lt;/h2&gt;
+&lt;p&gt;This may be the most underrated principle.&lt;/p&gt;
+&lt;p&gt;When the same information exists in multiple applications, copies begin to diverge. Which version is current? Which one was approved? Which one should be updated? The time spent reconciling duplicates can exceed the time saved by a convenient interface.&lt;/p&gt;
+&lt;p&gt;I prefer to maintain a canonical artifact wherever practical: one authoritative source that can be transformed into other forms. A text document might become a web article, a formatted report, or presentation material, without requiring separate edits to each output.&lt;/p&gt;
+&lt;p&gt;Canonicality is not the claim that every document must be plain text. Some formats and collaborative systems must remain authoritative in their native environment. The principle is to decide deliberately where truth resides, and treat everything else as a view, export, or derived artifact.&lt;/p&gt;
+&lt;p&gt;This is also a security principle. Clear ownership, traceable changes, and controlled propagation reduce ambiguity and make review more meaningful.&lt;/p&gt;
+&lt;h2 id=&quot;the-keyboard-is-the-common-thread&quot;&gt;The keyboard is the common thread&lt;/h2&gt;
+&lt;p&gt;These five principles reinforce each other. Productivity reduces needless interaction. Acceleration makes learning cumulative. Focus preserves attention. Automation makes repeatable work dependable. Canonicality prevents information from fragmenting.&lt;/p&gt;
+&lt;p&gt;Keyboard-first navigation ties them together. Vim and Emacs have given me different but complementary ways to develop fluency in editing and movement. The specific keystrokes matter less than the ability to move through work without breaking concentration.&lt;/p&gt;
+&lt;p&gt;I do not consider terminal-first a contest to see who can avoid graphical interfaces the longest. It is a practical decision to make the computer respond to my intent with as little friction as possible.&lt;/p&gt;
+&lt;p&gt;The final article makes these principles concrete: &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-workflow/&quot;&gt;Terminal First: Basic Workflows&lt;/a&gt;.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Terminal First: The Command Line Still Makes Us More Productive</title>
+        <published>2026-11-08T00:00:00+00:00</published>
+        <updated>2026-11-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://edwardcher.online/blog/terminal-first-philosophy/"/>
+        <id>https://edwardcher.online/blog/terminal-first-philosophy/</id>
+        
+        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-philosophy/">&lt;h2 id=&quot;the-interface-is-not-the-philosophy&quot;&gt;The interface is not the philosophy&lt;/h2&gt;
+&lt;p&gt;I have spent much of my career moving between programming, integration, security, architecture, and conversations with people who do not need to know how the underlying systems work. Across those roles, one idea has remained remarkably durable: complex work becomes more manageable when its parts are understandable, composable, and under our control.&lt;/p&gt;
+&lt;p&gt;That is why I remain terminal-first.&lt;/p&gt;
+&lt;p&gt;Not because a black screen is inherently better than a graphical interface. Not because every task deserves a shell script. And certainly not because modern applications have no place in my workflow. The terminal is simply the most direct expression of a philosophy I inherited from Unix: use small, purposeful components; connect them through clear interfaces; and preserve the ability to inspect and change what happens.&lt;/p&gt;
+&lt;figure class=&quot;article-figure&quot;&gt;
+  &lt;img src=&quot;/assets/article/unix-composition.svg&quot; alt=&quot;The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool.&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;310&quot;&gt;
+  &lt;figcaption&gt;The Unix mindset: compose, observe, and preserve rather than depend on one opaque tool.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;what-unix-got-right&quot;&gt;What Unix got right&lt;/h2&gt;
+&lt;p&gt;Unix emerged in a very different computing environment, yet its ideas continue to scale beyond the machines and constraints that shaped it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do one thing well.&lt;/strong&gt; A component with a clear responsibility is easier to understand, test, replace, and trust. Complexity belongs in the composition of parts, not in unnecessary complexity within every part.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make programs work together.&lt;/strong&gt; A tool becomes more valuable when its output can become another tool’s input. Interoperability should be a design property, not an afterthought.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Prefer text as a universal interface where it fits.&lt;/strong&gt; Text can be read, searched, compared, transformed, versioned, and transmitted. It is not the right representation for everything, but it remains one of the most durable ways to express intent and exchange information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make behavior observable.&lt;/strong&gt; A process that can be inspected is easier to diagnose. A process that can be repeated is easier to improve. Both matter when the work involves systems people depend on.&lt;/p&gt;
+&lt;p&gt;These principles are bigger than the shell. They apply to APIs, infrastructure, identity systems, software architecture, and even the way we organize our own knowledge.&lt;/p&gt;
+&lt;h2 id=&quot;why-it-still-works-today&quot;&gt;Why it still works today&lt;/h2&gt;
+&lt;p&gt;Today’s computers have enormous processing power, polished interfaces, and an application for almost every task. Yet abundance has created another kind of friction: context switching, hidden state, incompatible formats, and workflows that are difficult to reproduce.&lt;/p&gt;
+&lt;p&gt;The Unix mindset offers a counterweight. Instead of asking which application contains a task, I ask what the task actually requires: an input, a transformation, a decision, and an output. Once the work is expressed in those terms, the choice of interface becomes clearer.&lt;/p&gt;
+&lt;p&gt;On macOS, this does not require abandoning the desktop. Unix foundations coexist with excellent native applications. A terminal can initiate an action, a native application can provide the best surface for reviewing it, and automation can connect the two. The point is not to eliminate interfaces. It is to avoid being confined by them.&lt;/p&gt;
+&lt;h2 id=&quot;text-is-an-asset-not-a-nostalgia-project&quot;&gt;Text is an asset, not a nostalgia project&lt;/h2&gt;
+&lt;p&gt;Text has an unusual longevity. A Markdown document can be opened years later without recreating the exact application that produced it. A command can be recorded alongside its result. A configuration can be reviewed as a change rather than remembered as a sequence of clicks.&lt;/p&gt;
+&lt;p&gt;That durability matters to me as a programmer and security practitioner. If an action changes a system, I want to understand what changed. If a process works, I want to be able to reproduce it. If something fails, I want evidence rather than guesswork.&lt;/p&gt;
+&lt;p&gt;Text is not automatically safe or correct. Scripts can be destructive, logs can expose secrets, and automation can amplify mistakes. But plain, inspectable artifacts give us a better starting point for review, version control, and controlled execution.&lt;/p&gt;
+&lt;h2 id=&quot;ai-changes-the-speed-not-the-foundation&quot;&gt;AI changes the speed, not the foundation&lt;/h2&gt;
+&lt;p&gt;AI-assisted coding makes this philosophy more relevant, not less.&lt;/p&gt;
+&lt;p&gt;A model can help draft a script, explain an unfamiliar command, propose a refactor, or translate a requirement into a working starting point. It can reduce the cost of moving from an idea to an experiment. But generated output still needs a boundary between suggestion and execution.&lt;/p&gt;
+&lt;p&gt;I want AI to augment judgment, not replace it. A generated command should be understandable before it runs. A code change should be reviewable as a diff. A workflow should be testable and repeatable. Secrets, privileges, and production access still require deliberate controls.&lt;/p&gt;
+&lt;p&gt;The most useful AI workflow therefore remains grounded in text: describe the intent, inspect the proposed change, run bounded tests, observe the result, and retain the artifacts that matter. This is a modern extension of composability and observability, not a departure from them.&lt;/p&gt;
+&lt;h2 id=&quot;terminal-first-not-terminal-only&quot;&gt;Terminal-first, not terminal-only&lt;/h2&gt;
+&lt;p&gt;I still use graphical applications. Some work is genuinely better with visual context, rich layout, or direct manipulation. But I prefer to keep the &lt;em&gt;control plane&lt;/em&gt; of my work close to the keyboard and the underlying artifacts close to open formats.&lt;/p&gt;
+&lt;p&gt;That is the distinction: terminal-first is a choice about where work begins, how it connects, and how much control we retain. It is not a rule that everything must end in a terminal window.&lt;/p&gt;
+&lt;p&gt;The Unix philosophy has survived because it is not really about old tools. It is about building systems and habits that remain useful when tools change.&lt;/p&gt;
+&lt;p&gt;The next article turns that philosophy into five personal principles: &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-principle/&quot;&gt;Terminal First: Five Principles to Follow&lt;/a&gt;.&lt;/p&gt;
 </content>
         
     </entry>

@@ -1,51 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://edwardcher.github.io/</loc>
+        <loc>https://edwardcher.online/</loc>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/blog/</loc>
+        <loc>https://edwardcher.online/beyond/</loc>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/blog/terminal-first-philosophy/</loc>
-        <lastmod>2026-11-18</lastmod>
+        <loc>https://edwardcher.online/beyond/mechanical-time/</loc>
+        <lastmod>2026-11-20</lastmod>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/blog/terminal-first-principle/</loc>
-        <lastmod>2026-11-18</lastmod>
+        <loc>https://edwardcher.online/blog/</loc>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/blog/terminal-first-workflow/</loc>
-        <lastmod>2026-11-18</lastmod>
+        <loc>https://edwardcher.online/blog/terminal-first-consistent-workflow/</loc>
+        <lastmod>2026-11-20</lastmod>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/experiments/</loc>
+        <loc>https://edwardcher.online/blog/terminal-first-philosophy/</loc>
+        <lastmod>2026-11-08</lastmod>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/experiments/helix-editing-api-workflow/</loc>
+        <loc>https://edwardcher.online/blog/terminal-first-principle/</loc>
+        <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/blog/terminal-first-workflow/</loc>
+        <lastmod>2026-11-10</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/</loc>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/helix-editing-api-workflow/</loc>
+        <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/</loc>
+        <lastmod>2026-11-20</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/java4shell-identity-exposure-lab/</loc>
+        <lastmod>2026-11-20</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/security-key-first-webauthn-lab/</loc>
         <lastmod>2026-11-19</lastmod>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/experiments/windowing-emacs-tmux-zellij/</loc>
+        <loc>https://edwardcher.online/experiments/windowing-emacs-tmux-zellij/</loc>
+        <lastmod>2026-11-15</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/experiments/yazi-primary-finder/</loc>
+        <lastmod>2026-11-16</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/hello/</loc>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/identity/</loc>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/identity/identity-globe/</loc>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/identity/java4shell-identity-compromise/</loc>
+        <lastmod>2026-11-20</lastmod>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/identity/password-is-a-vulnerability/</loc>
+    </url>
+    <url>
+        <loc>https://edwardcher.online/identity/security-key-enrollment-browser-ux/</loc>
         <lastmod>2026-11-19</lastmod>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/experiments/yazi-primary-finder/</loc>
-        <lastmod>2026-11-19</lastmod>
+        <loc>https://edwardcher.online/references/</loc>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/identity/</loc>
+        <loc>https://edwardcher.online/resume/</loc>
     </url>
     <url>
-        <loc>https://edwardcher.github.io/identity/identity-globe/</loc>
-    </url>
-    <url>
-        <loc>https://edwardcher.github.io/identity/password-is-a-vulnerability/</loc>
-    </url>
-    <url>
-        <loc>https://edwardcher.github.io/resume/</loc>
-    </url>
-    <url>
-        <loc>https://edwardcher.github.io/tags/</loc>
+        <loc>https://edwardcher.online/tags/</loc>
     </url>
 </urlset>

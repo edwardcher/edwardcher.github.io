@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Edit with Helix, test with Hurl, and automate with Rust: a reproducible identity API lab using OAuth, SCIM, and FIDO device binding.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Helix, Hurl, and Rust: A Terminal-First Approach to API Testing | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.online/experiments">← Back to collection</a>
+<div class="post-meta">Terminal / API / FIDO / <time datetime="2026-11-20">20 November 2026</time></div>
+<h1>Helix, Hurl, and Rust: A Terminal-First Approach to API Testing<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Edit with Helix, test with Hurl, and automate with Rust: a reproducible identity API lab using OAuth, SCIM, and FIDO device binding.</p>
+<div class="post-body"><blockquote>
+<p><strong>Lab objective:</strong> Authenticate an integration client, create a test user, create and bind a pending FIDO device, then verify the association. No password authenticator is created. <strong>A pending device is not an enrolled passkey.</strong></p>
+</blockquote>
+<h2 id="three-tools-one-repeatable-workflow">Three tools, one repeatable workflow</h2>
+<p>A terminal-first approach is not about avoiding graphical interfaces. It is about making the steps of an API test visible, reviewable, and repeatable. A collection of requests is useful; a project that another engineer can clone, run, and validate is better.</p>
+<p>This experiment combines three focused tools:</p>
+<ul>
+<li><strong>Helix — edit.</strong> Navigate and maintain plain-text API requests, Rust source, and project configuration without leaving the terminal.</li>
+<li><strong>Hurl — test.</strong> Send HTTP requests, capture response values, and assert expected behavior in readable <code>.hurl</code> files.</li>
+<li><strong>Rust — automate.</strong> Prepare unique test identities and orchestrate the same test sequence without duplicating Hurl’s HTTP functionality.</li>
+</ul>
+<p>The test files can be committed to Git, reviewed as diffs, and reused in an authorized test environment. This builds on <a href="/experiments/helix-editing-api-workflow/">Helix: Making Editing Fun Again</a> by moving from editing and isolated requests to a complete identity API lifecycle.</p>
+<pre><code data-lang="text">$ hx tests/provision-fido.hurl   # edit the HTTP workflow
+$ cargo run                     # generate a unique test identity and run Hurl
+[+] Running HID provisioning test with unique lab identity: terminal-lab-...
+[+] SCIM FIDO pre-enrollment checks passed.
+</code></pre>
+<p><em>The output illustrates a successful configured-tenant run; it is not a captured live HID result.</em></p>
+<h2 id="the-test-case-identity-provisioning-with-hid">The test case: identity provisioning with HID</h2>
+<p>We will use HID Authentication Service to make the workflow concrete: obtain an OAuth access token, create a user using SCIM, prepare a pending FIDO device, bind it to the new user, and verify the association. This is a lifecycle <strong>API test</strong>, not a simulation of the FIDO cryptographic ceremony.</p>
+<h2 id="why-hid-authentication-service">Why HID Authentication Service?</h2>
+<p>The HID Authentication Service exposes an OpenID Connect/OAuth token endpoint and SCIM APIs for user and device lifecycle management. Its FIDO integration uses <code>AT_FIDO</code> for the authentication policy and <code>DT_FIDO</code> for the device type. For a <strong>device-binding-required</strong> workflow, a pending FIDO device can be created and assigned to a user before a genuine WebAuthn enrollment ceremony.</p>
+<p>This distinction matters: <strong>we are preparing an identity for FIDO, not minting a security key through an API.</strong> A private key must be generated and held by a FIDO authenticator during the actual registration process.</p>
+<pre><code data-lang="text">[OAuth client_credentials] -&gt; [SCIM Users POST]
+                                      |
+                                      v
+                              [internal user ID]
+                                      |
+[SCIM Device POST: DT_FIDO/PENDING] -&gt; [device ID]
+                                      |
+                                      v
+                           [SCIM Device PUT: owner]
+                                      |
+                                      v
+                          [SCIM Device GET: verify]
+                                      |
+                         [IdP WebAuthn enrollment]
+                              (separate ceremony)
+</code></pre>
+<h2 id="project-layout">Project layout</h2>
+<pre><code data-lang="text">examples/hid-fido-hurl-lab/
+├── Cargo.toml
+├── src/main.rs
+├── tests/provision-fido.hurl
+├── .env.example
+├── .gitignore
+└── README.md
+</code></pre>
+<p>The complete runnable files are included in the blog source under <code>examples/hid-fido-hurl-lab/</code>.</p>
+<h2 id="install-and-configure">Install and configure</h2>
+<pre><code data-lang="sh">brew install helix hurl rustup
+rustup default stable
+
+cd examples/hid-fido-hurl-lab
+mkdir -p .secrets
+cp .env.example .secrets/hurl.env
+chmod 600 .secrets/hurl.env
+hx .secrets/hurl.env
+</code></pre>
+<p>Fill in the HID tenant host, tenant identifier, client ID and client secret. Use a <strong>test tenant</strong> and an API client explicitly authorized for user/device lifecycle operations. The client-credentials token endpoint is <code>/idp/{tenant}/authn/token</code>; the SCIM endpoints are under <code>/scim/{tenant}/v2/</code>.</p>
+<p>The secrets file is excluded from Git. Do not paste tokens into logs or enable verbose HTTP tracing when working with live credentials.</p>
+<h2 id="the-hurl-collection-documented-and-readable">The Hurl collection — documented and readable</h2>
+<p>The sequence deliberately uses the <strong>Device</strong> API for the pending FIDO device rather than pretending that a generic <code>AT_FIDO</code> authenticator POST registers a security key. The expected <code>HTTP 200</code> on device creation and binding follows HID’s published FIDO integration examples; the user creation uses the SCIM <code>HTTP 201</code> expectation.</p>
+<pre><code data-lang="hurl"># HID Authentication Service — FIDO device pre-enrollment lab
+# Run ONLY against a test tenant with a privileged API client.
+# Client secrets live in .secrets/hurl.env (mode 0600), never in Git.
+# Each run uses a unique test_username and device_external_id from Rust.
+# A pending device is NOT an enrolled passkey or usable FIDO credential.
+
+# 01 / Machine-to-machine OAuth token (HID OpenID token endpoint)
+POST {{base_url}}/idp/{{tenant}}/authn/token
+Content-Type: application/x-www-form-urlencoded
+[BasicAuth]
+{{client_id}}: {{client_secret}}
+[Form]
+grant_type: client_credentials
+
+HTTP 200
+[Captures]
+access_token: jsonpath &quot;$.access_token&quot;
+[Asserts]
+jsonpath &quot;$.access_token&quot; exists
+jsonpath &quot;$.token_type&quot; == &quot;Bearer&quot;
+
+# 02 / Provision an isolated test identity through SCIM
+POST {{base_url}}/scim/{{tenant}}/v2/Users?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &quot;schemas&quot;: [&quot;urn:ietf:params:scim:schemas:core:2.0:User&quot;],
+  &quot;userName&quot;: &quot;{{test_username}}&quot;,
+  &quot;name&quot;: {&quot;givenName&quot;: &quot;Terminal&quot;, &quot;familyName&quot;: &quot;Lab&quot;},
+  &quot;active&quot;: true
+}
+
+HTTP 201
+[Captures]
+user_id: jsonpath &quot;$.id&quot;
+[Asserts]
+jsonpath &quot;$.id&quot; exists
+jsonpath &quot;$.userName&quot; == &quot;{{test_username}}&quot;
+
+# 03 / Create a pending FIDO device; this does NOT generate a private key
+# HID FIDO integration documentation shows HTTP 200 for Device creation.
+POST {{base_url}}/scim/{{tenant}}/v2/Device?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &quot;schemas&quot;: [&quot;urn:hid:scim:api:idp:2.0:Device&quot;],
+  &quot;externalId&quot;: &quot;{{device_external_id}}&quot;,
+  &quot;type&quot;: &quot;DT_FIDO&quot;,
+  &quot;status&quot;: {&quot;status&quot;: &quot;PENDING&quot;, &quot;neverExpires&quot;: true}
+}
+
+HTTP 200
+[Captures]
+device_id: jsonpath &quot;$.id&quot;
+[Asserts]
+jsonpath &quot;$.id&quot; exists
+jsonpath &quot;$.type&quot; == &quot;DT_FIDO&quot;
+jsonpath &quot;$.status.status&quot; == &quot;PENDING&quot;
+
+# 04 / Bind the pending device to the newly created SCIM user
+# This follows HID&#39;s documented PUT /Device/{id} assignment operation.
+PUT {{base_url}}/scim/{{tenant}}/v2/Device/{{device_id}}?api-version=11
+Authorization: Bearer {{access_token}}
+Content-Type: application/scim+json
+Accept: application/scim+json
+{
+  &quot;schemas&quot;: [&quot;urn:hid:scim:api:idp:2.0:Device&quot;],
+  &quot;id&quot;: &quot;{{device_id}}&quot;,
+  &quot;type&quot;: &quot;DT_FIDO&quot;,
+  &quot;status&quot;: {&quot;status&quot;: &quot;PENDING&quot;, &quot;active&quot;: false},
+  &quot;owner&quot;: {&quot;value&quot;: &quot;{{user_id}}&quot;}
+}
+
+HTTP 200
+[Asserts]
+jsonpath &quot;$.id&quot; == &quot;{{device_id}}&quot;
+jsonpath &quot;$.owner.value&quot; == &quot;{{user_id}}&quot;
+jsonpath &quot;$.status.status&quot; == &quot;PENDING&quot;
+
+# 05 / Read back the binding to verify persistence
+GET {{base_url}}/scim/{{tenant}}/v2/Device/{{device_id}}?api-version=11
+Authorization: Bearer {{access_token}}
+Accept: application/scim+json
+
+HTTP 200
+[Asserts]
+jsonpath &quot;$.id&quot; == &quot;{{device_id}}&quot;
+jsonpath &quot;$.owner.value&quot; == &quot;{{user_id}}&quot;
+jsonpath &quot;$.type&quot; == &quot;DT_FIDO&quot;
+</code></pre>
+<p>Hurl’s <code>[Captures]</code> blocks carry the access token, user ID and device ID to later requests. <code>[Asserts]</code> stop the test when the response does not match the expected resource state. If an assertion fails, inspect the tenant’s API version and permissions rather than weakening the check to accept any HTTP response.</p>
+<h2 id="rust-as-the-thin-runner">Rust as the thin runner</h2>
+<p>I do not need another HTTP framework for this experiment. Rust simply gives each run a unique identity and launches Hurl. That avoids conflicts from repeatedly creating the same SCIM username.</p>
+<pre><code data-lang="rust">use std::{env, path::Path, process::{Command, ExitCode}, time::{SystemTime, UNIX_EPOCH}};
+
+fn main() -&gt; ExitCode {
+    let config = Path::new(&quot;.secrets/hurl.env&quot;);
+    if !config.is_file() {
+        eprintln!(&quot;Missing .secrets/hurl.env; copy .env.example and edit it.&quot;);
+        return ExitCode::FAILURE;
+    }
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).expect(&quot;clock&quot;).as_millis();
+    let suffix = format!(&quot;{}-{}&quot;, now, std::process::id());
+    let username = format!(&quot;terminal-lab-{}&quot;, suffix);
+    let device = format!(&quot;fido-lab-{}&quot;, suffix);
+    println!(&quot;[+] Running HID provisioning test with unique lab identity: {username}&quot;);
+    println!(&quot;[!] This creates persistent resources. No automatic deletion.&quot;);
+    let status = Command::new(&quot;hurl&quot;)
+        .args([&quot;--test&quot;, &quot;--variables-file&quot;, &quot;.secrets/hurl.env&quot;,
+               &quot;--variable&quot;, &amp;format!(&quot;test_username={username}&quot;),
+               &quot;--variable&quot;, &amp;format!(&quot;device_external_id={device}&quot;),
+               &quot;tests/provision-fido.hurl&quot;])
+        .status();
+    match status {
+        Ok(s) if s.success() =&gt; { println!(&quot;[+] SCIM FIDO pre-enrollment checks passed.&quot;); ExitCode::SUCCESS }
+        Ok(s) =&gt; { eprintln!(&quot;[-] Hurl failed: {s}&quot;); ExitCode::FAILURE }
+        Err(e) =&gt; { eprintln!(&quot;[-] Could not execute hurl: {e}&quot;); ExitCode::FAILURE }
+    }
+}
+</code></pre>
+<p>Run the project:</p>
+<pre><code data-lang="sh">hx tests/provision-fido.hurl
+cargo run
+</code></pre>
+<p>Each invocation creates persistent lab resources. <strong>There is no automatic deletion</strong>; record the test user and device identifiers from your authorized tenant’s audit trail and apply its cleanup policy.</p>
+<h2 id="finish-with-an-actual-fido-security-key">Finish with an actual FIDO security key</h2>
+<p>At the end of this test, the device remains <code>PENDING</code>. A tenant administrator must have configured the HID IdP’s FIDO enrollment workflow, including its enrollment-protection mechanism. The user then completes the browser-based WebAuthn ceremony with a physical security key or supported passkey. The server verifies the registration and stores the corresponding public-key credential.</p>
+<p>For device-bound assurance, consider <code>deviceBinding: required</code>, user verification, allowed AAGUIDs, and verified attestation <strong>as appropriate to the deployed HID workflow and authenticator capabilities</strong>. Do not claim a user is FIDO-enrolled merely because the SCIM device has an owner.</p>
+<h2 id="the-productivity-gain-fewer-hidden-steps">The productivity gain: fewer hidden steps</h2>
+<p><strong>Helix keeps the source readable. Hurl makes expectations executable. Rust makes the sequence repeatable.</strong> Together they turn one-off requests into an integration test that can be reviewed in Git and rerun by another engineer.</p>
+<p>A failed assertion points to the exact lifecycle step that needs investigation. Unique usernames avoid SCIM conflicts between runs. Explicit configuration separates the test logic from tenant credentials. The same files can later be incorporated into CI, provided that secrets, test-tenant permissions, cleanup, and reporting are handled appropriately.</p>
+<p>This is not a claim that a terminal replaces every API tool. It is a practical way to reduce context switching and hidden state while preserving the HTTP requests as plain text. For identity systems, where authorization, auditability, and reproducibility matter, that is a meaningful productivity improvement.</p>
+<h2 id="closing-thoughts-the-shell-brings-it-together">Closing thoughts: the shell brings it together</h2>
+<p>What I like about this approach is that each tool does one job well. <strong>Helix</strong> keeps me close to the files I am editing. <strong>Hurl</strong> turns readable HTTP requests into tests with explicit expectations. <strong>Rust</strong> handles the small amount of orchestration needed to make each run consistent. And the <strong>shell</strong> ties everything together without another layer of clicking through screens.</p>
+<p>The real advantage is not replacing Postman for the sake of it. It is having a project I can open, understand, change, and run again. Requests and assertions live in plain text, changes are visible in Git, and a failed step is easier to investigate. There is less to remember between sessions—and less hidden configuration for the next engineer to discover.</p>
+<p>HID Authentication Service makes a useful example because an identity lifecycle involves more than a single API call: obtaining a token, creating a user, assigning a pending FIDO device, and checking the result. But the same pattern applies to other APIs: payment integrations, provisioning services, inventory systems, internal platforms, or a small service I am developing myself. The endpoints change; the workflow stays familiar.</p>
+<p>For me, that is what <strong>terminal-first productivity</strong> means. Use simple tools that work together, keep the test readable, and make it easy to repeat the work tomorrow.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a rel="external" href="https://docs.hidglobal.com/dev/auth-service/api/token-endpoint.htm">HID OpenID token endpoint</a></li>
+<li><a rel="external" href="https://docs.hidglobal.com/dev/auth-service/api/users-rest-api.htm">HID SCIM Users REST API</a></li>
+<li><a rel="external" href="https://docs.hidglobal.com/dev/auth-service/api/device-rest-api.htm">HID SCIM Device REST API</a></li>
+<li><a rel="external" href="https://docs.hidglobal.com/dev/auth-service/integration/user-authentication-with-fido.htm">HID User Authentication with FIDO</a></li>
+<li><a rel="external" href="https://hurl.dev/docs/samples.html">Hurl documentation</a></li>
+</ul>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+</body></html>

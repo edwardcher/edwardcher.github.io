@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive FIDO2 registration and authentication experiment for security keys and compatible smart cards, hosted entirely on GitHub Pages.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Security-Key-First WebAuthn Lab | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.online/blog/">← All posts</a>
+<div class="post-meta">Security / Testing / <time datetime="2026-11-19">19 November 2026</time></div>
+<h1>Security-Key-First WebAuthn Lab<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">An interactive FIDO2 registration and authentication experiment for security keys and compatible smart cards, hosted entirely on GitHub Pages.</p>
+<div class="post-body"><p>This is a hands-on companion to <a href="/identity/security-key-enrollment-browser-ux/">Making Security-Key Enrollment Less Painful in Modern Browsers</a>. The objective is to measure how much of a physical security-key journey can be simplified <strong>without bypassing browser or authenticator security controls</strong>.</p>
+<p>The experiment runs as a standalone HTML page on HTTPS GitHub Pages. It creates real WebAuthn credentials on supported authenticators and verifies subsequent signed assertions locally using the Web Crypto API. No server, account service or external dependency is required.</p>
+<p><strong>New in the updated lab:</strong> an external-security-key preference switch, discoverable/passwordless authentication, browser capability inspection, and live ceremony progress. Safari and Chrome may render different browser-owned prompts, and a FIDO2-enabled smart card may need PIN and user-presence confirmation.</p>
+<p>For the most reliable experience, <strong><a href="/security-key-lab/">launch the standalone security-key lab</a></strong>. Embedded WebAuthn may be restricted by browser policies, especially in Safari. Enroll and authenticate on the same origin and browser profile; the local credential registry is not synchronized between Safari and Chrome.</p>
+<p><strong>Important:</strong> This is a local cryptographic demonstration, <strong>not production authentication</strong>. Credentials and public keys are stored in this browser’s local storage, registration attestation is not verified by a trusted server, and challenges are generated client-side. Browser-local state can be altered by anyone controlling the browser. Do not use the demo to protect an account, issue trusted credentials or establish enterprise assurance.</p>
+<div class="security-key-lab-embed">
+  <iframe title="Security-Key-First WebAuthn Lab" src="/security-key-lab/" loading="lazy" allow="publickey-credentials-create *; publickey-credentials-get *" style="display:block;width:100%;min-height:720px;border:1px solid rgba(76,208,170,.35);border-radius:12px;background:#090f13"></iframe>
+</div>
+<p><a href="/security-key-lab/"><strong>Open the lab in its own window</strong></a></p>
+<h2 id="test-plan">Test plan</h2>
+<ol>
+<li>Open the standalone lab on HTTPS (or <code>http://localhost</code> for local development).</li>
+<li>Insert a FIDO2 security key or a compatible smart card and reader; choose a test username.</li>
+<li>Choose <strong>Enroll security key</strong> and complete the browser’s prompts.</li>
+<li>Choose <strong>Authenticate</strong> to produce and locally verify a signed assertion using the enrolled public key.</li>
+<li>Compare Safari with Chrome or Edge on the same authenticator, noting how the browser interprets the security-key hint and cross-platform selection.</li>
+</ol>
+<p>The default configuration prefers a security key, cross-platform attachment, and optional PIN/UV (<code>preferred</code>). Turn on <strong>Require PIN / user verification</strong> when testing a higher-assurance policy. Requiring discoverable credentials is also optional because many cards have limited resident credential storage.</p>
+<h2 id="limitations">Limitations</h2>
+<p>The browser chooses its own dialogs. A smart card needs a functioning FIDO2 application and reader path; PIV/PKI alone is insufficient. The demo cannot attest that a particular physical card model was used. Clearing browser storage removes the local registration record but <strong>does not erase the credential from the security key</strong>.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+</body></html>

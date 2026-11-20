@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A quieter corner of Edwardcher.online for speaking, learning, pro bono work, and meaningful collaborations.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>~/hello | Edwardcher Monreal | Identity, Systems &amp; Ideas</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<div class="hello-shell">
+  <div class="hello-topline"><span><span class="hello-green">●</span> edwardcher@localhost:~/hello</span><span class="hello-dots" aria-hidden="true">● ● ●</span></div>
+  <p class="hello-command">$ whoami --beyond-the-resume</p>
+  <h1>You found me<span class="hello-green">.</span></h1>
+  <p class="hello-lead">Not everything needs to be on LinkedIn.</p>
+  <div class="hello-intro">
+    <img class="hello-portrait" src="https://edwardcher.online/assets/hello-pixel-portrait.webp" width="304" height="323" alt="Pixelated monochrome portrait, deliberately obscured" loading="eager">
+    <div><p class="hello-green hello-kicker">[ HUMAN MODE: ENABLED ]</p><h2>The human behind the terminal</h2><p>Programmer by instinct. Architect by profession. Still curious enough to take things apart, understand how they work, and occasionally put them back together better.</p><p>Some conversations start with a problem. Others start with a question. Both are welcome.</p></div>
+  </div>
+  <section class="hello-section"><p class="hello-command">$ ./connect --purpose meaningful</p><h2>Have something interesting?</h2><div class="hello-offers">
+    <div><strong>01 / Public speaking</strong><p>Identity, cybersecurity, practical architecture, and lessons learned in the field.</p></div>
+    <div><strong>02 / Charitable &amp; pro bono</strong><p>Selected community initiatives, nonprofit security assessments, and mentoring where I can make a useful contribution.</p></div>
+    <div><strong>03 / Teaching &amp; training</strong><p>Hands-on workshops, technical knowledge sharing, and making complex topics approachable.</p></div>
+    <div><strong>04 / Professional engagements</strong><p>For serious architecture, security, and advisory conversations, let's discuss the scope and the right way to work together.</p></div>
+  </div></section>
+  <section class="hello-section"><p class="hello-command">$ ./contact --human</p><h2>Say hello</h2><p>No ticketing system. No chatbot pretending to be me.</p><div class="hello-contact"><a href="mailto:mouselessmonk@gmail.com?subject=Hello%20from%20edwardcher.online">mouselessmonk@gmail.com ↗</a><button type="button" class="hello-copy" data-copy="mouselessmonk@gmail.com">Copy email</button></div><p class="hello-note">Good conversations are free. Serious work deserves a proper scope and a good cup of coffee. Independent engagements are subject to existing professional commitments.</p></section>
+  <section class="hello-section"><p class="hello-command">$ ./coffee --protocol bitcoin</p><h2>Buy the hacker a coffee <span class="hello-muted">(BTC edition)</span></h2><p>Found an experiment useful? Want to support the independent lab? This is the virtual coffee jar, entirely optional. Donations are not payment for consulting services.</p><div class="hello-donate"><img src="https://edwardcher.online/assets/hello-bitcoin-qr.webp" alt="Bitcoin receiving address QR code" width="210" height="210" loading="lazy"><div><p class="hello-green">Bitcoin mainnet · Native SegWit</p><code id="hello-btc">bc1q3yshgge5neuc0m78mrr8t4dy4s9r4rdzuajzq2</code><div class="hello-donate-actions"><button type="button" class="hello-copy" data-copy="bc1q3yshgge5neuc0m78mrr8t4dy4s9r4rdzuajzq2">Copy BTC address</button></div><p class="hello-note">Verify the address in your wallet before sending. Bitcoin transactions are irreversible. The receiving address is public and may reveal on-chain activity.</p></div></div></section>
+  <section class="hello-section hello-secret"><p class="hello-command">$ history | grep origin</p><p class="hello-note">Nothing interesting here. Probably.</p><button id="hello-origin" type="button" aria-expanded="false" aria-controls="hello-origin-story">[ show archived memory ]</button><div id="hello-origin-story" hidden><p class="hello-command">$ history | grep -i iloveyou</p><h2>Recovered memory: circa 2000</h2><p class="hello-green">AMACC Programmers Pool · ILOVEYOU virus</p><p>More than 25 years ago, I served as lead programmer in an AMACC Programmers Pool effort to develop a countermeasure against the ILOVEYOU virus.</p><p>It was one of my earliest encounters with the real-world consequences of malicious code, and helped set my course toward computer security.</p><p>There was no GitHub repository or public commit history to preserve our contribution. Just programmers trying to solve a problem that needed solving.</p><p>Twenty-five years later, the tools have changed. The curiosity hasn't.</p><p class="hello-note">A personal recollection of my involvement, not an independently documented attribution or a claim to have developed the only countermeasure.</p></div></section>
+  <p class="hello-return"><a href="https://edwardcher.online">← cd ~ / back to the main terminal</a></p>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('hello-origin'), story=document.getElementById('hello-origin-story');
+  b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));story.hidden=open;b.textContent=open?'[ show archived memory ]':'[ hide archived memory ]';});
+  document.querySelectorAll('.hello-copy').forEach(function(btn){btn.addEventListener('click',function(){var value=btn.getAttribute('data-copy');var old=btn.textContent;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(function(){btn.textContent='Copied ✓';setTimeout(function(){btn.textContent=old;},1800);}).catch(function(){btn.textContent='Select address to copy';});}else{btn.textContent='Select address to copy';}});});
+})();
+</script>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+</body></html>

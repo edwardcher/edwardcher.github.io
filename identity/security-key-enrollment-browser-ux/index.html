@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A pragmatic look at reducing friction in FIDO2 security-key and smart-card enrollment, with Safari as a reference and a hands-on WebAuthn lab.">
+  <meta name="theme-color" content="#0a0f12">
+  <title>Making Security-Key Enrollment Less Painful in Modern Browsers | Edwardcher Monreal</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.online/blog/">← All posts</a>
+<div class="post-meta">Security / Authentication / <time datetime="2026-11-19">19 November 2026</time></div>
+<h1>Making Security-Key Enrollment Less Painful in Modern Browsers<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">A pragmatic look at reducing friction in FIDO2 security-key and smart-card enrollment, with Safari as a reference and a hands-on WebAuthn lab.</p>
+<div class="post-body"><p>A physical FIDO2 security key is one of the strongest ways to establish device-bound authentication. Yet enrolling one in a modern browser can feel unnecessarily complicated. A user selects <strong>Add passkey</strong>, sees a choice of credential providers, perhaps a phone or QR-code prompt, and only eventually finds the physical key they already have in hand.</p>
+<p>The security ceremony is important. The maze of choices is not.</p>
+<p>My interest is in making the registration journey more predictable, especially when the intended authenticator is already known: an enterprise-issued security key or a FIDO2-enabled smart card inserted into a compatible reader.</p>
+<h2 id="the-browser-does-not-know-the-enterprise-s-intent">The browser does not know the enterprise’s intent</h2>
+<p>Passkeys serve several legitimate use cases: synchronized credentials, built-in platform authenticators, hybrid phone authentication and removable security keys. Browser interfaces are designed to accommodate all of them. That flexibility becomes friction when an enterprise is deliberately enrolling a particular physical credential.</p>
+<p>A user should not have to discover the right path through several dialogs. The relying party can express its intent before the browser starts the ceremony.</p>
+<h2 id="a-security-key-first-request">A security-key-first request</h2>
+<p>WebAuthn Level 3 defines <strong>client hints</strong>, including <code>"security-key"</code>, to express a preferred authenticator experience. In registration, <code>authenticatorAttachment: "cross-platform"</code> provides a useful compatibility signal for older implementations. They are not the same thing: hints are UI preferences, while attachment selection constrains authenticator categories; neither identifies a particular smart card or proves enterprise issuance.</p>
+<pre><code data-lang="javascript">const credential = await navigator.credentials.create({
+  publicKey: {
+    challenge, // fresh challenge from the relying party
+    rp: { id: location.hostname, name: &quot;Example RP&quot; },
+    user: { id: userHandle, name: username, displayName: username },
+    pubKeyCredParams: [{ type: &quot;public-key&quot;, alg: -7 },
+                       { type: &quot;public-key&quot;, alg: -257 }],
+    hints: [&quot;security-key&quot;],
+    authenticatorSelection: {
+      authenticatorAttachment: &quot;cross-platform&quot;,
+      residentKey: &quot;preferred&quot;,
+      userVerification: &quot;preferred&quot;
+    },
+    extensions: { credProps: true },
+    attestation: &quot;none&quot;
+  }
+});
+</code></pre>
+<p>The example expresses a preference rather than an assurance policy. For enterprise deployment, decide whether discoverable credentials, user verification, and verified authenticator attestation are mandatory. <code>residentKey: "required"</code> can consume scarce authenticator storage; <code>"preferred"</code> is more flexible when a username-first flow and credential IDs are available. Likewise, <code>userVerification: "required"</code> is appropriate when policy requires PIN or another UV mechanism, but it adds interaction and can exclude older devices.</p>
+<p>Client hints are not a guaranteed Safari shortcut. WebKit’s public issue tracker still lists implementation work for WebAuthn hints; test the actual installed Safari version rather than promising that a particular dialog disappears. Chrome and other browsers may render different choices from the same options.</p>
+<h2 id="safari-as-a-useful-reference-point">Safari as a useful reference point</h2>
+<p>Safari 26.4 adds CTAP PIN/UV Auth Protocol 2 support and improves the handling of <code>excludeCredentials</code> when exactly one credential is excluded. Both matter for physical authenticators: modern PIN flows need interoperability, and exclusion lists should prevent redundant registrations. Neither change gives a website permission to suppress PIN entry, authenticator touch, or browser-controlled consent.</p>
+<p>For a smart card, WebAuthn communicates with the <strong>FIDO2 authenticator application</strong>, not with its PIV/PKI or physical-access applets. The card must expose a supported FIDO2 transport through its reader and middleware path. A card that supports PKI alone will not become a WebAuthn security key because of a browser hint.</p>
+<h2 id="reduce-decisions-not-security-controls">Reduce decisions, not security controls</h2>
+<p>The optimized journey should be simple: <strong>Register security key → present card or key → verify with PIN if required → touch or confirm → done.</strong> This is a target experience, not a promise of exactly five screens on every browser.</p>
+<p>There are practical improvements beyond the options object:</p>
+<ol>
+<li>Use a dedicated <strong>Register security key</strong> action rather than a generic <strong>Add passkey</strong> entry point.</li>
+<li>Provision the card and its PIN before enrollment when managed issuance permits it.</li>
+<li>Use <code>excludeCredentials</code> to prevent registering the same credential twice, without treating it as a complete account-duplication control.</li>
+<li>Avoid unnecessary application-side confirmation screens; let the browser own the protected authenticator interaction.</li>
+<li>Capture browser, operating system, reader, transport, user verification and registration outcomes during testing. Optimize the number of <strong>decisions</strong> and the median completion time, not merely the number of clicks.</li>
+</ol>
+<h2 id="the-assurance-boundary-still-matters">The assurance boundary still matters</h2>
+<p><code>hints: ["security-key"]</code> does <strong>not</strong> prove that a hardware-bound, enterprise-approved credential was used. Cross-platform authentication can include hybrid mechanisms. For managed FIDO deployments, the relying party needs an enrollment policy, verified attestation where appropriate, device issuance records, credential lifecycle management and reliable server-side WebAuthn verification.</p>
+<p>The browser cannot silently create a credential on a physical smart card, bypass a required PIN, or authorize an unattended touch. Those are deliberate security boundaries, not defects in the user experience.</p>
+<h2 id="try-the-experiment">Try the experiment</h2>
+<p>I built a <a href="/experiments/security-key-first-webauthn-lab/">Security-Key-First WebAuthn Lab</a> to explore these choices on a real browser and authenticator. It supports registration and subsequent assertion verification using browser cryptography, with no backend required for the <strong>local demonstration</strong>. It is not an identity provider and must not be used as an authentication service for real accounts.</p>
+<p>The experiment deliberately keeps the same three user-facing concepts: <strong>identity</strong>, <strong>enroll</strong>, <strong>authenticate</strong>. It exposes the relevant WebAuthn policy settings without hiding the authenticator’s security prompts.</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>Hardware-backed authentication should be strong without being needlessly confusing. The opportunity is not to remove the security ceremony; it is to remove everything around it that does not contribute to assurance.</p>
+<p><strong>A better security-key experience is one where the user knows what to do, the browser knows what to prefer, and the relying party knows what it can actually trust.</strong></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a rel="external" href="https://www.w3.org/TR/webauthn-3/">W3C WebAuthn Level 3 — client hints</a></li>
+<li><a rel="external" href="https://webkit.org/blog/17862/webkit-features-for-safari-26-4/">WebKit — Safari 26.4 Web Authentication updates</a></li>
+<li><a rel="external" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API">MDN — Web Authentication API</a></li>
+</ul>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+</body></html>
