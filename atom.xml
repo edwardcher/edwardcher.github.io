@@ -8,7 +8,7 @@
     <updated>2026-11-21T00:00:00+00:00</updated>
     <id>https://edwardcher.online/atom.xml</id>
     <entry xml:lang="en">
-        <title>Edwardcher&#39;s FIDO MDS Explorer</title>
+        <title>My FIDO MDS Explorer</title>
         <published>2026-11-21T00:00:00+00:00</published>
         <updated>2026-11-21T00:00:00+00:00</updated>
         
@@ -20,10 +20,15 @@
         <id>https://edwardcher.online/identity/edwardcher-fido-mds-explorer/</id>
         
         <content type="html" xml:base="https://edwardcher.online/identity/edwardcher-fido-mds-explorer/">&lt;p&gt;The FIDO Metadata Service (MDS) publishes structured information about authenticator models. It includes identifiers such as AAGUIDs, authenticator capabilities, and metadata status information. That data is useful, but a long list of records or raw JSON is not always the easiest way to explore it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edwardcher’s FIDO MDS Explorer&lt;/strong&gt; presents the catalog as a visual, searchable application. Browse authenticators by vendor or product, search identifiers, and inspect individual metadata records without starting from a table.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My FIDO MDS Explorer&lt;/strong&gt; presents the catalog as a visual, searchable application. Browse authenticators by vendor or product, search identifiers, and inspect individual metadata records without starting from a table.&lt;/p&gt;
 &lt;h2 id=&quot;explore-fido-metadata&quot;&gt;Explore FIDO metadata&lt;/h2&gt;
-&lt;div class=&quot;mds-article-launch&quot;&gt;&lt;a href=&quot;/fido-mds-explorer/&quot; class=&quot;button&quot;&gt;[ Open FIDO MDS Explorer ]&lt;/a&gt;&lt;p&gt;The explorer opens as a full-page application, keeping its interactive controls usable on desktop and mobile.&lt;/p&gt;&lt;/div&gt;
-&lt;iframe src=&quot;/fido-mds-explorer/&quot; title=&quot;Edwardcher&#39;s FIDO MDS Explorer&quot; loading=&quot;lazy&quot; style=&quot;display:block;width:100%;height:720px;max-height:85vh;border:1px solid #294737;border-radius:10px;background:#08100c&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot;&gt;&lt;/iframe&gt;
+&lt;div class=&quot;mds-embed-shell&quot;&gt;
+  &lt;a class=&quot;mds-expand&quot; href=&quot;/fido-mds-explorer/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; aria-label=&quot;Open FIDO MDS Explorer in a new tab&quot; title=&quot;Open full-page explorer&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M14 4h6v6M20 4l-9 9&quot;/&gt;&lt;path d=&quot;M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5&quot;/&gt;&lt;/svg&gt;
+    &lt;span&gt;Full page ↗&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;iframe src=&quot;/fido-mds-explorer/&quot; title=&quot;FIDO MDS Explorer interactive application&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 &lt;p&gt;The explorer includes metadata from different manufacturers, including HID Crescendo products. Its purpose is to make the underlying FIDO records easier to navigate, not to replace certification evidence or deployment testing.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Data freshness:&lt;/strong&gt; This edition uses a bundled metadata snapshot. The catalog is not automatically synchronized with the live FIDO MDS. Consult the &lt;a rel=&quot;external&quot; href=&quot;https://fidoalliance.org/metadata/&quot;&gt;FIDO Alliance Metadata Service&lt;/a&gt; for authoritative information and current status.&lt;/p&gt;
 &lt;p&gt;The application is an independent project and is not an official FIDO Alliance service.&lt;/p&gt;

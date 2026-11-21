@@ -94,3 +94,23 @@ body{background:#000;color:var(--text)}header{background:rgba(0,0,0,.96);border-
 
 /* Single FIDO explorer homepage shortcut. */
 .mds-quick-link{display:inline-flex;align-items:center;gap:.45rem;margin:.6rem 0 0;color:#b4dfc7;text-decoration:none;font-size:.8rem;border:1px solid rgba(109,190,145,.3);padding:.4rem .7rem;border-radius:7px;transition:border-color .25s,color .25s,box-shadow .25s}.mds-quick-link svg{width:17px;height:17px;flex:none}.mds-quick-link:hover,.mds-quick-link:focus-visible{color:#d5ffe5;border-color:#76e2a5;box-shadow:0 0 14px rgba(74,189,120,.17)}
+
+/* Keep homepage identity helix readable at desktop widths; no horizontal text distortion. */
+@media(min-width:1160px){.hero-reference .hero-helix{width:39%;max-width:590px}.hero-introduction{padding-right:39%}}
+
+/* Homepage toolbox: compact, keyboard-accessible and future-ready. */
+.home-toolbox{position:relative;display:inline-block;align-self:center;font-size:14px}
+.home-toolbox summary{display:inline-flex;align-items:center;gap:7px;cursor:pointer;color:var(--accent);padding:8px 9px;border:1px solid rgba(0,224,139,.35);border-radius:5px;list-style:none;user-select:none;transition:border-color .2s,box-shadow .2s}
+.home-toolbox summary::-webkit-details-marker{display:none}
+.home-toolbox summary svg{width:16px;height:16px}
+.home-toolbox summary:hover,.home-toolbox summary:focus-visible,.home-toolbox[open] summary{border-color:var(--accent);box-shadow:0 0 14px rgba(0,224,139,.17);outline-offset:3px}
+.toolbox-panel{position:absolute;z-index:30;left:0;top:calc(100% + 12px);width:min(340px,calc(100vw - 38px));padding:14px;background:#07110f;border:1px solid #327e5c;border-radius:12px;box-shadow:0 14px 36px #000b,0 0 20px #00db7c13;animation:toolbox-reveal .28s ease-out}
+.toolbox-heading{display:flex;gap:13px;align-items:center;margin:0 0 12px;padding:4px 3px 11px;border-bottom:1px solid #244638;color:var(--accent)}
+.toolbox-prompt{font-size:27px;font-weight:bold}.toolbox-heading strong{display:block;font-size:15px;letter-spacing:.08em}.toolbox-heading small{display:block;font-size:11px;color:#b1c8bc;margin-top:3px}
+.toolbox-entry{display:flex;align-items:center;gap:10px;padding:11px 9px;margin-top:5px;border:1px solid #294438;border-radius:8px;color:#e4f0e9;text-decoration:none;transition:background .2s,border-color .2s}
+.toolbox-entry:hover,.toolbox-entry:focus-visible{background:#0e2a20;border-color:var(--accent)}.toolbox-entry>span:nth-child(2){flex:1;font-weight:600;font-size:13px}.toolbox-entry small{display:block;font-weight:400;font-size:11px;color:#a3b8ae;margin-top:4px}.toolbox-entry-icon{color:var(--accent);font-size:21px;width:26px;text-align:center}
+@keyframes toolbox-reveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.home-toolbox{font-size:12px}.home-toolbox summary{padding:6px}.toolbox-panel{left:auto;right:0}}
+@media(prefers-reduced-motion:reduce){.toolbox-panel{animation:none}.home-toolbox summary,.toolbox-entry{transition:none}}
+/* Article iframe expand control. */
+.mds-embed-shell{position:relative;margin:20px 0}.mds-embed-shell iframe{display:block;width:100%;height:720px;max-height:85vh;border:1px solid #294737;border-radius:10px;background:#08100c}.mds-expand{position:absolute;z-index:5;top:12px;right:12px;display:inline-flex;align-items:center;gap:7px;padding:9px 11px;border:1px solid #58b889;border-radius:7px;color:#e1ffe9;background:#081c17;text-decoration:none;font-size:12px;box-shadow:0 3px 16px #000b}.mds-expand:hover,.mds-expand:focus-visible{background:#174735;color:#fff}.mds-expand svg{width:16px;height:16px}

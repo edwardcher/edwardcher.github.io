@@ -16,7 +16,7 @@
   };
   const render = () => {
     ctx.clearRect(0, 0, w, h);
-    const count = 34, radius = Math.min(w * .22, 92), center = w * .40;
+    const count = 17, radius = Math.min(w * .22, 92), center = w * .26;
     const pitch = h / (count - 1);
     for (let i = 0; i < count; i++) {
       const y = i * pitch, phase = i * .37 + frame;
@@ -28,15 +28,21 @@
         ctx.beginPath(); ctx.arc(x, y, 1.7 + (depth + 1) * 1.45, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(0,245,145,${.26 + (depth + 1) * .3})`; ctx.fill();
       }
-      if (i % 2 === 0) {
-        const word = words[Math.floor(i / 2) % words.length];
-        const fontSize = i % 8 === 0 ? 16 : 12;
-        ctx.font = `${i % 8 === 0 ? 'bold ' : ''}${fontSize}px ui-monospace, Menlo, monospace`;
+      if (true) {
+        const word = words[i % words.length];
+        const fontSize = i % 4 === 0 ? 20 : 18;
+        ctx.font = `${i % 4 === 0 ? 'bold ' : ''}${fontSize}px ui-monospace, Menlo, monospace`;
         ctx.textAlign = 'left';
-        const x = center + radius + 10;
+        const x = center + radius + 14;
         const available = Math.max(32, w - x - 14);
         ctx.fillStyle = `rgba(80,255,169,${.66 + .22 * Math.sin(phase) ** 2})`;
-        ctx.fillText(word, x, y + 4, available);
+        // Never horizontally squeeze text: choose a legible font size instead.
+        let size = fontSize;
+        while (size > 12 && ctx.measureText(word).width > available) {
+          size -= 1;
+          ctx.font = `${i % 4 === 0 ? 'bold ' : ''}${size}px ui-monospace, Menlo, monospace`;
+        }
+        ctx.fillText(word, x, y + 5);
       }
     }
   };
