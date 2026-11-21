@@ -125,3 +125,18 @@ body{background:#000;color:var(--text)}header{background:rgba(0,0,0,.96);border-
 .home-toolbox[open] .toolbox-entry:nth-of-type(3){animation-delay:.12s}
 @keyframes toolbox-entry-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.home-toolbox[open] .toolbox-entry{animation:none}.toolbox-entry-arrow{transition:none}}
+
+/* Global header toolbox: preserve original popover visuals, align to viewport. */
+.header-actions .home-toolbox{flex:0 0 auto}
+.header-actions .home-toolbox summary{white-space:nowrap}
+.header-actions .toolbox-panel{left:auto;right:0;text-align:left;white-space:normal;max-width:calc(100vw - 24px)}
+.header-actions .toolbox-entry{white-space:normal}
+header{position:relative;z-index:50}
+@media(max-width:760px){
+ .header-actions .toolbox-panel{right:-55px;width:min(340px,calc(100vw - 24px))}
+}
+@media(max-width:420px){
+ .header-actions .home-toolbox summary{font-size:11px;gap:4px;padding:7px 5px}
+ .header-actions .home-toolbox summary svg{width:13px;height:13px}
+ .header-actions .toolbox-panel{right:-80px}
+}
