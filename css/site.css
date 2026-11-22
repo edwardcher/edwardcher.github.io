@@ -140,3 +140,47 @@ header{position:relative;z-index:50}
  .header-actions .home-toolbox summary svg{width:13px;height:13px}
  .header-actions .toolbox-panel{right:-80px}
 }
+\n
+/* Unified global header controls: consistent 1px borders, height and alignment. */
+.header-actions{gap:clamp(8px,1.3vw,18px)}
+.header-actions>.header-home,
+.header-actions>.header-resume,
+.header-actions>.home-toolbox>summary{
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:8px 13px;
+  border:1px solid rgba(0,224,139,.48);
+  border-radius:6px;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.3;
+  white-space:nowrap;
+}
+.header-actions>.header-home{color:#dedee1;border-color:#36534b}
+.header-actions>.header-resume{color:var(--accent);border-color:rgba(0,224,139,.72)}
+.header-actions>.home-toolbox>summary{gap:7px;border-color:rgba(0,224,139,.48)}
+.header-actions>.header-home:hover,
+.header-actions>.header-home:focus-visible,
+.header-actions>.header-resume:hover,
+.header-actions>.header-resume:focus-visible,
+.header-actions>.home-toolbox>summary:hover,
+.header-actions>.home-toolbox>summary:focus-visible{
+  background:rgba(0,230,138,.08);border-color:var(--accent);
+}
+@media(max-width:760px){
+  .header-actions>.header-home,
+  .header-actions>.header-resume,
+  .header-actions>.home-toolbox>summary{
+    min-height:35px;padding:6px 9px;font-size:12px;
+  }
+}
+@media(max-width:420px){
+  .header-actions>.header-home,
+  .header-actions>.header-resume,
+  .header-actions>.home-toolbox>summary{
+    min-height:32px;padding:5px 6px;font-size:11px;
+  }
+}

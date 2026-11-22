@@ -1,3 +1,162 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Security-Key-First | WebAuthn Lab · Safari + Chrome</title><style>
 :root{color-scheme:dark;--bg:#080e12;--panel:#101c21;--line:#25424a;--green:#79efba;--muted:#a2bac1;--white:#e7f4f2}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#14342e 0%,#080e12 55%);color:var(--white);font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}main{max-width:920px;margin:auto;padding:32px 20px 45px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.18em}.hero{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}h1{font-size:clamp(23px,4vw,38px);line-height:1.18;margin:13px 0 8px;letter-spacing:-.04em}p{color:var(--muted);margin:8px 0 18px}.tag{border:1px solid #37624e;color:var(--green);padding:5px 9px;border-radius:100px;font-size:11px;white-space:nowrap}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}.panel{border:1px solid var(--line);background:linear-gradient(140deg,#122027,#0c1519);border-radius:12px;padding:22px}.panel h2{font-size:15px;margin:0 0 16px}.label{display:block;color:#b6cfd1;font-size:12px;margin:13px 0 6px}input[type=text],select{width:100%;padding:11px 12px;background:#071015;border:1px solid #36545a;color:#e4f5f2;border-radius:7px;font:inherit}input:focus,select:focus,button:focus-visible{outline:2px solid var(--green);outline-offset:2px}.check{display:flex;gap:9px;align-items:center;margin:12px 0;color:#c9dcd9;font-size:12px}.check input{accent-color:#5bd7a4}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button{background:var(--green);border:1px solid var(--green);color:#08201b;border-radius:7px;padding:12px 14px;font:700 12px ui-monospace,monospace;cursor:pointer}button.secondary{background:#14282b;color:var(--green)}button:disabled{opacity:.5;cursor:wait}.terminal{background:#060d10;border:1px solid #28434b;border-radius:8px;padding:15px;min-height:194px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;color:#c4e5dc}.terminal .ok{color:var(--green)}.terminal .bad{color:#ffb0a6}.stats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.stat{font-size:11px;padding:5px 8px;border:1px solid #294a45;border-radius:6px;color:#b9d2ce}.steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.step{border:1px solid #294a45;color:#9eb6b6;border-radius:6px;padding:5px 8px;font-size:10px}.step.active{color:#79efba;border-color:#79efba;background:#16372c}.step.done{color:#d8f9eb;border-color:#3b7d63}footer{border-top:1px solid var(--line);padding-top:18px;margin-top:18px;color:#91b0b4;font-size:11px}a{color:var(--green)}.warning{border-left:2px solid #d2ad66;padding:8px 11px;color:#e5d4a5;background:#33291a40;font-size:12px;margin:16px 0}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{display:block}.tag{display:inline-block}}
-</style></head><body><main><div class="hero"><div><div class="eyebrow">~/EXPERIMENTS / FIDO2 / WEB AUTHENTICATION</div><h1>Security-Key-First<span style="color:var(--green)">_</span></h1><p>A focused, real WebAuthn playground for FIDO2 security keys and smart cards. Safari-first. Chrome-ready.</p></div><span class="tag">LOCAL PoC · NO BACKEND</span></div><div class="stats"><span class="stat" id="secure">SECURE CONTEXT: CHECKING</span><span class="stat" id="browser">WEBAUTHN: CHECKING</span><span class="stat" id="capability">BROWSER CAPABILITIES: CHECKING</span><span class="stat" id="stored">LOCAL CREDENTIALS: 0</span></div><div class="grid"><section class="panel"><h2>01 / Identity & policy</h2><label class="label" for="username">Test identity</label><input id="username" type="text" maxlength="80" value="security-key-lab" autocomplete="off" spellcheck="false"><label class="label" for="credential">Registered local identity</label><select id="credential"><option value="">No local credentials</option></select><label class="check"><input id="uv" type="checkbox"> Require PIN / user verification (UV)</label><label class="check"><input id="resident" type="checkbox"> Require discoverable credential (resident key)</label><label class="check"><input id="strict" type="checkbox" checked> Prefer external security key (Safari / Chrome)</label><div class="actions"><button id="enroll">+ ENROLL SECURITY KEY</button><button id="auth" class="secondary">AUTHENTICATE →</button><button id="discover" class="secondary">PASSWORDLESS / DISCOVERABLE →</button></div><div class="warning">A FIDO2-enabled smart card needs a compatible reader. PKI/PIV functionality alone is not WebAuthn.</div></section><section class="panel"><h2>02 / Ceremony output</h2><div class="steps" aria-label="Ceremony progress"><span id="step1" class="step">01 · READY</span><span id="step2" class="step">02 · BROWSER PROMPT</span><span id="step3" class="step">03 · VERIFY</span></div><div class="terminal" id="output" role="status" aria-live="polite">$ webauthn-lab --ready<br>Waiting for action...</div><div class="actions"><button id="clear" class="secondary">FORGET LOCAL RECORD</button><button id="copy" class="secondary">COPY LOG</button><button id="details" class="secondary">SHOW CAPABILITIES</button></div></section></div><footer>SECURITY BOUNDARY — This lab verifies a WebAuthn assertion in your browser, but it does not provide trusted RP registration, server-held challenges, attestation verification, account sessions or enterprise device assurance. Local storage is editable. Do not use this as production authentication. Registration is origin/RP-ID bound; localhost and GitHub Pages are different RPs. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer">WebAuthn reference</a>.</footer></main><script src="./lab.js"></script></body></html>
+</style><style>/* Site-level return navigation, isolated from tool controls */
+.edwardcher-return{display:inline-flex;align-items:center;justify-content:center;padding:7px 11px;border:1px solid #326449;border-radius:6px;background:#0b1b13;color:#9af0b6;text-decoration:none;font:600 12px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:nowrap;letter-spacing:.01em;position:relative;z-index:30}
+.edwardcher-return:hover,.edwardcher-return:focus-visible{color:#e5fff0;background:#163622;border-color:#74e8a0;outline-offset:3px}
+</style>
+<style id="security-key-lab-visual-refresh">
+/* Visual-only refresh. All WebAuthn controls, IDs and event wiring are preserved. */
+:root{--bg:#070e10;--panel:#0e191c;--line:#29413f;--green:#79efba;--muted:#9eb8b4;--white:#e9f5f0}
+body{background:radial-gradient(ellipse 85% 48% at 80% -8%,#133b30 0%,transparent 75%),#070e10;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+main{max-width:1120px;padding:30px 26px 64px}
+main>nav[aria-label="Site navigation"]{margin-bottom:32px!important}
+.edwardcher-return{padding:8px 12px;border-radius:8px;border-color:#2b5142;background:#0d2119;
+  color:#a4d6c0;transition:background .15s,border-color .15s}
+.hero{align-items:flex-end;gap:20px;padding:0 0 20px}
+.hero>div{max-width:730px}
+.eyebrow{font-size:11px;letter-spacing:.17em;color:#72dca8;font-weight:700}
+h1{font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-.065em;margin:18px 0 14px;font-weight:800}
+.hero p{font-size:14px;line-height:1.7;max-width:650px;margin:0;color:#a6bfbb}
+.tag{font-size:10px;letter-spacing:.04em;padding:7px 11px;border-color:#345b4b;background:#0c261d;
+  color:#9be4bc;flex-shrink:0}
+.stats{gap:7px;margin:7px 0 25px;padding:13px 0 0;border-top:1px solid #203a37}
+.stat{border:1px solid #2b4842;background:#0b1b1a;border-radius:6px;padding:6px 10px;
+  font-size:10px;color:#b0c9c3;letter-spacing:.02em}
+.grid{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.panel{background:linear-gradient(155deg,#101e20 0%,#0b1518 100%);border:1px solid #294540;
+  border-radius:12px;padding:28px;min-width:0;box-shadow:0 12px 40px #00000019}
+.panel h2{font-size:14px;letter-spacing:.015em;margin:0 0 24px;padding-bottom:17px;
+  border-bottom:1px solid #2a423f;color:#e4f4ed}
+.label{font-size:11px;letter-spacing:.02em;font-weight:600;color:#b4cbc6;margin:18px 0 8px}
+input[type=text],select{min-height:45px;padding:10px 13px;border-radius:7px;
+  background:#081215;border-color:#36534f;color:#e8f6f0;font-size:13px}
+.check{gap:11px;margin:15px 0;font-size:11px;line-height:1.5;color:#bfd0cb}
+.check input{width:15px;height:15px;flex-shrink:0}
+.actions{gap:9px;margin-top:24px}
+button{min-height:40px;padding:10px 14px;border-radius:7px;font-size:11px;
+  letter-spacing:0;transition:background .16s,border-color .16s,transform .16s}
+button:not(:disabled):hover{transform:translateY(-1px);background:#b0ffd6;border-color:#b0ffd6}
+button.secondary{background:#0e2623;color:#89efbd;border-color:#478d70}
+button.secondary:not(:disabled):hover{background:#173d30;border-color:#76d9a9;color:#e2ffef}
+#enroll{flex:1 1 180px}
+#auth{flex:1 1 130px}
+#discover{flex:1 1 100%;background:transparent;border-color:#2f5b4c;color:#a8d9c2}
+#discover:hover{background:#142d26}
+.warning{margin:24px 0 0;padding:12px 14px;border-left:2px solid #b69c62;
+  border-radius:0 5px 5px 0;background:#24251b65;color:#d5c9a5;font-size:11px;line-height:1.65}
+.steps{gap:7px;margin:0 0 15px}
+.step{padding:7px 9px;font-size:10px;border-radius:6px;background:#0b1c1d}
+.step.active{background:#153c2c;border-color:#5fd9a0}
+.terminal{min-height:270px;padding:19px;border-radius:8px;background:#050d0f;
+  border:1px solid #294844;font-size:12px;line-height:1.75;color:#c3e5d7;
+  box-shadow:inset 0 1px 0 #ffffff08}
+#clear,#copy,#details{flex:1 1 auto;min-height:37px;padding:9px 11px;font-size:10px}
+footer{border-top:1px solid #29413f;margin-top:28px;padding-top:22px;font-size:10px;
+  line-height:1.8;color:#91ada7}
+@media(max-width:820px){
+  main{padding:24px 18px 48px}
+  .grid{grid-template-columns:1fr}
+  .hero{align-items:flex-start}
+  .panel{padding:22px}
+  .terminal{min-height:180px}
+}
+@media(max-width:520px){
+  main>nav[aria-label="Site navigation"]{margin-bottom:24px!important}
+  .hero{display:block}
+  .tag{display:inline-flex;margin-top:14px}
+  h1{font-size:clamp(28px,9vw,40px)}
+  .stats{margin-top:12px}
+  .panel{padding:19px}
+  .panel h2{margin-bottom:18px}
+  .actions{gap:8px}
+  #enroll,#auth{flex-basis:100%}
+  .step{font-size:9px;padding:6px}
+}
+@media(prefers-reduced-motion:reduce){button,.edwardcher-return{transition:none}button:not(:disabled):hover{transform:none}}
+</style>
+
+<style id="security-key-lab-mobile-product-ui">
+/* Presentation only: existing controls and WebAuthn handlers remain unchanged. */
+main{max-width:1160px}
+.hero{position:relative}
+.hero h1{letter-spacing:-.045em}
+.lab-intro{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.lab-intro-mark{display:grid;place-items:center;width:46px;height:46px;flex:none;border:1px solid #4b9475;
+border-radius:13px;background:linear-gradient(145deg,#1e5a43,#0c2924);color:#a1f7cc;box-shadow:0 0 30px #36ce8620}
+.lab-intro-mark svg{width:26px;height:26px}
+.lab-intro .eyebrow{margin:0}
+.lab-methods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 24px}
+.lab-method{display:flex;align-items:center;gap:13px;padding:15px 16px;border:1px solid #2d5449;border-radius:11px;
+background:linear-gradient(125deg,#112922,#0b1c1d);min-width:0}
+.lab-method-icon{width:42px;height:42px;display:grid;place-items:center;flex:none;border:1px solid #356c56;
+border-radius:10px;background:#153a2d;color:#7eecb6}
+.lab-method-icon svg{width:22px;height:22px}
+.lab-method strong{display:block;font-size:12px;color:#e7f6ef;line-height:1.35}
+.lab-method small{display:block;font-size:10px;color:#9bbab0;line-height:1.5;margin-top:3px}
+.lab-method .lab-method-symbol{display:inline-flex;align-items:center;gap:4px;color:#83eab5;font-size:10px;margin-top:6px}
+.lab-method .lab-method-symbol svg{width:14px;height:14px}
+.panel h2{display:flex;align-items:center;gap:10px}
+.lab-heading-icon{width:28px;height:28px;display:grid;place-items:center;border:1px solid #335d50;
+border-radius:7px;background:#123228;color:#83eab5;flex:none}
+.lab-heading-icon svg{width:17px;height:17px}
+.lab-primary-note{font-size:11px;line-height:1.6;color:#a9c5b9;margin:4px 0 8px}
+.lab-primary-note strong{color:#d5f6e6}
+.actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;line-height:1.35}
+.actions button svg{width:16px;height:16px;flex:none}
+#enroll{box-shadow:0 5px 22px #4fe8a01b}
+#enroll:not(:disabled):hover{box-shadow:0 7px 28px #4fe8a03a}
+.lab-help{display:flex;align-items:flex-start;gap:9px;padding:12px 13px;margin-top:18px;
+border:1px solid #2b5044;border-radius:8px;background:#0c221d;color:#b6d2c4;font-size:10px;line-height:1.6}
+.lab-help svg{flex:none;width:17px;height:17px;color:#86e9b5;margin-top:1px}
+.lab-help strong{color:#d7f6e6}
+.warning{font-size:10px}
+.lab-footer-label{display:inline-flex;align-items:center;gap:6px;color:#a9d4be;font-weight:700}
+.lab-footer-label svg{width:15px;height:15px}
+@media(max-width:820px){
+ .lab-methods{gap:10px}
+ .lab-method{padding:12px}
+ .hero{gap:12px}
+}
+@media(max-width:640px){
+ main{padding:17px 15px 38px}
+ main>nav[aria-label="Site navigation"]{margin-bottom:20px!important}
+ .lab-intro{gap:10px}
+ .lab-intro-mark{width:39px;height:39px;border-radius:10px}
+ .lab-intro-mark svg{width:23px;height:23px}
+ .eyebrow{font-size:9px;letter-spacing:.1em;line-height:1.5}
+ h1{font-size:clamp(29px,8.5vw,42px);margin:13px 0 10px}
+ .hero p{font-size:12px;line-height:1.65}
+ .tag{font-size:9px;margin:9px 0 0}
+ .lab-methods{grid-template-columns:1fr 1fr;gap:8px;margin:15px 0 19px}
+ .lab-method{display:block;padding:12px 10px;min-height:125px}
+ .lab-method-icon{width:34px;height:34px;margin-bottom:8px;border-radius:8px}
+ .lab-method-icon svg{width:19px;height:19px}
+ .lab-method strong{font-size:11px}
+ .lab-method small{font-size:9px;line-height:1.4}
+ .lab-method .lab-method-symbol{font-size:9px}
+ .stats{gap:6px;padding-top:11px;margin-bottom:17px}
+ .stat{font-size:9px;padding:6px 7px}
+ .panel{padding:17px;border-radius:10px}
+ .panel h2{font-size:12px;gap:8px;padding-bottom:13px}
+ .label{font-size:11px}
+ input[type=text],select{font-size:16px;min-height:46px}
+ .check{font-size:11px;line-height:1.5;align-items:flex-start}
+ .check input{width:18px;height:18px;margin:0}
+ .actions{gap:9px}
+ .actions button{font-size:11px;min-height:48px;padding:11px 10px}
+ #enroll,#auth{flex:1 1 100%}
+ #discover{flex:1 1 100%;min-height:44px}
+ #clear,#copy,#details{flex:1 1 calc(50% - 8px);min-height:44px;font-size:10px}
+ .terminal{min-height:190px;padding:14px;font-size:11px}
+ .warning{margin-top:16px}
+ footer{font-size:10px}
+}
+@media(max-width:360px){
+ .lab-methods{grid-template-columns:1fr}
+ .lab-method{display:flex;min-height:auto}
+ .lab-method-icon{margin:0}
+ .stat{font-size:8px}
+}
+</style>
+<style>html.edwardcher-embedded .edwardcher-return,html.edwardcher-embedded .mds-nav-home{display:none!important}</style><script>try{if(window.self!==window.top)document.documentElement.classList.add("edwardcher-embedded")}catch(e){document.documentElement.classList.add("edwardcher-embedded")}</script></head><body><main><nav aria-label="Site navigation" style="display:flex;justify-content:flex-end;margin-bottom:12px"><a class="edwardcher-return" href="/" aria-label="Return to Edwardcher.online homepage" title="Return to Edwardcher.online">← Main site</a></nav><div class="hero"><div><div class="lab-intro"><span class="lab-intro-mark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg></span><div class="eyebrow">~/EXPERIMENTS / FIDO2 / WEB AUTHENTICATION</div></div><h1>Security Key Lab<span style="color:var(--green)">_</span></h1><p>Register and authenticate with FIDO2 security keys and FIDO-enabled smart cards. A focused, browser-based WebAuthn lab.</p></div><span class="tag">LOCAL PoC · NO BACKEND</span></div><div class="lab-methods" aria-label="Physical authenticator options"><div class="lab-method"><span class="lab-method-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg></span><div><strong>USB security key</strong><small>Insert a FIDO2 key into a compatible USB port.</small><span class="lab-method-symbol"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V4m0 0-3 3m3-3 3 3M12 12l-5-3m0 0H4v3h3V9m5 6 5-3m0 0h3v3h-3v-3"/></svg> USB-C / USB-A</span></div></div><div class="lab-method"><span class="lab-method-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20M6 15h5"/></svg></span><div><strong>FIDO2 smart card</strong><small>Use NFC or a compatible smart-card reader.</small><span class="lab-method-symbol"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7c-3 3-3 7 0 10M9 10c-1 1-1 3 0 4M18 7c3 3 3 7 0 10M15 10c1 1 1 3 0 4"/><circle cx="12" cy="12" r="1"/></svg> NFC / reader</span></div></div></div><div class="stats"><span class="stat" id="secure">SECURE CONTEXT: CHECKING</span><span class="stat" id="browser">WEBAUTHN: CHECKING</span><span class="stat" id="capability">BROWSER CAPABILITIES: CHECKING</span><span class="stat" id="stored">LOCAL CREDENTIALS: 0</span></div><div class="grid"><section class="panel"><h2><span class="lab-heading-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg></span>01 / Security key setup</h2><label class="label" for="username">Test identity</label><input id="username" type="text" maxlength="80" value="security-key-lab" autocomplete="off" spellcheck="false"><label class="label" for="credential">Registered local identity</label><select id="credential"><option value="">No local credentials</option></select><label class="check"><input id="uv" type="checkbox"> Require PIN / user verification (UV)</label><label class="check"><input id="resident" type="checkbox"> Require discoverable credential (resident key)</label><label class="check"><input id="strict" type="checkbox" checked> Prefer external security key (Safari / Chrome)</label><p class="lab-primary-note">Start with your <strong>physical authenticator</strong>. Your browser will handle the device prompt.</p><div class="actions"><button id="enroll"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg> ENROLL SECURITY KEY</button><button id="auth" class="secondary"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> AUTHENTICATE →</button><button id="discover" class="secondary">PASSWORDLESS / DISCOVERABLE →</button></div><div class="warning">A FIDO2-enabled smart card needs a compatible reader. PKI/PIV functionality alone is not WebAuthn.</div><div class="lab-help"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7c-3 3-3 7 0 10M9 10c-1 1-1 3 0 4M18 7c3 3 3 7 0 10M15 10c1 1 1 3 0 4"/><circle cx="12" cy="12" r="1"/></svg><span><strong>On mobile:</strong> tap or connect your authenticator when your browser prompts you. NFC and USB support depend on the phone, browser, OS and authenticator.</span></div></section><section class="panel"><h2><span class="lab-heading-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></svg></span>02 / WebAuthn activity</h2><div class="steps" aria-label="Ceremony progress"><span id="step1" class="step">01 · READY</span><span id="step2" class="step">02 · BROWSER PROMPT</span><span id="step3" class="step">03 · VERIFY</span></div><div class="terminal" id="output" role="status" aria-live="polite">$ webauthn-lab --ready<br>Waiting for action...</div><div class="actions"><button id="clear" class="secondary">FORGET LOCAL RECORD</button><button id="copy" class="secondary">COPY LOG</button><button id="details" class="secondary">SHOW CAPABILITIES</button></div></section></div><footer><span class="lab-footer-label"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> SECURITY BOUNDARY</span> — This lab verifies a WebAuthn assertion in your browser, but it does not provide trusted RP registration, server-held challenges, attestation verification, account sessions or enterprise device assurance. Local storage is editable. Do not use this as production authentication. Registration is origin/RP-ID bound; localhost and GitHub Pages are different RPs. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer">WebAuthn reference</a>.</footer></main><script src="./lab.js"></script></body></html>

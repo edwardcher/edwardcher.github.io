@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.">
+  
+  
+  
+  <link rel="canonical" href="https://edwardcher.online/identity/jwtpp-debugging-beyond-decoding/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Edwardcher">
+  <meta property="og:title" content="JWT++ Debugging. Beyond Decoding. | Edwardcher">
+  <meta property="og:description" content="Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.">
+  <meta property="og:url" content="https://edwardcher.online/identity/jwtpp-debugging-beyond-decoding/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JWT++ Debugging. Beyond Decoding. | Edwardcher">
+  <meta name="twitter:description" content="Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.">
+  
+  
+  <script type="application/ld+json">{
+    "@context":"https://schema.org", "@type":"BlogPosting",
+    "@id":"https://edwardcher.online/identity/jwtpp-debugging-beyond-decoding/#article",
+    "headline":"JWT++ Debugging. Beyond Decoding.",
+    "description":"Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.",
+    "url":"https://edwardcher.online/identity/jwtpp-debugging-beyond-decoding/",
+    
+    "author":{"@id":"https://edwardcher.online/#person"},
+    "publisher":{"@id":"https://edwardcher.online/#person"},
+    "isPartOf":{"@id":"https://edwardcher.online/#website"}
+  }</script>
+  
+  <meta name="theme-color" content="#0a0f12">
+  <title>JWT++ Debugging. Beyond Decoding. | Edwardcher</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=20261122-header-polish">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><details class="home-toolbox"><summary aria-label="Open toolbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18M10 13v2h4v-2"/></svg>[ Tools ]</summary><div class="toolbox-panel"><div class="toolbox-heading"><span class="toolbox-prompt" aria-hidden="true">&gt;_</span><div><strong>TOOLBOX</strong><small>Interactive identity tools and experiments</small></div></div><a class="toolbox-entry" href="/fido-mds-explorer/" target="_blank" rel="noopener noreferrer" aria-label="Open FIDO MDS Explorer in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-7 3-7 7v3M12 6c-2.5 0-4 1.5-4 4v4M12 9c-1 0-1.5.7-1.5 2v5M15 10v3c0 3-1 6-3 8M18 11v3c0 3-1 5-2 7M5 17c1 1 2 2 3 2"/></svg></span><span>FIDO MDS Explorer<small>Browse FIDO authenticator metadata</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/identity-globe/" target="_blank" rel="noopener noreferrer" aria-label="Open Identity Globe in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-4 4-4 14 0 18M12 3c4 4 4 14 0 18M5 7h14M5 17h14"/></svg></span><span>Identity Globe<small>Explore identity signals</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/security-key-lab/" target="_blank" rel="noopener noreferrer" aria-label="Open FIDO Test Lab in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg></span><span>FIDO Test Lab<small>Test WebAuthn and security keys</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/toolbox/jwt-workbench/" target="_blank" rel="noopener noreferrer" aria-label="Open JWT++ Debugger in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5 3 12l5 7M16 5l5 7-5 7M14 4l-4 16"/></svg></span><span>JWT++ Debugger<small>Decode JWTs, inspect OAuth &amp; OIDC</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a></div></details><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+<a class="back-link" href="https://edwardcher.online/identity">← Back to collection</a>
+<div class="post-meta">Identity / Authentication</div>
+<h1>JWT++ Debugging. Beyond Decoding.<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.</p>
+<div class="post-body"><h2 id="when-decoding-isn-t-enough">When decoding isn’t enough</h2>
+<p>There is no shortage of JWT decoders. Most do a good job of splitting a token into its header, payload, and signature, making the claims readable within seconds.</p>
+<p>The challenge usually comes afterward.</p>
+<p>A decoded token might look perfectly reasonable, yet authentication or authorization still fails. Is the issuer correct? Does the audience match the application? Has the token expired? Is the signing key available through the expected JWKS endpoint? Or is the problem somewhere in the OAuth 2.0 or OpenID Connect flow?</p>
+<p>Answering these questions often means switching between a decoder, discovery documents, API responses, browser developer tools, and protocol references. Each tool provides part of the picture, but connecting those pieces remains a manual exercise.</p>
+<h2 id="why-i-built-jwt-debugger">Why I built JWT++ Debugger</h2>
+<p>I’ve used several good JWT debugging tools over the years. Rather than replace them, I wanted to address the gaps I encountered when troubleshooting real identity integrations.</p>
+<p>My objective was to bring token inspection, contextual analysis, and OpenID Connect troubleshooting into a single workspace, following a natural progression: <strong>Inspect. Analyze. Review. Act.</strong></p>
+<p>JWT++ starts with the token, but goes beyond displaying decoded claims. It brings related configuration and diagnostics into context, including an OIDC workflow view that helps connect protocol exchanges with the information being examined.</p>
+<p>I also wanted to retain something from my Terminal First approach. The interface remains straightforward for occasional users, while Vim-style keyboard navigation provides a faster workflow for those who prefer it.</p>
+<p>The result is a practical browser-based workbench designed to reduce unnecessary switching between tools and make the next troubleshooting step easier to identify.</p>
+<h2 id="try-jwt-debugger">Try JWT++ Debugger</h2>
+<p>For a quick look, use the embedded application below. For a larger workspace, launch it in its own tab.</p>
+<div class="jwtpp-embed-shell" style="position:relative;display:block;width:100%;margin:20px 0;min-height:650px;">
+  <a href="/toolbox/jwt-workbench/" target="_blank" rel="noopener noreferrer" aria-label="Launch JWT++ Debugger in a new tab" title="Launch JWT++ Debugger" style="position:absolute;z-index:10;top:12px;right:12px;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:8px 13px;border:1px solid #58b889;border-radius:7px;background:#081c17;color:#e1ffe9;font-size:12px;line-height:1.2;text-decoration:none;box-sizing:border-box;">↗ Launch full page</a>
+  <iframe src="/toolbox/jwt-workbench/" title="JWT++ Debugger — interactive JWT and OpenID Connect workbench" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="display:block;width:100%;height:760px;max-height:85vh;min-height:650px;border:1px solid #294737;border-radius:10px;background:#08100c;box-sizing:border-box;"></iframe>
+</div>
+<p>JWT++ is a diagnostic workbench, not a substitute for application-side token validation. Use test or sanitized credentials when investigating authentication flows.</p>
+</div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+
+<script>
+(() => {
+  const toolbox = document.querySelector('.home-toolbox');
+  if (!toolbox) return;
+  document.addEventListener('pointerdown', (event) => {
+    if (toolbox.open && !toolbox.contains(event.target)) toolbox.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toolbox.open) {
+      toolbox.open = false;
+      toolbox.querySelector('summary')?.focus();
+    }
+  });
+  toolbox.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => { toolbox.open = false; });
+  });
+})();
+</script>
+</body></html>

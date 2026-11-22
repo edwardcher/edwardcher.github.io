@@ -5,33 +5,8 @@
     <link rel="self" type="application/atom+xml" href="https://edwardcher.online/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://edwardcher.online"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-21T00:00:00+00:00</updated>
+    <updated>2026-11-20T00:00:00+00:00</updated>
     <id>https://edwardcher.online/atom.xml</id>
-    <entry xml:lang="en">
-        <title>My FIDO MDS Explorer</title>
-        <published>2026-11-21T00:00:00+00:00</published>
-        <updated>2026-11-21T00:00:00+00:00</updated>
-        
-        <author>
-          <name>Unknown</name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://edwardcher.online/identity/edwardcher-fido-mds-explorer/"/>
-        <id>https://edwardcher.online/identity/edwardcher-fido-mds-explorer/</id>
-        
-        <content type="html" xml:base="https://edwardcher.online/identity/edwardcher-fido-mds-explorer/">&lt;p&gt;The FIDO Metadata Service (MDS) publishes structured information about authenticator models. It includes identifiers such as AAGUIDs, authenticator capabilities, and metadata status information. That data is useful, but a long list of records or raw JSON is not always the easiest way to explore it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;My FIDO MDS Explorer&lt;/strong&gt; presents the catalog as a visual, searchable application. Browse authenticators by vendor or product, search identifiers, and inspect individual metadata records without starting from a table.&lt;/p&gt;
-&lt;h2 id=&quot;explore-fido-metadata&quot;&gt;Explore FIDO metadata&lt;/h2&gt;
-&lt;div class=&quot;mds-embed-shell&quot; style=&quot;position:relative;display:block;width:100%;margin:20px 0;min-height:640px;&quot;&gt;
-  &lt;a class=&quot;mds-expand&quot; href=&quot;/fido-mds-explorer/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; aria-label=&quot;Open FIDO MDS Explorer in a new tab&quot; title=&quot;Open full-page explorer&quot; style=&quot;position:absolute;z-index:10;top:12px;right:12px;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:115px;min-height:38px;padding:8px 12px;border:1px solid #58b889;border-radius:7px;background:#081c17;color:#e1ffe9;font-size:12px;line-height:1.2;text-decoration:none;box-sizing:border-box;&quot;&gt;⛶ Full page&lt;/a&gt;
-  &lt;iframe src=&quot;/fido-mds-explorer/&quot; title=&quot;FIDO MDS Explorer interactive application&quot; loading=&quot;eager&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allow=&quot;fullscreen&quot; allowfullscreen style=&quot;display:block;width:100%;height:740px;max-height:85vh;min-height:640px;border:1px solid #294737;border-radius:10px;background:#08100c;box-sizing:border-box;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;p&gt;The explorer includes metadata from different manufacturers, including HID Crescendo products. Its purpose is to make the underlying FIDO records easier to navigate, not to replace certification evidence or deployment testing.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data freshness:&lt;/strong&gt; This edition uses a bundled metadata snapshot. The catalog is not automatically synchronized with the live FIDO MDS. Consult the &lt;a rel=&quot;external&quot; href=&quot;https://fidoalliance.org/metadata/&quot;&gt;FIDO Alliance Metadata Service&lt;/a&gt; for authoritative information and current status.&lt;/p&gt;
-&lt;p&gt;The application is an independent project and is not an official FIDO Alliance service.&lt;/p&gt;
-</content>
-        
-    </entry>
     <entry xml:lang="en">
         <title>Beyond the Terminal: Learning to Appreciate Mechanical Time</title>
         <published>2026-11-20T00:00:00+00:00</published>
@@ -446,72 +421,6 @@ Reports:
         
     </entry>
     <entry xml:lang="en">
-        <title>Java4Shell: When a JVM Vulnerability Threatens Identity and Access</title>
-        <published>2026-11-20T00:00:00+00:00</published>
-        <updated>2026-11-20T00:00:00+00:00</updated>
-        
-        <author>
-          <name>Unknown</name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://edwardcher.online/identity/java4shell-identity-compromise/"/>
-        <id>https://edwardcher.online/identity/java4shell-identity-compromise/</id>
-        
-        <content type="html" xml:base="https://edwardcher.online/identity/java4shell-identity-compromise/">&lt;h2 id=&quot;the-authentication-boundary-starts-inside-the-runtime&quot;&gt;The authentication boundary starts inside the runtime&lt;/h2&gt;
-&lt;p&gt;Java4Shell (&lt;strong&gt;CVE-2026-114938&lt;/strong&gt;) was disclosed in November 2026. Unlike the 2022 Spring4Shell data-binding vulnerability, this flaw is in the &lt;strong&gt;OpenJDK HotSpot JVM’s accelerated Base64 decoder&lt;/strong&gt;. The reported bug is an out-of-bounds heap write involving an AVX-512 VBMI optimized decoding path. Exploitability requires an affected runtime, suitable x86-64 hardware, and a reachable decoding path. A Java installation alone is not proof of exposure.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-lang=&quot;text&quot;&gt;[unauthenticated request]
-          |
-          v
-[Base64-bearing input: auth header / token / encoded payload]
-          |
-          v
-[application calls Java Base64 decoder]
-          |
-          v
-[affected HotSpot + AVX-512 VBMI path]
-          |
-          v
-[potential memory corruption]
-          |
-          +----&amp;gt; [service failure / possible information disclosure]
-          |
-          +----&amp;gt; [possible code execution, target-dependent]
-                       |
-                       v
-              [application privileges]
-                       |
-             +---------+----------+
-             |                    |
-       [service tokens]    [secrets / sessions]
-             |                    |
-             +---------+----------+
-                       v
-             [downstream access risk]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;why-identity-systems-matter&quot;&gt;Why identity systems matter&lt;/h2&gt;
-&lt;p&gt;Base64 is a common encoding, not encryption. It appears in HTTP Basic authentication, token-processing paths, and some identity integrations. &lt;strong&gt;Not every JWT, SAML, or Basic-auth endpoint is exploitable&lt;/strong&gt;: the actual Java decoder path, runtime and hardware must be established. Nevertheless, identity providers and gateways deserve priority because they may process unauthenticated input and hold authority over downstream services.&lt;/p&gt;
-&lt;p&gt;If application compromise becomes possible, the attacker may inherit the process’s ability to access service credentials, signing-related configuration, sessions, or downstream APIs. &lt;strong&gt;Credential theft is a potential consequence of a successful compromise, not an automatic feature of Java4Shell.&lt;/strong&gt; FIDO2 and passkeys remain valuable for user authentication, but do not by themselves protect an already compromised workload’s bearer tokens.&lt;/p&gt;
-&lt;h2 id=&quot;remediation-is-a-trust-decision&quot;&gt;Remediation is a trust decision&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Inventory &lt;strong&gt;running&lt;/strong&gt; JVMs, vendor builds, bundled runtimes, containers, and appliances—not just the &lt;code&gt;java&lt;/code&gt; binary on a workstation.&lt;/li&gt;
-&lt;li&gt;Determine whether the host has the requisite AVX-512 VBMI support and whether untrusted Base64 reaches the relevant decoder.&lt;/li&gt;
-&lt;li&gt;Apply the vendor’s November 2026 fixed build, restart affected processes, and rebuild affected images.&lt;/li&gt;
-&lt;li&gt;Where patching is delayed, consider &lt;code&gt;-XX:-UseBASE64Intrinsics&lt;/code&gt; or, on supported x86-64 deployments, &lt;code&gt;-XX:UseAVX=2&lt;/code&gt;; validate operational effects.&lt;/li&gt;
-&lt;li&gt;Review workload identity privileges, accessible secrets, token audiences, and anomalous downstream token usage.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The executive question is not only &lt;em&gt;Is the CVE present?&lt;/em&gt; but &lt;em&gt;Which identity-bearing services are exposed, what authority do they possess, and what evidence confirms the risk is contained?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;See the companion &lt;a href=&quot;/experiments/java4shell-identity-exposure-lab/&quot;&gt;Java4Shell local assessment and reporting lab&lt;/a&gt; for a reproducible, non-destructive triage workflow and management report.&lt;/p&gt;
-&lt;h2 id=&quot;sources-and-technical-references&quot;&gt;Sources and technical references&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://calif.io/java4shell/&quot;&gt;Calif original Java4Shell research and proof-of-concept discussion&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching&quot;&gt;CISA: Critical Java Vulnerability Requires Immediate Patching&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://research.jfrog.com/post/java4shell-vulnerability/&quot;&gt;JFrog: Java4Shell vulnerability analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability&quot;&gt;Tenable: Java4Shell FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>Security-Key-First WebAuthn Lab</title>
         <published>2026-11-19T00:00:00+00:00</published>
         <updated>2026-11-19T00:00:00+00:00</updated>
@@ -543,77 +452,6 @@ Reports:
 &lt;p&gt;The default configuration prefers a security key, cross-platform attachment, and optional PIN/UV (&lt;code&gt;preferred&lt;/code&gt;). Turn on &lt;strong&gt;Require PIN / user verification&lt;/strong&gt; when testing a higher-assurance policy. Requiring discoverable credentials is also optional because many cards have limited resident credential storage.&lt;/p&gt;
 &lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
 &lt;p&gt;The browser chooses its own dialogs. A smart card needs a functioning FIDO2 application and reader path; PIV/PKI alone is insufficient. The demo cannot attest that a particular physical card model was used. Clearing browser storage removes the local registration record but &lt;strong&gt;does not erase the credential from the security key&lt;/strong&gt;.&lt;/p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Making Security-Key Enrollment Less Painful in Modern Browsers</title>
-        <published>2026-11-19T00:00:00+00:00</published>
-        <updated>2026-11-19T00:00:00+00:00</updated>
-        
-        <author>
-          <name>Unknown</name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://edwardcher.online/identity/security-key-enrollment-browser-ux/"/>
-        <id>https://edwardcher.online/identity/security-key-enrollment-browser-ux/</id>
-        
-        <content type="html" xml:base="https://edwardcher.online/identity/security-key-enrollment-browser-ux/">&lt;p&gt;A physical FIDO2 security key is one of the strongest ways to establish device-bound authentication. Yet enrolling one in a modern browser can feel unnecessarily complicated. A user selects &lt;strong&gt;Add passkey&lt;/strong&gt;, sees a choice of credential providers, perhaps a phone or QR-code prompt, and only eventually finds the physical key they already have in hand.&lt;/p&gt;
-&lt;p&gt;The security ceremony is important. The maze of choices is not.&lt;/p&gt;
-&lt;p&gt;My interest is in making the registration journey more predictable, especially when the intended authenticator is already known: an enterprise-issued security key or a FIDO2-enabled smart card inserted into a compatible reader.&lt;/p&gt;
-&lt;h2 id=&quot;the-browser-does-not-know-the-enterprise-s-intent&quot;&gt;The browser does not know the enterprise’s intent&lt;/h2&gt;
-&lt;p&gt;Passkeys serve several legitimate use cases: synchronized credentials, built-in platform authenticators, hybrid phone authentication and removable security keys. Browser interfaces are designed to accommodate all of them. That flexibility becomes friction when an enterprise is deliberately enrolling a particular physical credential.&lt;/p&gt;
-&lt;p&gt;A user should not have to discover the right path through several dialogs. The relying party can express its intent before the browser starts the ceremony.&lt;/p&gt;
-&lt;h2 id=&quot;a-security-key-first-request&quot;&gt;A security-key-first request&lt;/h2&gt;
-&lt;p&gt;WebAuthn Level 3 defines &lt;strong&gt;client hints&lt;/strong&gt;, including &lt;code&gt;&quot;security-key&quot;&lt;/code&gt;, to express a preferred authenticator experience. In registration, &lt;code&gt;authenticatorAttachment: &quot;cross-platform&quot;&lt;/code&gt; provides a useful compatibility signal for older implementations. They are not the same thing: hints are UI preferences, while attachment selection constrains authenticator categories; neither identifies a particular smart card or proves enterprise issuance.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-lang=&quot;javascript&quot;&gt;const credential = await navigator.credentials.create({
-  publicKey: {
-    challenge, // fresh challenge from the relying party
-    rp: { id: location.hostname, name: &amp;quot;Example RP&amp;quot; },
-    user: { id: userHandle, name: username, displayName: username },
-    pubKeyCredParams: [{ type: &amp;quot;public-key&amp;quot;, alg: -7 },
-                       { type: &amp;quot;public-key&amp;quot;, alg: -257 }],
-    hints: [&amp;quot;security-key&amp;quot;],
-    authenticatorSelection: {
-      authenticatorAttachment: &amp;quot;cross-platform&amp;quot;,
-      residentKey: &amp;quot;preferred&amp;quot;,
-      userVerification: &amp;quot;preferred&amp;quot;
-    },
-    extensions: { credProps: true },
-    attestation: &amp;quot;none&amp;quot;
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The example expresses a preference rather than an assurance policy. For enterprise deployment, decide whether discoverable credentials, user verification, and verified authenticator attestation are mandatory. &lt;code&gt;residentKey: &quot;required&quot;&lt;/code&gt; can consume scarce authenticator storage; &lt;code&gt;&quot;preferred&quot;&lt;/code&gt; is more flexible when a username-first flow and credential IDs are available. Likewise, &lt;code&gt;userVerification: &quot;required&quot;&lt;/code&gt; is appropriate when policy requires PIN or another UV mechanism, but it adds interaction and can exclude older devices.&lt;/p&gt;
-&lt;p&gt;Client hints are not a guaranteed Safari shortcut. WebKit’s public issue tracker still lists implementation work for WebAuthn hints; test the actual installed Safari version rather than promising that a particular dialog disappears. Chrome and other browsers may render different choices from the same options.&lt;/p&gt;
-&lt;h2 id=&quot;safari-as-a-useful-reference-point&quot;&gt;Safari as a useful reference point&lt;/h2&gt;
-&lt;p&gt;Safari 26.4 adds CTAP PIN/UV Auth Protocol 2 support and improves the handling of &lt;code&gt;excludeCredentials&lt;/code&gt; when exactly one credential is excluded. Both matter for physical authenticators: modern PIN flows need interoperability, and exclusion lists should prevent redundant registrations. Neither change gives a website permission to suppress PIN entry, authenticator touch, or browser-controlled consent.&lt;/p&gt;
-&lt;p&gt;For a smart card, WebAuthn communicates with the &lt;strong&gt;FIDO2 authenticator application&lt;/strong&gt;, not with its PIV/PKI or physical-access applets. The card must expose a supported FIDO2 transport through its reader and middleware path. A card that supports PKI alone will not become a WebAuthn security key because of a browser hint.&lt;/p&gt;
-&lt;h2 id=&quot;reduce-decisions-not-security-controls&quot;&gt;Reduce decisions, not security controls&lt;/h2&gt;
-&lt;p&gt;The optimized journey should be simple: &lt;strong&gt;Register security key → present card or key → verify with PIN if required → touch or confirm → done.&lt;/strong&gt; This is a target experience, not a promise of exactly five screens on every browser.&lt;/p&gt;
-&lt;p&gt;There are practical improvements beyond the options object:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Use a dedicated &lt;strong&gt;Register security key&lt;/strong&gt; action rather than a generic &lt;strong&gt;Add passkey&lt;/strong&gt; entry point.&lt;/li&gt;
-&lt;li&gt;Provision the card and its PIN before enrollment when managed issuance permits it.&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;excludeCredentials&lt;/code&gt; to prevent registering the same credential twice, without treating it as a complete account-duplication control.&lt;/li&gt;
-&lt;li&gt;Avoid unnecessary application-side confirmation screens; let the browser own the protected authenticator interaction.&lt;/li&gt;
-&lt;li&gt;Capture browser, operating system, reader, transport, user verification and registration outcomes during testing. Optimize the number of &lt;strong&gt;decisions&lt;/strong&gt; and the median completion time, not merely the number of clicks.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;the-assurance-boundary-still-matters&quot;&gt;The assurance boundary still matters&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;hints: [&quot;security-key&quot;]&lt;/code&gt; does &lt;strong&gt;not&lt;/strong&gt; prove that a hardware-bound, enterprise-approved credential was used. Cross-platform authentication can include hybrid mechanisms. For managed FIDO deployments, the relying party needs an enrollment policy, verified attestation where appropriate, device issuance records, credential lifecycle management and reliable server-side WebAuthn verification.&lt;/p&gt;
-&lt;p&gt;The browser cannot silently create a credential on a physical smart card, bypass a required PIN, or authorize an unattended touch. Those are deliberate security boundaries, not defects in the user experience.&lt;/p&gt;
-&lt;h2 id=&quot;try-the-experiment&quot;&gt;Try the experiment&lt;/h2&gt;
-&lt;p&gt;I built a &lt;a href=&quot;/experiments/security-key-first-webauthn-lab/&quot;&gt;Security-Key-First WebAuthn Lab&lt;/a&gt; to explore these choices on a real browser and authenticator. It supports registration and subsequent assertion verification using browser cryptography, with no backend required for the &lt;strong&gt;local demonstration&lt;/strong&gt;. It is not an identity provider and must not be used as an authentication service for real accounts.&lt;/p&gt;
-&lt;p&gt;The experiment deliberately keeps the same three user-facing concepts: &lt;strong&gt;identity&lt;/strong&gt;, &lt;strong&gt;enroll&lt;/strong&gt;, &lt;strong&gt;authenticate&lt;/strong&gt;. It exposes the relevant WebAuthn policy settings without hiding the authenticator’s security prompts.&lt;/p&gt;
-&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
-&lt;p&gt;Hardware-backed authentication should be strong without being needlessly confusing. The opportunity is not to remove the security ceremony; it is to remove everything around it that does not contribute to assurance.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;A better security-key experience is one where the user knows what to do, the browser knows what to prefer, and the relying party knows what it can actually trust.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://www.w3.org/TR/webauthn-3/&quot;&gt;W3C WebAuthn Level 3 — client hints&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://webkit.org/blog/17862/webkit-features-for-safari-26-4/&quot;&gt;WebKit — Safari 26.4 Web Authentication updates&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API&quot;&gt;MDN — Web Authentication API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
         
     </entry>

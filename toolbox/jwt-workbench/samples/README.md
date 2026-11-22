@@ -1,0 +1,1 @@
+All samples are synthetic and for local testing only. Issuer: https://mock.identity-workbench.example/issuer (reserved .example domain, not a live provider). RS256 signatures use a newly generated test-only private key that is NOT distributed. Matching public key: jwks.json. Successful test-key signature verification does not establish issuer trust.
