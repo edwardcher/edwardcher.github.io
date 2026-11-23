@@ -46,7 +46,7 @@
       }
     }
   };
-  const tick = () => { frame += .006; render(); raf = requestAnimationFrame(tick); };
+  const tick = () => { frame += .012; render(); raf = requestAnimationFrame(tick); };
   const update = () => { cancelAnimationFrame(raf); resize(); if (reduced.matches) render(); else tick(); };
   window.addEventListener('resize', update, { passive:true });
   reduced.addEventListener?.('change', update);
