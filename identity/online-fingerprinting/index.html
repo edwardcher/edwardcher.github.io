@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore browser fingerprinting, device signals, network context and the limits of identity attribution.">
+  
+  
+  
+  <link rel="canonical" href="https://edwardcher.online/identity/online-fingerprinting/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Edwardcher">
+  <meta property="og:title" content="How much can a website learn about you without you ever signing in? | Edwardcher">
+  <meta property="og:description" content="Explore browser fingerprinting, device signals, network context and the limits of identity attribution.">
+  <meta property="og:url" content="https://edwardcher.online/identity/online-fingerprinting/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How much can a website learn about you without you ever signing in? | Edwardcher">
+  <meta name="twitter:description" content="Explore browser fingerprinting, device signals, network context and the limits of identity attribution.">
+  
+  
+  <script type="application/ld+json">{
+    "@context":"https://schema.org", "@type":"BlogPosting",
+    "@id":"https://edwardcher.online/identity/online-fingerprinting/#article",
+    "headline":"How much can a website learn about you without you ever signing in?",
+    "description":"Explore browser fingerprinting, device signals, network context and the limits of identity attribution.",
+    "url":"https://edwardcher.online/identity/online-fingerprinting/",
+    
+    "author":{"@id":"https://edwardcher.online/#person"},
+    "publisher":{"@id":"https://edwardcher.online/#person"},
+    "isPartOf":{"@id":"https://edwardcher.online/#website"}
+  }</script>
+  
+  <meta name="theme-color" content="#0a0f12">
+  <title>How much can a website learn about you without you ever signing in? | Edwardcher</title>
+  <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=20261125-housekeeping">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css">
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
+  <link rel="stylesheet" href="https://edwardcher.online/css/navigation.css?v=1">
+</head>
+<body id="site-top">
+<header><div class="wrap nav">
+  <a class="brand" href="https://edwardcher.online"><span class="brand-prompt">&gt;</span> edwardcher.online<span class="brand-cursor" aria-hidden="true"></span></a>
+  <nav class="header-actions" aria-label="Primary navigation"><a class="header-home" href="https://edwardcher.online">[ Home ]</a><details class="home-toolbox"><summary aria-label="Open toolbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18M10 13v2h4v-2"/></svg>[ Tools ]</summary><div class="toolbox-panel"><div class="toolbox-heading"><span class="toolbox-prompt" aria-hidden="true">&gt;_</span><div><strong>TOOLBOX</strong><small>Interactive identity tools and experiments</small></div></div><a class="toolbox-entry" href="/toolbox/browser-footprint/"><span class="toolbox-entry-icon" aria-hidden="true">◎</span><span>Browser Footprint<small>Explore what your browser reveals</small></span><span class="toolbox-entry-arrow">↗</span></a><a class="toolbox-entry" href="/fido-mds-explorer/" target="_blank" rel="noopener noreferrer" aria-label="Open FIDO MDS Explorer in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-7 3-7 7v3M12 6c-2.5 0-4 1.5-4 4v4M12 9c-1 0-1.5.7-1.5 2v5M15 10v3c0 3-1 6-3 8M18 11v3c0 3-1 5-2 7M5 17c1 1 2 2 3 2"/></svg></span><span>FIDO MDS Explorer<small>Browse FIDO authenticator metadata</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/identity-globe/" target="_blank" rel="noopener noreferrer" aria-label="Open Identity Globe in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-4 4-4 14 0 18M12 3c4 4 4 14 0 18M5 7h14M5 17h14"/></svg></span><span>Identity Globe<small>Explore identity signals</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/security-key-lab/" target="_blank" rel="noopener noreferrer" aria-label="Open Security Key Test in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="4"/><path d="m11 12 9 9m-4-4 2-2m-4 0 2-2"/></svg></span><span>Security Key Test<small>Test WebAuthn and security keys</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a><a class="toolbox-entry" href="/toolbox/jwt-workbench/" target="_blank" rel="noopener noreferrer" aria-label="Open JWT++ Debugger in a new tab"><span class="toolbox-entry-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5 3 12l5 7M16 5l5 7-5 7M14 4l-4 16"/></svg></span><span>JWT++ Debugger<small>Decode JWTs, inspect OAuth &amp; OIDC</small></span><span class="toolbox-entry-arrow" aria-hidden="true">↗</span></a></div></details><a class="header-resume" href="https://edwardcher.online/resume/">[ View Profile ]</a><button class="signature-header-help" type="button" data-navigation-help aria-label="Navigation help">?</button></nav>
+</div></header>
+<main class="wrap">
+<article class="post-page article-reading">
+
+
+
+<nav class="reading-nav" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/identity/">Identity</a></nav>
+<div class="post-meta">Identity / Privacy</div>
+<h1>How much can a website learn about you without you ever signing in?<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Explore browser fingerprinting, device signals, network context and the limits of identity attribution.</p>
+<div class="post-body"><p>We tend to associate identity with signing in. Yet a website can begin learning about a visitor long before an authentication ceremony takes place. The question is not simply whether a website knows your name, but whether it can recognize your browser again and associate observations with earlier activity.</p>
+<p><a href="/toolbox/browser-footprint/">Explore your Browser Footprint</a> to inspect the signals discussed here, including their live values and the APIs used to obtain them.</p>
+<h2 id="from-observation-to-recognition">From observation to recognition</h2>
+<p>An HTTP request already reveals information to the receiving service, including the apparent source IP address and request headers. JavaScript adds another layer: display dimensions, language preferences, time zone, reported platform and hardware concurrency. Some browsers deliberately reduce or withhold these values to limit fingerprinting.</p>
+<p>Individually, these observations are often unremarkable. Their combination can be more distinctive. A fingerprinting implementation normalizes selected values and may hash them into a compact identifier. Hashing does not create additional identifying information, however. Two browsers with identical inputs produce the same hash, while a configuration change can produce a different hash for the same browser.</p>
+<p>A first-party cookie offers a different mechanism: recognition of a browser profile that retains a stored value. It does not establish that the same physical device or person has returned. Fingerprinting and cookies should not be confused with one another.</p>
+<h2 id="the-security-value-and-the-privacy-cost">The security value — and the privacy cost</h2>
+<p>In identity security, device and network observations can provide context for a risk decision. A change in browser characteristics or network location may justify additional verification, especially when combined with other evidence of suspicious activity. But a changed fingerprint is not evidence of compromise on its own. Browser updates, accessibility settings, privacy controls and external displays can all change the observations.</p>
+<p>The same ability to correlate visits can also support unwanted tracking. The distinction lies in purpose, consent, retention and how the resulting intelligence is used. A defensive implementation should collect only what it needs, document its limitations and avoid turning uncertain observations into definitive claims about a person.</p>
+<h2 id="beyond-the-browser">Beyond the browser</h2>
+<p>A public IP lookup may reveal an approximate network location, provider and autonomous system. It does not establish a residential address or a person’s identity. VPNs, shared networks and proxies complicate interpretation; their presence is not inherently suspicious. Public-source intelligence can add context, but attribution requires independent corroboration and appropriate authorization. Browser APIs do not reliably reveal whether a VPN or screen-recording application is active.</p>
+<h2 id="recognition-is-not-authentication">Recognition is not authentication</h2>
+<p>A fingerprint is a correlation signal, not a cryptographic credential. A high observation-coverage score says that more requested values were available; it does not measure uniqueness, identity confidence or fraud probability. Establishing statistical uniqueness requires a representative comparison population. Authentication using a passkey, by contrast, can demonstrate possession of a registered cryptographic credential through a challenge-response ceremony.</p>
+<p>These distinctions matter when designing risk-based authentication: intelligence can inform a decision, but should not silently replace the evidence needed to establish trust.</p>
+<h2 id="a-living-browser-api-reference">A living browser API reference</h2>
+<p>Browser Footprint makes the collection process visible. Expand each observation to inspect its source expression, raw value and limitations. The particle portrait represents the available signals, not your actual appearance. Local analysis is the default; network lookup and remembering visits are optional.</p>
+<p>More advanced backend capabilities are coming soon. The aim is to make the boundary between observation, correlation and verified identity clearer as the tool evolves.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a rel="external" href="https://developer.mozilla.org/en-US/docs/Glossary/Fingerprinting">MDN — Browser fingerprinting</a></li>
+<li><a rel="external" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">MDN — Navigator</a></li>
+<li><a rel="external" href="https://www.w3.org/TR/webauthn-3/">W3C — Web Authentication</a></li>
+</ul>
+</div>
+<nav class="reading-end signature-nav" aria-label="Article navigation"><div class="article-neighbors"><a href="https://edwardcher.online/identity/jwtpp-debugging-beyond-decoding/"><small>← Previous article</small><strong>JWT++ Debugging. Beyond Decoding.</strong></a></div><div class="signature-actions"><a href="/identity/">← Identity</a><a href="/">⌂ Home</a><a href="#site-top">↑ Back to top</a></div></nav>
+<div id="reading-progress" aria-hidden="true"></div>
+</article>
+
+<footer class="footer"><span>© 2026 Edwardcher</span><span>Built with Rust · Helix · Zola · Markdown · Git</span></footer>
+</main>
+<script src="https://edwardcher.online/js/helix.js" defer></script>
+
+<script>
+(() => {
+  const toolbox = document.querySelector('.home-toolbox');
+  if (!toolbox) return;
+  document.addEventListener('pointerdown', (event) => {
+    if (toolbox.open && !toolbox.contains(event.target)) toolbox.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toolbox.open) {
+      toolbox.open = false;
+      toolbox.querySelector('summary')?.focus();
+    }
+  });
+  toolbox.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => { toolbox.open = false; });
+  });
+})();
+</script>
+<dialog id="reading-dialog" class="signature-help" aria-labelledby="signature-title">
+  <div class="signature-bar"><span> &gt; edwardcher.online / help</span><form method="dialog"><button aria-label="Close navigation help" autofocus>×</button></form></div>
+  <div class="signature-body"><p class="signature-kicker">TERMINAL FIRST / NAVIGATION</p><h2 id="signature-title">Navigate your way.</h2><p>Read naturally. Use the keyboard when you want to move faster.</p>
+  <dl><dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Scroll down / up</dd><dt><kbd>g</kbd> <kbd>g</kbd></dt><dd>Beginning of page</dd><dt><kbd>G</kbd></dt><dd>End of page</dd><dt><kbd>h</kbd></dt><dd>Home</dd><dt><kbd>f</kbd></dt><dd>Toggle link selection</dd><dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Next / previous control in link mode</dd><dt><kbd>l</kbd> / <kbd>Enter</kbd></dt><dd>Open selected link or control</dd><dt><kbd>Tab</kbd></dt><dd>Standard keyboard navigation</dd><dt><kbd>?</kbd></dt><dd>Navigation help</dd><dt><kbd>Esc</kbd></dt><dd>Close help / exit link mode</dd></dl>
+  <nav aria-label="Quick destinations"><a href="/">Home</a><a href="/blog/">Writing</a><a href="/identity/">Identity</a><a href="/experiments/">Experiments</a><a href="/resume/">Profile</a></nav><p class="signature-note">Keyboard shortcuts are optional. Standard browser navigation always works.</p></div>
+</dialog>
+
+<script src="https://edwardcher.online/js/reading-navigation.js" defer></script>
+</body></html>

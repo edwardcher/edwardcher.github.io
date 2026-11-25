@@ -214,3 +214,6 @@ img[src$="hid-crescendo-cards.png"],img[src$="hid-crescendo-keys.png"]{mix-blend
  #selection-drawer .selection-bottom button{margin-top:0;min-height:46px}
  #selection-drawer .selection-swipe-hint{font-size:11px;color:#8dc8a9;margin:0;padding:5px 14px;background:#10211d;border-bottom:1px solid #28483d;flex:0 0 auto}
 }
+
+/* Housekeeping: open verification and certification layouts */
+.uv-option{display:block}.uv-operator{display:block;text-align:center;margin:8px 0}.uv-combination{min-width:0}.uv-group-label{font-size:11px;color:#a6b8b5;margin:8px 0}.uv-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px 8px}.uv-chip{border:0;background:none;border-radius:0;display:flex;flex-direction:column;justify-content:flex-start;text-align:center;gap:6px;padding:6px 2px;min-width:0;overflow-wrap:anywhere}.uv-chip svg{width:28px;height:28px}.assurance-tile{border:0;background:none;padding:10px 3px;gap:7px}.assurance-icon svg{width:28px;height:28px;display:block}.assurance-grid{gap:10px}.assurance-evidence{margin-top:14px}
