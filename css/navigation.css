@@ -4,3 +4,5 @@
 .signature-nav{background:transparent;border:0;border-radius:0;padding:18px 0;margin:40px 0 24px;border-top:1px solid #31594b}.reading-end .signature-actions{border-top:0;padding-top:0}
 
 .article-neighbors{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.article-neighbors a{display:flex;flex-direction:column;gap:6px;max-width:48%;margin-bottom:18px}.article-neighbors small{color:#80dfb4}@media(max-width:520px){.article-neighbors a{max-width:100%}}
+
+.signature-body .workspace-label{flex-basis:100%;font-size:.75rem;letter-spacing:.08em;color:#a5c4b8}.signature-body nav a{display:inline-flex;align-items:center;gap:6px;min-height:36px;text-decoration:none}.signature-body nav a[aria-current]{color:#d9ffe9;text-decoration:underline;text-underline-offset:4px}.signature-body nav a:hover{text-decoration:underline}

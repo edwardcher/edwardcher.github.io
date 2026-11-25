@@ -44,7 +44,7 @@ $('ip').onclick = async () => {
     const d = await response.json();
     if(d.error||d.success===false||typeof d.ip!=='string'||!d.ip.trim()) throw new Error('No usable IP returned');
     const result = d.ip.trim()+' · Public '+(d.ip.includes(':')?'IPv6':'IPv4')+' observed by ipify';
-    ipCache.set(name,result); status.textContent=result; $('ipdiagnostic').textContent='Successful lookup; cached in page memory.';
+    ipCache.set(name,result); status.textContent=result; $('ipdiagnostic').textContent='Successful lookup; cached in page memory.'; replay();
   } catch(e) {
     status.textContent='Public IP lookup unavailable. Try again later.';
     $('ipdiagnostic').textContent=name+': '+(e.name==='AbortError'?'Timed out':e instanceof TypeError?'Network or browser policy prevented request':e.message);
@@ -55,4 +55,39 @@ const key='bf_visits';function read(){return Number(document.cookie.split('; ').
 const c=$('portrait'),ctx=c.getContext('2d'),reduced=matchMedia('(prefers-reduced-motion: reduce)'),points=[];
 // Front-facing parametric relief: symbolic geometry, never biometric data.
 for(let i=0;i<4200;i++){const y=2*(i+.5)/4200-1,a=i*2.399963,r=Math.sqrt(1-y*y),x=r*Math.cos(a),z=r*Math.sin(a);if(z<0)continue;const jaw=1-.30*Math.max(0,y);let depth=z*.50;const gauss=(cx,cy,sx,sy)=>Math.exp(-(((x-cx)/sx)**2+((y-cy)/sy)**2));depth+=.37*gauss(0,.02,.14,.24);depth-=.25*(gauss(.34,-.19,.22,.12)+gauss(-.34,-.19,.22,.12));depth+=.10*(gauss(.34,-.19,.10,.055)+gauss(-.34,-.19,.10,.055));depth-=.13*gauss(0,.40,.36,.045);depth+=.09*gauss(0,.50,.28,.12);const shade=Math.max(.12,Math.min(1,.52+depth*.6-.35*(gauss(.34,-.19,.18,.08)+gauss(-.34,-.19,.18,.08))-.35*gauss(0,.40,.32,.035)));points.push([x*jaw,y,depth,(Math.random()-.5)*4,(Math.random()-.5)*4,shade,i%rows.length]);}
-let behaviorLayer=0;document.addEventListener('bf-behavior',e=>{behaviorLayer=e.detail.samples;replay()});let start=performance.now(),frame;function draw(t){if(!ctx)return;const w=c.clientWidth,h=c.clientHeight,d=Math.min(devicePixelRatio,2);if(c.width!==Math.round(w*d)||c.height!==Math.round(h*d)){c.width=Math.round(w*d);c.height=Math.round(h*d);}ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);const p=reduced.matches?1:Math.min(1,(t-start)/2400),s=Math.min(w,h)*.39;for(const [x,y,z,rx,ry,shade,g] of points){const missing=rows[g][1]==null;const local=Math.max(0,Math.min(1,p*1.6-g/rows.length*.6)),e=1-(1-local)**3;const X=rx*(1-e)+x*e,Y=ry*(1-e)+y*e;const pers=3/(3-z*e);ctx.fillStyle=behaviorLayer>0&&g<behaviorLayer&&!missing?'rgba(145,201,255,.85)':missing?`rgba(233,139,119,${shade*.38})`:`rgba(113,239,179,${shade})`;ctx.fillRect(w/2+X*s*pers,h/2+Y*s*pers,missing?1:1.8,missing?1:1.8);}$('portraitstate').textContent=p<1?'Assembling observed signal groups…':`${available} observed · ${rows.length-available} unavailable${behaviorLayer?` · ${behaviorLayer} behaviour samples (blue)`:''}`;if(p<1)frame=requestAnimationFrame(draw);}function replay(){cancelAnimationFrame(frame);start=performance.now();frame=requestAnimationFrame(draw)}$('replay').onclick=replay;window.addEventListener('resize',()=>{if(!frame)draw(start+2400);else draw(start+2400)});replay();
+// Animate the existing symbolic relief without changing the fingerprint.
+let behaviorLayer=0, start=performance.now(), frame=null, lastPaint=-Infinity;
+function schedule(){if(frame===null&&!document.hidden&&ctx)frame=requestAnimationFrame(draw);}
+function draw(t){
+  frame=null;
+  if(!ctx||document.hidden)return;
+  if(!reduced.matches&&t-lastPaint<30){schedule();return;}
+  lastPaint=t;
+  const w=c.clientWidth,h=c.clientHeight,d=Math.min(devicePixelRatio,2);
+  if(c.width!==Math.round(w*d)||c.height!==Math.round(h*d)){c.width=Math.round(w*d);c.height=Math.round(h*d);}
+  ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);
+  const p=reduced.matches?1:Math.min(1,(t-start)/2400);
+  const idle=reduced.matches?0:Math.max(0,t-start-2400)/1000;
+  const angle=.24*Math.sin(idle*.65), ca=Math.cos(angle),sa=Math.sin(angle);
+  const scale=Math.min(w,h)*.39*(1+.018*Math.sin(idle*1.4));
+  for(let i=0;i<points.length;i++){
+    const [x,y,z,rx,ry,shade,g]=points[i],missing=rows[g][1]==null;
+    const local=Math.max(0,Math.min(1,p*1.6-g/rows.length*.6)),e=1-(1-local)**3;
+    const drift=reduced.matches?0:.009*Math.sin(idle*1.8+i*2.399963)*Math.min(1,idle);
+    const X=rx*(1-e)+(x*ca+z*sa+drift)*e,Y=ry*(1-e)+(y+drift)*e;
+    const depth=z*ca-x*sa,pers=3/(3-depth*e);
+    ctx.fillStyle=behaviorLayer>0&&g<behaviorLayer&&!missing?'rgba(145,201,255,.85)':missing?`rgba(233,139,119,${shade*.38})`:`rgba(113,239,179,${shade})`;
+    ctx.fillRect(w/2+X*scale*pers,h/2+Y*scale*pers,missing?1:1.8,missing?1:1.8);
+  }
+  const status=p<1?'Assembling observed signal groups…':`${available} observed · ${rows.length-available} unavailable${behaviorLayer?` · ${behaviorLayer} behaviour samples (blue)`:''}`;
+  if($('portraitstate').textContent!==status)$('portraitstate').textContent=status;
+  if(!reduced.matches)schedule();
+}
+function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;}
+function replay(){stop();start=performance.now();lastPaint=-Infinity;schedule();}
+document.addEventListener('bf-behavior',e=>{behaviorLayer=e.detail.samples;replay();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else schedule();});
+reduced.addEventListener('change',replay);
+$('replay').onclick=replay;
+window.addEventListener('resize',schedule);
+replay();

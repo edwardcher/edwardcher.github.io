@@ -30,7 +30,7 @@ export class BehaviourCollector {
   sample(){return {interval:median(this.intervals),speed:median(this.speeds),keys:this.intervals.length,moves:this.speeds.length,clicks:this.clicks,synthetic:this.synthetic,seconds:(performance.now()-this.started)/1000};}
   stop(){for(const type of ['keydown','pointermove','click'])this.target.removeEventListener(type,this.handler);return this.intervals?this.sample():null;}
 }
-export function quality(s){return Math.round(100*Math.min(1,s.keys/10,s.moves/10,s.clicks/3,s.seconds/5));}
+export function quality(s){return Math.round(100*Math.min(1,s.keys/10,s.moves/10,s.clicks/4));}
 export function compare(baseline,sample){
   const features=['interval','speed'].map(metric=>{
     const values=baseline.map(s=>s[metric]);const center=median(values);

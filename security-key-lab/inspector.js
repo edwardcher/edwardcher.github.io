@@ -57,6 +57,7 @@ for(const button of drawer.querySelectorAll('[data-copy]'))button.addEventListen
 window.addEventListener('fido-lab-diagnostic',event=>{snapshot=event.detail;render()});
 function inEditable(target){return !!target.closest('input,textarea,select,[contenteditable="true"]')}
 document.addEventListener('keydown',event=>{
+ if(event.composedPath().some(node=>node instanceof HTMLDialogElement && node.open))return;
  if(event.metaKey||event.ctrlKey||event.altKey||inEditable(event.target))return;
  if(event.key==='Escape'&&!drawer.hidden){event.preventDefault();closeInspector();return}
  if(drawer.hidden){if(event.key==='i'||event.key==='?'){event.preventDefault();openInspector('guide')}return}

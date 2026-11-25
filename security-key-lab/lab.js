@@ -251,7 +251,7 @@ function selectDiagnosticTab(tab){const raw=tab==='raw';$('diag-summary').hidden
 $('diag-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('diag-raw').textContent);$('diag-copy').textContent='COPIED';setTimeout(()=>$('diag-copy').textContent='COPY RAW',1200)}catch(e){$('diag-copy').textContent='COPY UNAVAILABLE'}});
 $('diag-raw').addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;const box=$('diag-raw');if(e.key==='j'||e.key==='ArrowDown'){box.scrollTop+=24;e.preventDefault()}else if(e.key==='k'||e.key==='ArrowUp'){box.scrollTop-=24;e.preventDefault()}else if(e.key==='g'){box.scrollTop=0;e.preventDefault()}else if(e.key==='G'){box.scrollTop=box.scrollHeight;e.preventDefault()}});
 // Optional shortcuts only when focus is outside form fields and editable controls.
-document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,select,textarea,button,[contenteditable],pre'))return;if(e.key==='2')selectDiagnosticTab('raw')});
+document.addEventListener('keydown',e=>{if(e.composedPath().some(node=>node instanceof HTMLDialogElement && node.open)||e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,select,textarea,button,[contenteditable],pre'))return;if(e.key==='2')selectDiagnosticTab('raw')});
 showDiagnostic();
 selectDiagnosticTab('raw');
 
