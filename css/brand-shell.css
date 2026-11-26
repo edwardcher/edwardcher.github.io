@@ -34,3 +34,5 @@ main.wrap > .header-actions .toolbox-panel{left:0;right:auto;width:min(340px,cal
 .ec-context-nav button{background:transparent;border:0;color:#a8b8af;min-width:44px;min-height:44px;cursor:pointer}
 .ec-context-nav button:focus-visible,main.wrap > .header-actions :focus-visible{outline:2px solid #91e6b6;outline-offset:3px}
 @media(max-width:480px){.ec-shell.ec-standalone{padding-inline:16px}main.wrap > .header-actions{gap:4px 16px}main.wrap > .header-actions .toolbox-panel{position:fixed;left:16px;right:16px;width:auto;max-width:none;top:auto} .ec-context-nav{padding-inline:16px}}
+
+.ec-shell .ec-wordmark > span[aria-hidden="true"]{color:#E2E8E5;animation:ec-logo-blink 1.1s steps(1,end) infinite}@keyframes ec-logo-blink{50%{opacity:0}}@media(prefers-reduced-motion:reduce){.ec-shell .ec-wordmark > span[aria-hidden="true"]{animation:none}}

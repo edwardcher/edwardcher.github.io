@@ -219,3 +219,5 @@ header{position:relative;z-index:50}
 .manifesto-page .manifesto-inline-brand:hover,.manifesto-page .manifesto-inline-brand:focus-visible{text-decoration:underline;}
 .manifesto-cursor{display:inline-block;width:.45em;height:.85em;margin-left:.18em;background:#00df91;vertical-align:-.03em;animation:name-cursor-blink 1s steps(1,end) infinite;}
 @media(prefers-reduced-motion:reduce){.manifesto-cursor{animation:none;}}
+
+.manifesto-page{max-width:900px;background:#080d0b}.manifesto-page .manifesto-subtitle,.manifesto-page .reading-nav{font-family:ui-monospace,Menlo,Consolas,monospace}.manifesto-page .post-body{color:#d0dcd5;line-height:1.75}.manifesto-bridge{display:block;width:100%;max-width:760px;height:auto;margin:0 0 2rem}.bridge-signal{animation:bridge-flow 7s linear infinite}@keyframes bridge-flow{to{stroke-dashoffset:-190}}.manifesto-page .post-body .manifesto-conviction{border:0;border-left:3px solid #00d99b;padding:.35em 0 .35em 1em;font-size:1.15em;line-height:1.5}.profile-github{font-size:.85em}@media(prefers-reduced-motion:reduce){.bridge-signal{animation:none}}
