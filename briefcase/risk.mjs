@@ -1,0 +1,6 @@
+export const treatments=['Undecided','Mitigate','Avoid','Transfer','Accept'];
+export const ratings=['Unassessed','Low','Moderate','High','Critical'];
+export const emptyRisk=()=>({appetite:'Unassessed',records:{}});
+export function validateRisk(r){if(r===undefined)return; if(!r||!ratings.includes(r.appetite)||!r.records||typeof r.records!=='object'||Array.isArray(r.records))throw Error('Invalid risk assessment');for(const [id,v] of Object.entries(r.records)){if(!['REC','ENR','SES'].includes(id)||!v||!ratings.includes(v.inherent)||!ratings.includes(v.residual)||!treatments.includes(v.treatment)||!['owner','evidence','rationale'].every(k=>typeof v[k]==='string'&&v[k].length<=2000))throw Error('Invalid risk record');}}
+export const emptyRecord=()=>({inherent:'Unassessed',residual:'Unassessed',treatment:'Undecided',owner:'',evidence:'',rationale:''});
+export function riskRows(s,gs){const r=s.risk||emptyRisk();return gs.map(g=>{const v=r.records[g.id]||emptyRecord();const assessed=r.appetite!=='Unassessed'&&v.residual!=='Unassessed';return {...v,id:g.id,title:g.title,status:!assessed?'Not assessed':ratings.indexOf(v.residual)>ratings.indexOf(r.appetite)?'Above appetite':g.missing||!v.evidence.trim()||!v.owner.trim()||!v.rationale.trim()||v.treatment==='Undecided'?'Review required':'Within stated appetite — review required'};});}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "t": 2,
+  "context": "Customer",
+  "method": "Mobile push",
+  "currentMethod": "SMS OTP",
+  "recovery": "SMS only",
+  "proofing": false,
+  "session": false,
+  "separation": false,
+  "finance": {
+    "volume": 500000,
+    "unit": 0.04,
+    "support": 2000,
+    "caseCost": 12,
+    "fixed": 0,
+    "displace": 75,
+    "supportReduction": 30,
+    "ramp": 12,
+    "investment": 100000,
+    "recurring": 60000,
+    "years": 3,
+    "discount": 8
+  },
+  "costs": {},
+  "selected": {},
+  "notes": {},
+  "owner": "",
+  "decision": "Pending review",
+  "currency": "USD"
+}

@@ -1,0 +1,36 @@
+/* Shared brand shell; scoped to avoid changing application internals. */
+.ec-brand{display:flex;flex-direction:column;gap:2px;white-space:normal;line-height:1.35;text-decoration:none}.ec-wordmark{font-size:18px;font-weight:700;color:var(--accent,var(--mint,#8fe0b3))}.ec-brand small,.ec-platforms small{display:block;font-size:11px;font-weight:400;color:var(--muted,#a6b9ae)}.ec-platforms{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ec-platforms a{padding:6px 10px;border:1px solid transparent;border-radius:5px;line-height:1.35;font-size:13px}.ec-platforms a[aria-current="true"]{border-color:#00dc92;background:#09291d;color:#00f0a0;box-shadow:inset 0 -2px 0 #00dc92}.ec-platforms a[aria-current="true"] strong{color:#00f0a0}.ec-platforms a[aria-current="true"] small{color:#b4e8d0}.ec-platforms .ec-active-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:middle}.ec-platforms .ec-active-label{font-size:9px;letter-spacing:.06em;margin-left:8px;color:#00f0a0;font-weight:600}.ec-platforms a:focus-visible,.ec-footer a:focus-visible{outline:2px solid #8fe0b3;outline-offset:3px}.ec-footer{display:block;border-top:1px solid var(--line,#34453c);padding:16px 0;color:var(--muted,#a6b9ae);font-size:12px;line-height:1.65}.ec-footer strong,.ec-footer a{color:var(--accent,var(--mint,#8fe0b3))}.ec-footer p{margin:4px 0 10px}.ec-shell .nav{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.ec-shell .header-actions{flex-wrap:wrap;white-space:normal;gap:12px}.ec-app-footer{padding:0 24px;max-width:1220px;margin:auto}@media(max-width:700px){.ec-shell .nav{gap:10px}.ec-platforms{width:100%}.ec-platforms a{flex:1;min-width:0}.ec-shell .header-actions{justify-content:flex-start}.ec-brand small{font-size:11px}}
+.ec-footer-line{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 20px;margin-bottom:8px}.ec-footer p{margin:4px 0}.ec-footer-line strong{white-space:nowrap}
+
+
+/* Shared platform navigation: fixed right edge, identical geometry. */
+.ec-shell .nav,.ec-shell.ec-standalone{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:16px;max-width:1536px;width:100%;margin:0 auto;padding:12px clamp(22px,3.35vw,52px);min-height:72px;box-sizing:border-box}
+.ec-shell .ec-brand,.ec-shell .ec-platforms{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:normal}
+.ec-shell .header-actions{margin-left:auto;justify-content:flex-end}
+.ec-shell .ec-platforms{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;flex:0 0 196px;width:196px;margin:0 0 0 auto;padding:4px;border:1px solid #29352e;border-radius:9px;background:#0c100e;box-sizing:border-box;align-items:center}
+.ec-shell .ec-platforms::before{content:"";position:absolute;z-index:-1;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/2);border-radius:5px;background:#263a30;box-shadow:0 2px 5px #0009;transition:transform 200ms ease;pointer-events:none}
+.ec-shell .ec-platforms:has(a:nth-child(2)[aria-current])::before{transform:translateX(100%)}
+.ec-shell .ec-platforms a,.ec-shell .ec-platforms a[aria-current]{display:block;text-align:center;padding:9px 4px;border:0;border-radius:5px;background:transparent;box-shadow:none;color:#aebbb3;font:600 13px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-decoration:none;white-space:nowrap}
+.ec-shell .ec-platforms a[aria-current]{color:#91e6b6;background:#263a30}
+.ec-shell .ec-platforms a:hover{color:#edf5ef}
+.ec-shell .ec-platforms a:focus-visible{outline:2px solid #91e6b6;outline-offset:2px}
+@supports selector(:has(*)){.ec-shell .ec-platforms a[aria-current]{background:transparent}}
+@media(max-width:1100px){.ec-shell .nav,.ec-shell.ec-standalone{gap:12px}.ec-shell .header-actions{order:3;flex:0 0 100%;justify-content:flex-start}.ec-shell.ec-standalone .crumb{order:3}.ec-shell.ec-standalone nav:not(.ec-platforms){order:4;margin-left:0}.ec-shell .ec-platforms{order:2}}
+@media(max-width:480px){.ec-shell .nav,.ec-shell.ec-standalone{padding:12px 16px;gap:10px}.ec-shell .ec-brand{flex:1 1 100%}.ec-shell .ec-platforms{margin-left:auto}.ec-shell .header-actions{gap:8px}}
+@media(prefers-reduced-motion:reduce){.ec-shell .ec-platforms::before{transition:none}}
+
+/* RC5: global identity only; contextual navigation belongs to the page. */
+.ec-shell{background:#030504;border-bottom:1px solid #29352e}
+.ec-shell.ec-standalone{max-width:none;padding-inline:max(clamp(22px,3.35vw,52px),calc((100% - 1536px)/2 + 52px));}
+.ec-shell .ec-wordmark{color:#00df99}
+.ec-shell .ec-brand small{color:#a8b8af}
+.ec-shell .nav,.ec-shell.ec-standalone{justify-content:space-between}
+main.wrap > .header-actions{display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:10px 0;margin:0;position:relative;z-index:4;white-space:normal}
+main.wrap > .header-actions > .home-toolbox > summary,main.wrap > .header-actions > .header-resume,main.wrap > .header-actions > .signature-header-help{border:0;background:transparent;box-shadow:none;padding:8px 0;min-height:44px;border-radius:0;color:var(--accent);font-size:14px}
+main.wrap > .header-actions > .signature-header-help{margin-left:auto;padding:8px 12px;color:#a8b8af}
+main.wrap > .header-actions > .home-toolbox > summary:hover,main.wrap > .header-actions > .header-resume:hover{text-decoration:underline;text-underline-offset:4px}
+main.wrap > .header-actions .toolbox-panel{left:0;right:auto;width:min(340px,calc(100vw - 44px));max-width:calc(100vw - 44px)}
+.ec-context-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1220px;margin:auto;padding:8px 24px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.ec-context-nav button{background:transparent;border:0;color:#a8b8af;min-width:44px;min-height:44px;cursor:pointer}
+.ec-context-nav button:focus-visible,main.wrap > .header-actions :focus-visible{outline:2px solid #91e6b6;outline-offset:3px}
+@media(max-width:480px){.ec-shell.ec-standalone{padding-inline:16px}main.wrap > .header-actions{gap:4px 16px}main.wrap > .header-actions .toolbox-panel{position:fixed;left:16px;right:16px;width:auto;max-width:none;top:auto} .ec-context-nav{padding-inline:16px}}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "t": 1,
+  "context": "Workforce",
+  "method": "Mobile push",
+  "currentMethod": "SMS OTP",
+  "recovery": "SMS only",
+  "proofing": false,
+  "session": false,
+  "separation": false,
+  "finance": {
+    "volume": 0,
+    "unit": 0,
+    "support": 800,
+    "caseCost": 25,
+    "fixed": 0,
+    "displace": 0,
+    "supportReduction": 40,
+    "ramp": 12,
+    "investment": 180000,
+    "recurring": 30000,
+    "years": 3,
+    "discount": 8
+  },
+  "costs": {},
+  "selected": {},
+  "notes": {},
+  "owner": "",
+  "decision": "Pending review",
+  "currency": "USD"
+}
