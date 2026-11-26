@@ -1,1 +1,3 @@
 html{background:#080d0b;color:#e3f4ea}body{font-family:system-ui,sans-serif}.ec-error{max-width:680px;margin:4rem auto;padding:2rem;border:1px solid #30483a;border-radius:12px;background:#101b15;color:#e3f4ea;line-height:1.6}.ec-error h1,.ec-error a,.ec-error code{color:#75ce97}.ec-error a{margin-right:1rem}.ec-error[hidden]{display:none}
+
+.bc-loading-track{height:4px;background:#30483a;overflow:hidden;border-radius:4px}.bc-loading-track:after{content:"";display:block;width:35%;height:100%;background:#75ce97;animation:bc-load 1.3s ease-in-out infinite alternate}@keyframes bc-load{to{transform:translateX(185%)}}@media(prefers-reduced-motion:reduce){.bc-loading-track:after{animation:none}}

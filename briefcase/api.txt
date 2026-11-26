@@ -1,0 +1,38 @@
+EDWARDCHER / BRIEFCASE GENERATION API
+Boardroom to Terminal
+Strategic thinking. Pragmatic engineering.
+
+01 / PURPOSE
+Generate repeatable executive briefs from portable JSON. This is a local
+JavaScript module contract, not a hosted REST API. No API key is required.
+
+02 / TERMINAL WORKFLOW
+From the extracted project root, using Node.js:
+  node scripts/briefcase.mjs validate project.json
+  node scripts/briefcase.mjs pack project.json > portable.json
+  node scripts/briefcase.mjs compose portable.json > presentation.json
+  node scripts/briefcase.mjs html portable.json > brief.html
+Example inputs: static/briefcase/examples/*.json
+The CLI uses the default board audience and Edwardcher theme.
+
+03 / MODULE CONTRACT
+static/briefcase/portable.mjs
+  pack(state) -> versioned edwardcher.intelligence object
+  unpack(project) -> validated state (also accepts legacy state)
+static/briefcase/present.mjs
+  deck(state, audience=0, theme=false) -> eight-slide presentation model
+  preview(model, slideIndex=0) -> HTML fragment
+  printHTML(model) -> printable HTML document
+  await powerpoint(model, PptxConstructor) -> PowerPoint instance
+Audience: 0 board, 1 investment committee, 2 architecture and risk.
+Theme: dark (default), light, blue. Boolean true also selects light.
+Use the bundled PptxGenJS constructor for browser PowerPoint generation.
+Call writeFile on the returned instance to export. PDF uses browser print.
+
+04 / DATA AND TRUST
+Portable schema: edwardcher.intelligence, version 1; calculation version
+must match. Presentation schema: edwardcher.presentation, version 1.
+USD only. Do not relabel non-USD values. Evidence references are not
+verification; assumptions and qualitative risk ratings are not approvals.
+The raw project and presentation model may contain sensitive business data.
+Review before sharing. Generation is local; no hosted generation endpoint.

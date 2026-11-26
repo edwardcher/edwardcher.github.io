@@ -1,11 +1,12 @@
 const app=document.getElementById('app');
 const fallback=document.getElementById('app-fallback');
+const loading=document.getElementById('app-loading');
 try {
- await import('/briefcase/executive.mjs');
+ await import('./executive.mjs?v=e15-local-persistence');
  if (!app.hasChildNodes()) throw new Error('Empty application');
  fallback.hidden=true;
 } catch(error) {
  console.error('Briefcase initialisation failed',error);
  app.replaceChildren();
  fallback.hidden=false;
-}
+} finally { loading.hidden=true; }

@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Briefcase Generation API | Edwardcher</title>
+<meta name="description" content="Read the generation interface and portable data documentation for Edwardcher Briefcase.">
+<link rel="canonical" href="https://edwardcher.online/briefcase/api.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Edwardcher">
+<meta property="og:title" content="Briefcase Generation API | Edwardcher">
+<meta property="og:description" content="Read the generation interface and portable data documentation for Edwardcher Briefcase.">
+<meta property="og:url" content="https://edwardcher.online/briefcase/api.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Briefcase Generation API | Edwardcher">
+<meta name="twitter:description" content="Read the generation interface and portable data documentation for Edwardcher Briefcase."><style>body{background:#0b100e;color:#edf5ef;font:17px/1.6 system-ui;max-width:850px;margin:3rem auto;padding:0 1.2rem}a{color:#79e5ad}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1}h2{color:#79e5ad;font-size:1.1rem}section{border-top:1px solid #345044;padding:1rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.7 ui-monospace,monospace}nav{display:flex;gap:1rem;flex-wrap:wrap}</style><nav><a href="/briefcase/">← Briefcase</a><a href="api.txt">Raw text</a><a href="api.txt" download>Download reference</a></nav><h1>Briefcase generation API.</h1><p>Boardroom to Terminal · Strategic thinking. Pragmatic engineering.</p><section><h2>01 / PURPOSE</h2><pre>Generate repeatable executive briefs from portable JSON. This is a local
+JavaScript module contract, not a hosted REST API. No API key is required.</pre></section><section><h2>02 / TERMINAL WORKFLOW</h2><pre>From the extracted project root, using Node.js:
+  node scripts/briefcase.mjs validate project.json
+  node scripts/briefcase.mjs pack project.json &gt; portable.json
+  node scripts/briefcase.mjs compose portable.json &gt; presentation.json
+  node scripts/briefcase.mjs html portable.json &gt; brief.html
+Example inputs: static/briefcase/examples/*.json
+The CLI uses the default board audience and Edwardcher theme.</pre></section><section><h2>03 / MODULE CONTRACT</h2><pre>static/briefcase/portable.mjs
+  pack(state) -&gt; versioned edwardcher.intelligence object
+  unpack(project) -&gt; validated state (also accepts legacy state)
+static/briefcase/present.mjs
+  deck(state, audience=0, theme=false) -&gt; eight-slide presentation model
+  preview(model, slideIndex=0) -&gt; HTML fragment
+  printHTML(model) -&gt; printable HTML document
+  await powerpoint(model, PptxConstructor) -&gt; PowerPoint instance
+Audience: 0 board, 1 investment committee, 2 architecture and risk.
+Theme: dark (default), light, blue. Boolean true also selects light.
+Use the bundled PptxGenJS constructor for browser PowerPoint generation.
+Call writeFile on the returned instance to export. PDF uses browser print.</pre></section><section><h2>04 / DATA AND TRUST</h2><pre>Portable schema: edwardcher.intelligence, version 1; calculation version
+must match. Presentation schema: edwardcher.presentation, version 1.
+USD only. Do not relabel non-USD values. Evidence references are not
+verification; assumptions and qualitative risk ratings are not approvals.
+The raw project and presentation model may contain sensitive business data.
+Review before sharing. Generation is local; no hosted generation endpoint.
+</pre></section></html>
