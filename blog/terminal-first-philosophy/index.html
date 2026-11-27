@@ -55,7 +55,7 @@
 </div>
 
 <h1>Terminal First: The Command Line Still Makes Us More Productive<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why the Unix philosophy still matters in a world of graphical applications, cloud platforms, and AI-assisted engineering.</p>
-<div class="post-body"><h2 id="the-interface-is-not-the-philosophy">The interface is not the philosophy</h2>
+<div class="post-body"><h2 id="the-interface-is-not-the-philosophy">The philosophy behind the interface</h2>
 <p>I have spent much of my career moving between programming, integration, security, architecture, and conversations with people who do not need to know how the underlying systems work. Across those roles, one idea has remained remarkably durable: complex work becomes more manageable when its parts are understandable, composable, and under our control.</p>
 <p>That is why I remain terminal-first.</p>
 <p>Not because a black screen is inherently better than a graphical interface. Not because every task deserves a shell script. And certainly not because modern applications have no place in my workflow. The terminal is simply the most direct expression of a philosophy I inherited from Unix: use small, purposeful components; connect them through clear interfaces; and preserve the ability to inspect and change what happens.</p>
@@ -74,11 +74,11 @@
 <p>Today’s computers have enormous processing power, polished interfaces, and an application for almost every task. Yet abundance has created another kind of friction: context switching, hidden state, incompatible formats, and workflows that are difficult to reproduce.</p>
 <p>The Unix mindset offers a counterweight. Instead of asking which application contains a task, I ask what the task actually requires: an input, a transformation, a decision, and an output. Once the work is expressed in those terms, the choice of interface becomes clearer.</p>
 <p>On macOS, this does not require abandoning the desktop. Unix foundations coexist with excellent native applications. A terminal can initiate an action, a native application can provide the best surface for reviewing it, and automation can connect the two. The point is not to eliminate interfaces. It is to avoid being confined by them.</p>
-<h2 id="text-is-an-asset-not-a-nostalgia-project">Text is an asset, not a nostalgia project</h2>
+<h2 id="text-is-an-asset-not-a-nostalgia-project">Text is an asset</h2>
 <p>Text has an unusual longevity. A Markdown document can be opened years later without recreating the exact application that produced it. A command can be recorded alongside its result. A configuration can be reviewed as a change rather than remembered as a sequence of clicks.</p>
 <p>That durability matters to me as a programmer and security practitioner. If an action changes a system, I want to understand what changed. If a process works, I want to be able to reproduce it. If something fails, I want evidence rather than guesswork.</p>
 <p>Text is not automatically safe or correct. Scripts can be destructive, logs can expose secrets, and automation can amplify mistakes. But plain, inspectable artifacts give us a better starting point for review, version control, and controlled execution.</p>
-<h2 id="ai-changes-the-speed-not-the-foundation">AI changes the speed, not the foundation</h2>
+<h2 id="ai-changes-the-speed-not-the-foundation">AI and the Unix philosophy</h2>
 <p>AI-assisted coding makes this philosophy more relevant, not less.</p>
 <p>A model can help draft a script, explain an unfamiliar command, propose a refactor, or translate a requirement into a working starting point. It can reduce the cost of moving from an idea to an experiment. But generated output still needs a boundary between suggestion and execution.</p>
 <p>I want AI to augment judgment, not replace it. A generated command should be understandable before it runs. A code change should be reviewable as a diff. A workflow should be testable and repeatable. Secrets, privileges, and production access still require deliberate controls.</p>

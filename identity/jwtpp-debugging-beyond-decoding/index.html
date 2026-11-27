@@ -55,7 +55,7 @@
 </div>
 
 <h1>JWT++ Debugging. Beyond Decoding.<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why I built JWT++ Debugger: a practical JWT and OpenID Connect workbench that helps you inspect tokens, analyze claims, review configuration, and identify the next troubleshooting step.</p>
-<div class="post-body"><h2 id="when-decoding-isn-t-enough">When decoding isn’t enough</h2>
+<div class="post-body"><h2 id="when-decoding-isnt-enough">Understanding JWT trust</h2>
 <p>There is no shortage of JWT decoders. Most do a good job of splitting a token into its header, payload, and signature, making the claims readable within seconds.</p>
 <p>The challenge usually comes afterward.</p>
 <p>A decoded token might look perfectly reasonable, yet authentication or authorization still fails. Is the issuer correct? Does the audience match the application? Has the token expired? Is the signing key available through the expected JWKS endpoint? Or is the problem somewhere in the OAuth 2.0 or OpenID Connect flow?</p>

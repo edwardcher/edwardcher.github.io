@@ -72,7 +72,7 @@
 <p><strong>Preparing for a customer discussion.</strong> I open Yazi in a project directory, move through notes and architecture files using <code>j</code> and <code>k</code>, preview the likely document, and open the PDF in Preview when I need the finished layout. The terminal finds the artifact; macOS displays it where it makes sense.</p>
 <p><strong>Reviewing a code change.</strong> I locate the relevant Rust, Python, or Elixir file, open it in Helix, and return to the same directory context afterward. I can then run <code>rg</code>, tests, or <code>git diff</code> in the adjacent shell. I am not switching between a file browser, IDE project tree, and a separate command window just to complete a small change.</p>
 <p><strong>Sharing a reference.</strong> I find a file, copy its path with my Yazi clipboard mapping, and paste it into a message or terminal command. The mapping is a small convenience, but repeated dozens of times it removes meaningful friction. It is also one of those tiny integrations that makes the terminal feel like part of macOS rather than a separate environment.</p>
-<h2 id="a-few-building-blocks-not-a-configuration-manual">A few building blocks, not a configuration manual</h2>
+<h2 id="a-few-building-blocks-not-a-configuration-manual">Essential configuration</h2>
 <p>On macOS, <code>open</code> already knows how to delegate to registered applications, and <code>pbcopy</code> writes to the system clipboard:</p>
 <pre><code data-lang="sh">open architecture.pdf
 printf &#39;%s&#39; &quot;$PWD/architecture.pdf&quot; | pbcopy

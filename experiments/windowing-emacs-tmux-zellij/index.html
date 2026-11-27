@@ -80,7 +80,7 @@ tmux -CC new -A -s work
 tmux new -A -s investigation
 </code></pre>
 <p>The first workflow depends on iTerm2’s control-mode support; the second is ordinary tmux. That portability is part of the appeal. I do not need a separate philosophy for local and remote sessions.</p>
-<h2 id="a-working-day-not-a-dashboard">A working day, not a dashboard</h2>
+<h2 id="a-working-day-not-a-dashboard">My daily tmux workflow</h2>
 <p>One pane might hold a Rust service, another its logs, and a third an HTTP request or a test run. I can leave a long-running task in one pane while inspecting its output in another, without rebuilding the workspace each time. When an interruption arrives, I switch sessions rather than rearrange the entire desktop. The session holds the context until I return.</p>
 <p>I am not trying to fit every application into a grid of panes. Emacs still has a place. Zellij remains an interesting alternative. But tmux gives me a small, dependable layer between my shell and my terminal application, and iTerm2 makes that layer feel natural on macOS.</p>
 <p>The next question is more mundane—and arguably more important: once I have a good workspace, <strong>how do I find and open things quickly?</strong> That is where <a href="https://edwardcher.online/experiments/yazi-primary-finder/">Yazi became my primary terminal file manager</a>.</p>

@@ -60,7 +60,7 @@
         <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-consistent-workflow/">&lt;p&gt;I have always preferred working with the keyboard whenever possible. Not because I dislike graphical interfaces, but because I find it easier to stay focused when I can navigate, search, edit and execute commands without constantly changing how I interact with my computer.&lt;/p&gt;
 &lt;p&gt;Over time, I have found that combining Vim-style keybindings, terminal applications, Alfred workflows and the Unix shell makes working on my Mac noticeably more efficient.&lt;/p&gt;
 &lt;p&gt;The interesting part is that none of these tools is particularly new. What makes the difference is how they complement one another.&lt;/p&gt;
-&lt;h2 id=&quot;consistency-matters-more-than-the-tool&quot;&gt;Consistency Matters More Than the Tool&lt;/h2&gt;
+&lt;h2 id=&quot;consistency-matters-more-than-the-tool&quot;&gt;The value of consistency&lt;/h2&gt;
 &lt;p&gt;One of the reasons I appreciate Vim-style keybindings is their consistency.&lt;/p&gt;
 &lt;p&gt;Once you become familiar with keyboard-driven navigation, the same principles can be applied across different applications. Whether I am editing code, navigating directories, searching files or managing terminal sessions, I can rely on similar movements and interactions.&lt;/p&gt;
 &lt;p&gt;I use applications such as Helix, Yazi and other terminal tools that follow this philosophy. They do not necessarily implement Vim in exactly the same way, but they share enough familiar conventions to make moving between them intuitive.&lt;/p&gt;
@@ -73,7 +73,7 @@
 &lt;p&gt;With a few keystrokes, I can launch an application, locate a file, open a project or trigger a custom workflow. Some of these workflows execute shell scripts, allowing me to bring command-line capabilities directly into the macOS desktop experience.&lt;/p&gt;
 &lt;p&gt;The shell remains the foundation for scripting and automation, while Alfred makes those capabilities accessible without having to open a terminal for every operation.&lt;/p&gt;
 &lt;p&gt;This is where the combination starts to make sense. I am not choosing between the GUI and the command line. I am using whichever provides the most efficient path to the task.&lt;/p&gt;
-&lt;h2 id=&quot;the-real-advantage-is-reducing-context-switching&quot;&gt;The Real Advantage Is Reducing Context Switching&lt;/h2&gt;
+&lt;h2 id=&quot;the-real-advantage-is-reducing-context-switching&quot;&gt;Reducing context switching&lt;/h2&gt;
 &lt;p&gt;Consider how often we interrupt our work just to operate the computer.&lt;/p&gt;
 &lt;p&gt;We switch windows, find applications, navigate directories, locate files, return to an editor and open another terminal to execute something.&lt;/p&gt;
 &lt;p&gt;None of these actions is particularly difficult. But repeated throughout the day, they introduce small interruptions that can break concentration.&lt;/p&gt;
@@ -469,7 +469,7 @@ Reports:
         
         <content type="html" xml:base="https://edwardcher.online/experiments/helix-editing-api-workflow/">&lt;p&gt;I have used Vim and Emacs long enough that editing is mostly muscle memory. That is a good thing, but it can also make an editor feel like infrastructure: always present, rarely questioned. Exploring &lt;a rel=&quot;external&quot; href=&quot;https://helix-editor.com/&quot;&gt;Helix&lt;/a&gt; has reminded me that editing can still be enjoyable.&lt;/p&gt;
 &lt;p&gt;Helix is a modal terminal editor with a &lt;strong&gt;selection-first&lt;/strong&gt; approach. It is not Vim with a different theme, and it is not an attempt to recreate everything Emacs can do. I have had to adjust some habits. In return, common actions feel direct: select what I want to change, then act on that selection. Multiple selections, tree-sitter-powered syntax awareness, and language-server integration make the editor feel capable without requiring a large personal configuration project.&lt;/p&gt;
-&lt;h2 id=&quot;the-pleasure-of-a-smaller-surface&quot;&gt;The pleasure of a smaller surface&lt;/h2&gt;
+&lt;h2 id=&quot;the-pleasure-of-a-smaller-surface&quot;&gt;A simpler editing environment&lt;/h2&gt;
 &lt;p&gt;For years I have valued the extensibility of Emacs and the precision of Vim. I am not abandoning either. But I do not always want to maintain an editor ecosystem before I can edit a file.&lt;/p&gt;
 &lt;p&gt;My preferred loop now is often simple: use Yazi to locate a file, open it with &lt;code&gt;hx&lt;/code&gt;, make a focused change, return to the shell, run the relevant check, and continue. Helix is the editing surface; the shell remains the execution environment.&lt;/p&gt;
 &lt;p&gt;That distinction is why Helix fits my &lt;a href=&quot;https://edwardcher.online/blog/terminal-first-philosophy/&quot;&gt;terminal-first philosophy&lt;/a&gt;. I do not need one tool to contain my entire workflow. I need the pieces to connect predictably.&lt;/p&gt;
@@ -550,7 +550,7 @@ git diff
 &lt;p&gt;&lt;strong&gt;Preparing for a customer discussion.&lt;/strong&gt; I open Yazi in a project directory, move through notes and architecture files using &lt;code&gt;j&lt;/code&gt; and &lt;code&gt;k&lt;/code&gt;, preview the likely document, and open the PDF in Preview when I need the finished layout. The terminal finds the artifact; macOS displays it where it makes sense.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reviewing a code change.&lt;/strong&gt; I locate the relevant Rust, Python, or Elixir file, open it in Helix, and return to the same directory context afterward. I can then run &lt;code&gt;rg&lt;/code&gt;, tests, or &lt;code&gt;git diff&lt;/code&gt; in the adjacent shell. I am not switching between a file browser, IDE project tree, and a separate command window just to complete a small change.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Sharing a reference.&lt;/strong&gt; I find a file, copy its path with my Yazi clipboard mapping, and paste it into a message or terminal command. The mapping is a small convenience, but repeated dozens of times it removes meaningful friction. It is also one of those tiny integrations that makes the terminal feel like part of macOS rather than a separate environment.&lt;/p&gt;
-&lt;h2 id=&quot;a-few-building-blocks-not-a-configuration-manual&quot;&gt;A few building blocks, not a configuration manual&lt;/h2&gt;
+&lt;h2 id=&quot;a-few-building-blocks-not-a-configuration-manual&quot;&gt;Essential configuration&lt;/h2&gt;
 &lt;p&gt;On macOS, &lt;code&gt;open&lt;/code&gt; already knows how to delegate to registered applications, and &lt;code&gt;pbcopy&lt;/code&gt; writes to the system clipboard:&lt;/p&gt;
 &lt;pre&gt;&lt;code data-lang=&quot;sh&quot;&gt;open architecture.pdf
 printf &amp;#39;%s&amp;#39; &amp;quot;$PWD/architecture.pdf&amp;quot; | pbcopy
@@ -602,7 +602,7 @@ tmux -CC new -A -s work
 tmux new -A -s investigation
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The first workflow depends on iTerm2’s control-mode support; the second is ordinary tmux. That portability is part of the appeal. I do not need a separate philosophy for local and remote sessions.&lt;/p&gt;
-&lt;h2 id=&quot;a-working-day-not-a-dashboard&quot;&gt;A working day, not a dashboard&lt;/h2&gt;
+&lt;h2 id=&quot;a-working-day-not-a-dashboard&quot;&gt;My daily tmux workflow&lt;/h2&gt;
 &lt;p&gt;One pane might hold a Rust service, another its logs, and a third an HTTP request or a test run. I can leave a long-running task in one pane while inspecting its output in another, without rebuilding the workspace each time. When an interruption arrives, I switch sessions rather than rearrange the entire desktop. The session holds the context until I return.&lt;/p&gt;
 &lt;p&gt;I am not trying to fit every application into a grid of panes. Emacs still has a place. Zellij remains an interesting alternative. But tmux gives me a small, dependable layer between my shell and my terminal application, and iTerm2 makes that layer feel natural on macOS.&lt;/p&gt;
 &lt;p&gt;The next question is more mundane—and arguably more important: once I have a good workspace, &lt;strong&gt;how do I find and open things quickly?&lt;/strong&gt; That is where &lt;a href=&quot;https://edwardcher.online/experiments/yazi-primary-finder/&quot;&gt;Yazi became my primary terminal file manager&lt;/a&gt;.&lt;/p&gt;
@@ -643,7 +643,7 @@ fd &amp;#39;\.md$&amp;#39; ~/work/notes
 &lt;p&gt;I am comfortable with both Vim and Emacs keybindings. That fluency means I can move, select, and restructure text without continuously reaching for a pointing device.&lt;/p&gt;
 &lt;p&gt;For quick edits in a terminal, I favor a lightweight editor such as Helix. For richer writing, literate work, and structured notes, I can use Emacs as a native macOS application. There is no contradiction: a graphical Emacs window can still be part of a terminal-first workflow.&lt;/p&gt;
 &lt;p&gt;The practical goal is consistency in how I think about text. Whether I am editing Markdown, reviewing configuration, or working through code, the core motions are familiar.&lt;/p&gt;
-&lt;h2 id=&quot;alfred-is-the-front-door-not-another-silo&quot;&gt;Alfred is the front door, not another silo&lt;/h2&gt;
+&lt;h2 id=&quot;alfred-is-the-front-door-not-another-silo&quot;&gt;Alfred as a common entry point&lt;/h2&gt;
 &lt;p&gt;Alfred gives me an immediate prompt for launching actions. I can use it to open a working folder, invoke a shell-backed workflow, or move to a native app when that is the right place to finish a task.&lt;/p&gt;
 &lt;p&gt;A useful Alfred workflow might accept a search phrase, pass it to a trusted local script, and open the matching document. Another might prompt for a project name and open the corresponding terminal workspace.&lt;/p&gt;
 &lt;p&gt;I prefer a small number of memorable workflows over dozens of shortcuts I cannot recall. A launcher should reduce decisions, not create a second application catalog to maintain.&lt;/p&gt;
@@ -689,7 +689,7 @@ zola serve
 &lt;p&gt;I resist the temptation to automate everything. Each new integration creates another dependency, and each shortcut needs a name, a purpose, and occasionally maintenance.&lt;/p&gt;
 &lt;p&gt;My test is simple: does this change remove friction while preserving clarity? Can I explain what it does? Can I recover when it fails? Does it preserve the correct source of truth?&lt;/p&gt;
 &lt;p&gt;If the answer is no, a few direct keystrokes may be the better design.&lt;/p&gt;
-&lt;h2 id=&quot;the-outcome-matters-more-than-the-tools&quot;&gt;The outcome matters more than the tools&lt;/h2&gt;
+&lt;h2 id=&quot;the-outcome-matters-more-than-the-tools&quot;&gt;Choosing tools for the task&lt;/h2&gt;
 &lt;p&gt;A terminal-first workflow is not defined by the number of commands I know. It is defined by the continuity between thinking, acting, checking, and preserving the result.&lt;/p&gt;
 &lt;p&gt;macOS gives me a useful combination: Unix foundations, native applications, AppleScript, Alfred, and increasingly capable AI assistance. I use those layers together rather than treating them as competing camps.&lt;/p&gt;
 &lt;p&gt;The terminal remains the center of gravity. The keyboard remains my most consistent interface. And text remains the durable thread connecting the work.&lt;/p&gt;
@@ -760,7 +760,7 @@ zola serve
         <link rel="alternate" type="text/html" href="https://edwardcher.online/blog/terminal-first-philosophy/"/>
         <id>https://edwardcher.online/blog/terminal-first-philosophy/</id>
         
-        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-philosophy/">&lt;h2 id=&quot;the-interface-is-not-the-philosophy&quot;&gt;The interface is not the philosophy&lt;/h2&gt;
+        <content type="html" xml:base="https://edwardcher.online/blog/terminal-first-philosophy/">&lt;h2 id=&quot;the-interface-is-not-the-philosophy&quot;&gt;The philosophy behind the interface&lt;/h2&gt;
 &lt;p&gt;I have spent much of my career moving between programming, integration, security, architecture, and conversations with people who do not need to know how the underlying systems work. Across those roles, one idea has remained remarkably durable: complex work becomes more manageable when its parts are understandable, composable, and under our control.&lt;/p&gt;
 &lt;p&gt;That is why I remain terminal-first.&lt;/p&gt;
 &lt;p&gt;Not because a black screen is inherently better than a graphical interface. Not because every task deserves a shell script. And certainly not because modern applications have no place in my workflow. The terminal is simply the most direct expression of a philosophy I inherited from Unix: use small, purposeful components; connect them through clear interfaces; and preserve the ability to inspect and change what happens.&lt;/p&gt;
@@ -779,11 +779,11 @@ zola serve
 &lt;p&gt;Today’s computers have enormous processing power, polished interfaces, and an application for almost every task. Yet abundance has created another kind of friction: context switching, hidden state, incompatible formats, and workflows that are difficult to reproduce.&lt;/p&gt;
 &lt;p&gt;The Unix mindset offers a counterweight. Instead of asking which application contains a task, I ask what the task actually requires: an input, a transformation, a decision, and an output. Once the work is expressed in those terms, the choice of interface becomes clearer.&lt;/p&gt;
 &lt;p&gt;On macOS, this does not require abandoning the desktop. Unix foundations coexist with excellent native applications. A terminal can initiate an action, a native application can provide the best surface for reviewing it, and automation can connect the two. The point is not to eliminate interfaces. It is to avoid being confined by them.&lt;/p&gt;
-&lt;h2 id=&quot;text-is-an-asset-not-a-nostalgia-project&quot;&gt;Text is an asset, not a nostalgia project&lt;/h2&gt;
+&lt;h2 id=&quot;text-is-an-asset-not-a-nostalgia-project&quot;&gt;Text is an asset&lt;/h2&gt;
 &lt;p&gt;Text has an unusual longevity. A Markdown document can be opened years later without recreating the exact application that produced it. A command can be recorded alongside its result. A configuration can be reviewed as a change rather than remembered as a sequence of clicks.&lt;/p&gt;
 &lt;p&gt;That durability matters to me as a programmer and security practitioner. If an action changes a system, I want to understand what changed. If a process works, I want to be able to reproduce it. If something fails, I want evidence rather than guesswork.&lt;/p&gt;
 &lt;p&gt;Text is not automatically safe or correct. Scripts can be destructive, logs can expose secrets, and automation can amplify mistakes. But plain, inspectable artifacts give us a better starting point for review, version control, and controlled execution.&lt;/p&gt;
-&lt;h2 id=&quot;ai-changes-the-speed-not-the-foundation&quot;&gt;AI changes the speed, not the foundation&lt;/h2&gt;
+&lt;h2 id=&quot;ai-changes-the-speed-not-the-foundation&quot;&gt;AI and the Unix philosophy&lt;/h2&gt;
 &lt;p&gt;AI-assisted coding makes this philosophy more relevant, not less.&lt;/p&gt;
 &lt;p&gt;A model can help draft a script, explain an unfamiliar command, propose a refactor, or translate a requirement into a working starting point. It can reduce the cost of moving from an idea to an experiment. But generated output still needs a boundary between suggestion and execution.&lt;/p&gt;
 &lt;p&gt;I want AI to augment judgment, not replace it. A generated command should be understandable before it runs. A code change should be reviewable as a diff. A workflow should be testable and repeatable. Secrets, privileges, and production access still require deliberate controls.&lt;/p&gt;
