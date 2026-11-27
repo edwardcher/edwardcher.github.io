@@ -33,7 +33,7 @@
   <meta name="theme-color" content="#0a0f12">
   <title>Java4Shell: When a JVM Vulnerability Threatens Identity and Access | Edwardcher</title>
   <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=editorial-2">
-  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=editorial-2">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=article-topics-1">
   <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
   <link rel="stylesheet" href="https://edwardcher.online/css/navigation.css?v=1">
   <link rel="stylesheet" href="https://edwardcher.online/css/brand-shell.css?v=terminal-home-1">
@@ -48,8 +48,12 @@
 
 
 
-<nav class="reading-nav" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></nav>
-<div class="post-meta">Security / Vulnerability</div>
+<nav class="reading-nav article-path" aria-label="Breadcrumb"><a class="terminal-home" href="https://edwardcher.online" aria-label="Home" title="Home">~</a><a class="article-section-link" href="/identity/" aria-label="Identity">/identity</a></nav>
+<div class="post-meta article-topics">
+<span class="article-topic">Security</span><span class="article-topic">Vulnerability</span>
+
+</div>
+
 <h1>Java4Shell: When a JVM Vulnerability Threatens Identity and Access<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">Why the 2026 OpenJDK Base64 memory-corruption vulnerability matters to authentication, workload identity and credential exposure.</p>
 <div class="post-body"><h2 id="the-authentication-boundary-starts-inside-the-runtime">The authentication boundary starts inside the runtime</h2>
 <p>Java4Shell (<strong>CVE-2026-114938</strong>) was disclosed in November 2026. Unlike the 2022 Spring4Shell data-binding vulnerability, this flaw is in the <strong>OpenJDK HotSpot JVM’s accelerated Base64 decoder</strong>. The reported bug is an out-of-bounds heap write involving an AVX-512 VBMI optimized decoding path. Exploitability requires an affected runtime, suitable x86-64 hardware, and a reachable decoding path. A Java installation alone is not proof of exposure.</p>
@@ -103,7 +107,7 @@
 <li><a rel="external" href="https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability">Tenable: Java4Shell FAQ</a></li>
 </ul>
 </div>
-<nav class="reading-end signature-nav" aria-label="Article navigation"><div class="article-neighbors"><a href="https://edwardcher.online/identity/identity-globe/"><small>← Previous article</small><strong>Identity Globe: From Threat Signals to Business Priorities</strong></a><a href="https://edwardcher.online/identity/security-key-enrollment-browser-ux/"><small>Next article →</small><strong>Making Security-Key Enrollment Less Painful in Modern Browsers</strong></a></div><div class="signature-actions"><a href="/blog/">← Writing</a><a href="/">⌂ Home</a><a href="#site-top">↑ Back to top</a></div></nav>
+<nav class="reading-end signature-nav" aria-label="Article navigation"><div class="article-neighbors"><a href="https://edwardcher.online/identity/identity-globe/"><small>← Previous article</small><strong>Identity Globe: From Threat Signals to Business Priorities</strong></a><a href="https://edwardcher.online/identity/security-key-enrollment-browser-ux/"><small>Next article →</small><strong>Making Security-Key Enrollment Less Painful in Modern Browsers</strong></a></div><div class="signature-actions"><a href="/identity/">← Identity</a><a href="/">⌂ Home</a><a href="#site-top">↑ Back to top</a></div></nav>
 <div id="reading-progress" aria-hidden="true"></div>
 </article>
 

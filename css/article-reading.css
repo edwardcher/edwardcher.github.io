@@ -270,3 +270,12 @@
 /* RC10: local terminal-inspired smart-card artwork. */
 .article-reading .identity-smartcard-figure {max-width:720px;}
 .article-reading .identity-smartcard-figure img {max-width:100%;}
+
+/* Article navigation and editorial classification are separate. */
+.article-reading .article-path { display:flex; align-items:baseline; gap:0; font-family:ui-monospace,Menlo,Consolas,monospace; }
+.article-reading .article-path a { color:#75ce97; text-decoration:none; }
+.article-reading .article-path a:hover,.article-reading .article-path a:focus-visible { text-decoration:underline; }
+.article-reading .article-path .terminal-home::before { inset:-8px 0; }
+.article-reading .article-topics { display:flex; flex-wrap:wrap; align-items:center; gap:8px; letter-spacing:normal; margin:0 0 1rem; }
+.article-reading .article-topic { background:#10251c; color:#9bdcb7; border-radius:4px; padding:3px 8px; line-height:1.5; }
+.article-reading .article-topics time { color:#aebbb6; }

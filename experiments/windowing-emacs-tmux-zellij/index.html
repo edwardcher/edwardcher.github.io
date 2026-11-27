@@ -33,7 +33,7 @@
   <meta name="theme-color" content="#0a0f12">
   <title>Windows Within Windows: Emacs, Zellij, and Why I Returned to tmux | Edwardcher</title>
   <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=editorial-2">
-  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=editorial-2">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=article-topics-1">
   <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
   <link rel="stylesheet" href="https://edwardcher.online/css/navigation.css?v=1">
   <link rel="stylesheet" href="https://edwardcher.online/css/brand-shell.css?v=terminal-home-1">
@@ -48,8 +48,12 @@
 
 
 
-<nav class="reading-nav" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/experiments/">Experiments</a></nav>
-<div class="post-meta">Terminal / Windowing / <time datetime="2026-11-15">15 November 2026</time></div>
+<nav class="reading-nav article-path" aria-label="Breadcrumb"><a class="terminal-home" href="https://edwardcher.online" aria-label="Home" title="Home">~</a><a class="article-section-link" href="/experiments/" aria-label="Experiments">/experiments</a></nav>
+<div class="post-meta article-topics">
+<span class="article-topic">Terminal</span><span class="article-topic">Windowing</span>
+<time datetime="2026-11-15">15 November 2026</time>
+</div>
+
 <h1>Windows Within Windows: Emacs, Zellij, and Why I Returned to tmux<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">After exploring Emacs, Zellij, and tmux, I returned to tmux for a practical reason: its relationship with iTerm2 and the rest of my Mac.</p>
 <div class="post-body"><p>I have spent enough time inside terminals to appreciate a peculiar problem: eventually, the terminal becomes a desktop of its own. There are shells, editors, logs, remote machines, and experiments running at once. The question stops being <em>which terminal should I open?</em> and becomes <em>how do I keep my working context intact?</em></p>
 <p>I have used Emacs for years, learned to navigate with Vim keybindings, and experimented with both Zellij and tmux. All three can organize work, but they are not interchangeable. What I wanted was not the cleverest layout. I wanted to move between tasks without having to think about the window manager.</p>

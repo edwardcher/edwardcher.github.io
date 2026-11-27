@@ -33,7 +33,7 @@
   <meta name="theme-color" content="#0a0f12">
   <title>Security-Key-First WebAuthn Lab | Edwardcher</title>
   <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=editorial-2">
-  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=editorial-2">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=article-topics-1">
   <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
   <link rel="stylesheet" href="https://edwardcher.online/css/navigation.css?v=1">
   <link rel="stylesheet" href="https://edwardcher.online/css/brand-shell.css?v=terminal-home-1">
@@ -48,8 +48,12 @@
 
 
 
-<nav class="reading-nav" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></nav>
-<div class="post-meta">Security / Testing / <time datetime="2026-11-19">19 November 2026</time></div>
+<nav class="reading-nav article-path" aria-label="Breadcrumb"><a class="terminal-home" href="https://edwardcher.online" aria-label="Home" title="Home">~</a><a class="article-section-link" href="/experiments/" aria-label="Experiments">/experiments</a></nav>
+<div class="post-meta article-topics">
+<span class="article-topic">Security</span><span class="article-topic">Testing</span>
+<time datetime="2026-11-19">19 November 2026</time>
+</div>
+
 <h1>Security-Key-First WebAuthn Lab<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">An interactive FIDO2 registration and authentication experiment for security keys and compatible smart cards, hosted entirely on GitHub Pages.</p>
 <div class="post-body"><p>This is a hands-on companion to <a href="/identity/security-key-enrollment-browser-ux/">Making Security-Key Enrollment Less Painful in Modern Browsers</a>. The objective is to measure how much of a physical security-key journey can be simplified <strong>without bypassing browser or authenticator security controls</strong>.</p>
 <p>The experiment runs as a standalone HTML page on HTTPS GitHub Pages. It creates real WebAuthn credentials on supported authenticators and verifies subsequent signed assertions locally using the Web Crypto API. No server, account service or external dependency is required.</p>
@@ -72,7 +76,7 @@
 <h2 id="limitations">Limitations</h2>
 <p>The browser chooses its own dialogs. A smart card needs a functioning FIDO2 application and reader path; PIV/PKI alone is insufficient. The demo cannot attest that a particular physical card model was used. Clearing browser storage removes the local registration record but <strong>does not erase the credential from the security key</strong>.</p>
 </div>
-<nav class="reading-end signature-nav" aria-label="Article navigation"><div class="article-neighbors"><a href="https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/"><small>← Previous article</small><strong>Helix, Hurl, and Rust: A Terminal-First Approach to API Testing</strong></a><a href="https://edwardcher.online/experiments/helix-editing-api-workflow/"><small>Next article →</small><strong>Helix: Making Editing Fun Again</strong></a></div><div class="signature-actions"><a href="/blog/">← Writing</a><a href="/">⌂ Home</a><a href="#site-top">↑ Back to top</a></div></nav>
+<nav class="reading-end signature-nav" aria-label="Article navigation"><div class="article-neighbors"><a href="https://edwardcher.online/experiments/helix-hurl-rust-hid-fido-lab/"><small>← Previous article</small><strong>Helix, Hurl, and Rust: A Terminal-First Approach to API Testing</strong></a><a href="https://edwardcher.online/experiments/helix-editing-api-workflow/"><small>Next article →</small><strong>Helix: Making Editing Fun Again</strong></a></div><div class="signature-actions"><a href="/experiments/">← Experiments</a><a href="/">⌂ Home</a><a href="#site-top">↑ Back to top</a></div></nav>
 <div id="reading-progress" aria-hidden="true"></div>
 </article>
 

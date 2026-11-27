@@ -33,7 +33,7 @@
   <meta name="theme-color" content="#0a0f12">
   <title>Helix: Making Editing Fun Again | Edwardcher</title>
   <link rel="stylesheet" href="https://edwardcher.online/css/site.css?v=editorial-2">
-  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=editorial-2">
+  <link rel="stylesheet" href="https://edwardcher.online/css/article-reading.css?v=article-topics-1">
   <link rel="alternate" type="application/atom+xml" title="Posts" href="https://edwardcher.online/atom.xml">
   <link rel="stylesheet" href="https://edwardcher.online/css/navigation.css?v=1">
   <link rel="stylesheet" href="https://edwardcher.online/css/brand-shell.css?v=terminal-home-1">
@@ -48,8 +48,12 @@
 
 
 
-<nav class="reading-nav" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/experiments/">Experiments</a></nav>
-<div class="post-meta">Terminal / Helix / <time datetime="2026-11-17">17 November 2026</time></div>
+<nav class="reading-nav article-path" aria-label="Breadcrumb"><a class="terminal-home" href="https://edwardcher.online" aria-label="Home" title="Home">~</a><a class="article-section-link" href="/experiments/" aria-label="Experiments">/experiments</a></nav>
+<div class="post-meta article-topics">
+<span class="article-topic">Terminal</span><span class="article-topic">Helix</span>
+<time datetime="2026-11-17">17 November 2026</time>
+</div>
+
 <h1>Helix: Making Editing Fun Again<span class="article-title-cursor" aria-hidden="true"></span></h1><p class="summary">After years with Vim and Emacs, exploring Helix for Rust, Python, Elixir, API experiments, and AI-assisted work—without leaving the shell behind.</p>
 <div class="post-body"><p>I have used Vim and Emacs long enough that editing is mostly muscle memory. That is a good thing, but it can also make an editor feel like infrastructure: always present, rarely questioned. Exploring <a rel="external" href="https://helix-editor.com/">Helix</a> has reminded me that editing can still be enjoyable.</p>
 <p>Helix is a modal terminal editor with a <strong>selection-first</strong> approach. It is not Vim with a different theme, and it is not an attempt to recreate everything Emacs can do. I have had to adjust some habits. In return, common actions feel direct: select what I want to change, then act on that selection. Multiple selections, tree-sitter-powered syntax awareness, and language-server integration make the editor feel capable without requiring a large personal configuration project.</p>
