@@ -620,3 +620,6 @@ document.addEventListener('keydown', e=>{
 // Confirm that the complete application module initialized.
 document.documentElement.dataset.workbenchReady="true";
 const appHealth=document.getElementById("appHealth");if(appHealth){appHealth.textContent="Workbench ready";appHealth.dataset.status="ready";}
+
+// Half-page reading shortcuts; other modal workflows retain their own bindings.
+document.addEventListener("keydown",e=>{const modal=document.querySelector("dialog[open]");if(modal&&modal!==shortcutDialog)return;if(modal===shortcutDialog&&e.key==="q"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.target.closest?.("input,textarea,select,[contenteditable]")){e.preventDefault();shortcutDialog.close();return;}window.EdwardcherHalfPage?.(e,modal);});
