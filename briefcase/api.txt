@@ -20,7 +20,7 @@ static/briefcase/portable.mjs
   pack(state) -> versioned edwardcher.intelligence object
   unpack(project) -> validated state (also accepts legacy state)
 static/briefcase/present.mjs
-  deck(state, audience=0, theme=false) -> eight-slide presentation model
+  deck(state, audience=0, theme=false) -> nine-slide presentation model
   preview(model, slideIndex=0) -> HTML fragment
   printHTML(model) -> printable HTML document
   await powerpoint(model, PptxConstructor) -> PowerPoint instance
