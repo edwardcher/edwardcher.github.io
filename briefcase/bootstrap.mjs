@@ -2,7 +2,7 @@ const app=document.getElementById('app');
 const fallback=document.getElementById('app-fallback');
 const loading=document.getElementById('app-loading');
 try {
- await import('./executive.mjs?v=review-progress-1');
+ await import('./executive.mjs?v=dialog-polish-1');
  if (!app.hasChildNodes()) throw new Error('Empty application');
  fallback.hidden=true;
 } catch(error) {
