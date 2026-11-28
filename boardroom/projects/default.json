@@ -1,0 +1,1079 @@
+{
+  "source": "https://www.kuppingercole.com/research/lc80894/passwordless-authentication-for-enterprises",
+  "date": "2026-03-10",
+  "vendors": [
+    {
+      "name": "HID",
+      "issuer": "ASSA ABLOY",
+      "ticker": "STO:ASSA-B",
+      "category": "Hardware / PKI",
+      "domain": "hidglobal.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "portfolio": "Crescendo \u00b7 DigitalPersona \u00b7 HID Approve \u00b7 HID Risk Management Solution",
+      "impression": "Convergence candidate for organisations seeking fewer separate credentials.",
+      "due_diligence": "Validate badge compatibility, credential lifecycle, recovery and reader estate.",
+      "id": "hid",
+      "description": "Physical and logical access, credentials and authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "credential",
+        "physical",
+        "auth",
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Crescendo \u00b7 DigitalPersona \u00b7 HID Approve",
+          "source": "https://hidglobal.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "Microsoft",
+      "issuer": "Microsoft",
+      "ticker": "NASDAQ:MSFT",
+      "category": "Identity platform",
+      "domain": "microsoft.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "portfolio": "Microsoft Entra ID \u00b7 Windows Hello for Business",
+      "impression": "Natural candidate for Entra-centric estates.",
+      "due_diligence": "Check licensing, hybrid dependencies and non-Microsoft application coverage.",
+      "id": "microsoft",
+      "description": "Enterprise identity and access through Microsoft Entra.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "platform",
+        "auth",
+        "endpoint"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Microsoft Entra ID \u00b7 Windows Hello for Business",
+          "source": "https://microsoft.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "Okta",
+      "issuer": "Okta",
+      "ticker": "NASDAQ:OKTA",
+      "category": "Identity platform",
+      "domain": "okta.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "Okta Workforce Identity \u00b7 FastPass",
+      "impression": "Broad workforce and customer identity platform candidate.",
+      "due_diligence": "Validate recovery, federation dependencies and migration cost.",
+      "id": "okta",
+      "description": "Workforce and customer identity platforms.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "platform",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Okta Workforce Identity \u00b7 FastPass",
+          "source": "https://okta.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "Thales",
+      "issuer": "Thales",
+      "ticker": "EPA:HO",
+      "category": "Hardware / PKI",
+      "domain": "thalesgroup.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "portfolio": "SafeNet authentication \u00b7 Luna HSM",
+      "impression": "Candidate for cryptographic assurance and regulated environments.",
+      "due_diligence": "Check deployment model, key custody and integration effort.",
+      "id": "thales",
+      "description": "Digital identity, authentication and cryptographic security.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "credential",
+        "auth",
+        "key protection"
+      ],
+      "technical_evidence": [
+        {
+          "product": "SafeNet authentication \u00b7 Luna HSM",
+          "source": "https://thalesgroup.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "IBM",
+      "issuer": "IBM",
+      "ticker": "NYSE:IBM",
+      "category": "Identity platform",
+      "domain": "ibm.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "IBM Verify",
+      "impression": "Candidate for complex enterprise identity estates.",
+      "due_diligence": "Validate product-specific passkey support and operational complexity.",
+      "id": "ibm",
+      "description": "Enterprise identity and access management.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "platform",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "IBM Verify",
+          "source": "https://ibm.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "Ping Identity",
+      "issuer": "Ping Identity",
+      "ticker": null,
+      "category": "Identity platform",
+      "domain": "pingidentity.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "PingFederate \u00b7 PingOne",
+      "impression": "Candidate for heterogeneous federation and orchestration.",
+      "due_diligence": "Check integration scope and migration dependencies.",
+      "id": "ping-identity",
+      "description": "Federation and enterprise identity services.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "platform",
+        "federation",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "PingFederate \u00b7 PingOne",
+          "source": "https://pingidentity.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "HYPR",
+      "issuer": "HYPR",
+      "ticker": null,
+      "category": "Passwordless specialist",
+      "domain": "hypr.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "HYPR Authenticate",
+      "impression": "Specialist candidate for workforce passwordless transformation.",
+      "due_diligence": "Validate offline recovery, platform coverage and support capacity.",
+      "id": "hypr",
+      "description": "Passwordless workforce authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "auth",
+        "endpoint"
+      ],
+      "technical_evidence": [
+        {
+          "product": "HYPR Authenticate",
+          "source": "https://hypr.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation"
+        ]
+      }
+    },
+    {
+      "name": "1Kosmos",
+      "issuer": "1Kosmos",
+      "ticker": null,
+      "category": "Passwordless specialist",
+      "domain": "1kosmos.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "BlockID",
+      "impression": "Candidate when identity proofing and authentication must connect.",
+      "due_diligence": "Validate proofing accuracy, privacy and recovery controls.",
+      "id": "1kosmos",
+      "description": "Identity verification and passwordless authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "proofing",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "BlockID",
+          "source": "https://1kosmos.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation"
+        ]
+      }
+    },
+    {
+      "name": "Beyond Identity",
+      "issuer": "Beyond Identity",
+      "ticker": null,
+      "category": "Passwordless specialist",
+      "domain": "beyondidentity.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "Device-bound authentication",
+      "impression": "Candidate for device-centric authentication.",
+      "due_diligence": "Validate device lifecycle, platform coverage and current corporate status.",
+      "id": "beyond-identity",
+      "description": "Device-bound passwordless authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "auth",
+        "endpoint"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Device-bound authentication",
+          "source": "https://beyondidentity.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation"
+        ]
+      }
+    },
+    {
+      "name": "Yubico",
+      "issuer": "Yubico",
+      "ticker": "STO:YUBICO",
+      "category": "Hardware / PKI",
+      "domain": "yubico.com",
+      "evidence": "W",
+      "initiatives": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "portfolio": "YubiKey",
+      "impression": "Candidate for hardware-backed phishing resistance.",
+      "due_diligence": "Validate issuance, replacement and application compatibility.",
+      "id": "yubico",
+      "description": "Hardware security keys and authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Vendors to Watch"
+        }
+      ],
+      "architecture_roles": [
+        "credential",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "YubiKey",
+          "source": "https://yubico.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "name": "OneSpan",
+      "issuer": "OneSpan",
+      "ticker": "NASDAQ:OSPN",
+      "category": "Authentication",
+      "domain": "onespan.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "OneSpan authentication \u00b7 transaction signing",
+      "impression": "Candidate for transaction-centric banking security.",
+      "due_diligence": "Validate transaction binding, mobile integration and current listing.",
+      "id": "onespan",
+      "description": "Digital transaction security and authentication.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "auth",
+        "transaction signing"
+      ],
+      "technical_evidence": [
+        {
+          "product": "OneSpan authentication \u00b7 transaction signing",
+          "source": "https://onespan.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "RSA",
+      "issuer": "RSA",
+      "ticker": null,
+      "category": "Authentication",
+      "domain": "rsa.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "RSA ID Plus \u00b7 SecurID",
+      "impression": "Candidate for established enterprise MFA estates.",
+      "due_diligence": "Validate phishing resistance, migration and recovery.",
+      "id": "rsa",
+      "description": "Enterprise authentication and identity security.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "RSA ID Plus \u00b7 SecurID",
+          "source": "https://rsa.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Overall",
+          "Product",
+          "Innovation",
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "Cisco",
+      "issuer": "Cisco",
+      "ticker": "NASDAQ:CSCO",
+      "category": "Authentication",
+      "domain": "cisco.com",
+      "evidence": "E",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "Cisco Duo",
+      "impression": "Candidate for access security in Cisco-oriented estates.",
+      "due_diligence": "Validate authentication policy, device coverage and recovery.",
+      "id": "cisco",
+      "description": "Duo multi-factor authentication and access security.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "auth",
+        "endpoint"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Cisco Duo",
+          "source": "https://cisco.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ],
+      "leadership_reference": {
+        "report_id": "kc-lc80894-2026",
+        "initiative": "Passwordless",
+        "designations": [
+          "Market"
+        ]
+      }
+    },
+    {
+      "name": "CyberArk",
+      "issuer": "Palo Alto Networks",
+      "ticker": "NASDAQ:PANW",
+      "category": "Identity platform",
+      "domain": "cyberark.com",
+      "evidence": "L",
+      "initiatives": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "portfolio": "Privileged access management \u00b7 identity security",
+      "impression": "Candidate where privileged identity is central to the initiative.",
+      "due_diligence": "Validate workforce versus privileged scope and current ownership.",
+      "id": "cyberark",
+      "description": "Identity security and privileged access management.",
+      "research_refs": [
+        {
+          "report_id": "kc-lc80894-2026",
+          "section": "Product/Vendor evaluation"
+        }
+      ],
+      "architecture_roles": [
+        "privileged",
+        "auth"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Privileged access management \u00b7 identity security",
+          "source": "https://cyberark.com",
+          "status": "editorial product mapping; vendor documentation not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "threatmark",
+      "name": "ThreatMark",
+      "issuer": "ThreatMark",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "threatmark.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "Behavioral Intelligence Platform",
+      "description": "Candidate for behavioural risk and fraud prevention research.",
+      "impression": "Investigate pre-authentication risk signals and fraud decisioning.",
+      "due_diligence": "Validate SDK coverage, decision latency, privacy and integration contracts.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Behavioral Intelligence Platform",
+          "source": "https://www.threatmark.com",
+          "status": "Research candidate; capabilities not independently verified",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "feedzai",
+      "name": "Feedzai",
+      "issuer": "",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "feedzai.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "RiskOps",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "RiskOps",
+          "source": "https://feedzai.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "bio-catch",
+      "name": "BioCatch",
+      "issuer": "",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "biocatch.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "Behavioral biometrics",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Behavioral biometrics",
+          "source": "https://biocatch.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "featurespace",
+      "name": "Featurespace",
+      "issuer": "",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "featurespace.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "ARIC Risk Hub",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "ARIC Risk Hub",
+          "source": "https://featurespace.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "sift",
+      "name": "Sift",
+      "issuer": "",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "sift.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "Digital trust and fraud prevention",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Digital trust and fraud prevention",
+          "source": "https://sift.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "seon",
+      "name": "SEON",
+      "issuer": "",
+      "ticker": null,
+      "category": "Risk intelligence",
+      "domain": "seon.io",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "portfolio": "Fraud prevention",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "risk"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Fraud prevention",
+          "source": "https://seon.io",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "identiv",
+      "name": "Identiv",
+      "issuer": "",
+      "ticker": null,
+      "category": "Physical access",
+      "domain": "identiv.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "portfolio": "Physical identity and access technology",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "physical"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Physical identity and access technology",
+          "source": "https://identiv.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "suprema",
+      "name": "Suprema",
+      "issuer": "",
+      "ticker": null,
+      "category": "Physical access",
+      "domain": "supremainc.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "portfolio": "Access control and biometrics",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "physical"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Access control and biometrics",
+          "source": "https://supremainc.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    },
+    {
+      "id": "axis",
+      "name": "Axis Communications",
+      "issuer": "",
+      "ticker": null,
+      "category": "Physical access",
+      "domain": "axis.com",
+      "evidence": "E",
+      "initiatives": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "portfolio": "Network access control",
+      "description": "Candidate for initiative-specific product research.",
+      "impression": "Investigate fit against initiative requirements.",
+      "due_diligence": "Verify current product ownership, capabilities, deployment and integration interfaces.",
+      "research_refs": [],
+      "architecture_roles": [
+        "physical"
+      ],
+      "technical_evidence": [
+        {
+          "product": "Network access control",
+          "source": "https://axis.com",
+          "status": "Publisher reference only; not reviewed",
+          "protocols": []
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "ticker": "STO:ASSA-B",
+    "price": 394.4,
+    "currency": "SEK",
+    "change": 0.92,
+    "asof": "2026-11-27 16:49 CET",
+    "previous": 390.8,
+    "low": 391.9,
+    "high": 394.9,
+    "open": 392,
+    "cap": "412.31B",
+    "source": "User-provided screenshot; not independently verified",
+    "metrics": {
+      "Q3 sales growth": "+7%",
+      "EBITA margin": "18.7%",
+      "Cash conversion": "117%"
+    }
+  },
+  "schema_version": 1,
+  "lenses": [
+    "Passwordless",
+    "Converged Access",
+    "MFA",
+    "Real-Time Risk Intelligence"
+  ],
+  "status": "Existing catalog mapped to public report contents; initiative flags remain editorial",
+  "organisation": "Your organisation",
+  "initiative": 0,
+  "research_reports": [
+    {
+      "publisher": "KuppingerCole",
+      "title": "Passwordless Authentication for Enterprises",
+      "edition": "2026-03-10",
+      "status": "Public table of contents inspected; existing catalog mapped; full report not accessed",
+      "url": "https://www.kuppingercole.com/research/lc80894/passwordless-authentication-for-enterprises",
+      "id": "kc-lc80894-2026",
+      "scope": "Enterprise passwordless authentication",
+      "access": "Public contents; subscription full report"
+    },
+    {
+      "publisher": "GigaOm",
+      "title": "Radar for Identity and Access Management v1.0",
+      "edition": "2025-03-18",
+      "status": "Additional analyst reference; company mapping pending",
+      "url": "https://s.gigaom.com/report/gigaom-radar-for-identity-and-access-management/"
+    },
+    {
+      "publisher": "Omdia",
+      "title": "Identity-as-a-Service Solution",
+      "edition": "2023",
+      "status": "Historical analyst reference; company mapping pending",
+      "url": "https://omdia.tech.informa.com/om029990/omdia-universe-identityasaservice-solution-2023"
+    },
+    {
+      "publisher": "Forrester",
+      "title": "Passwordless Authentication in Customer Identity and Access Management",
+      "edition": "2023-09-25",
+      "status": "Public abstract; licensed full report; consumer scope",
+      "url": "https://www.forrester.com/report/passwordless-authentication-in-customer-identity-and-access-management/RES179886"
+    },
+    {
+      "publisher": "FIDO Alliance",
+      "title": "Metadata Service",
+      "edition": "Continuously maintained",
+      "status": "Technical evidence registry, not analyst research; product mapping pending",
+      "url": "https://fidoalliance.org/metadata/"
+    },
+    {
+      "id": "gartner-reference",
+      "publisher": "Gartner",
+      "title": "Access management research",
+      "edition": "Not selected",
+      "status": "Publisher reference only; no report imported",
+      "url": "https://www.gartner.com/en"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ticker": "NASDAQ:MSFT",
+      "price": 492.85,
+      "currency": "USD",
+      "change": 0.6,
+      "previous": 489.93,
+      "asof": "2026-11-27 13:05 UTC-5",
+      "source": "User-provided Google Finance screenshot; not independently verified"
+    }
+  ],
+  "positioning_model": {
+    "version": 1,
+    "axes": [
+      "Mapped role breadth within initiative",
+      "Mapped core role coverage"
+    ],
+    "threshold": 0.5,
+    "initiatives": [
+      {
+        "roles": [
+          "auth",
+          "platform",
+          "credential",
+          "proofing",
+          "endpoint",
+          "federation"
+        ],
+        "core": [
+          "auth",
+          "credential",
+          "endpoint",
+          "proofing"
+        ]
+      },
+      {
+        "roles": [
+          "physical",
+          "credential",
+          "auth",
+          "platform",
+          "endpoint",
+          "key protection"
+        ],
+        "core": [
+          "physical",
+          "credential",
+          "auth"
+        ]
+      },
+      {
+        "roles": [
+          "auth",
+          "platform",
+          "endpoint",
+          "credential",
+          "risk",
+          "transaction signing",
+          "privileged"
+        ],
+        "core": [
+          "auth",
+          "platform",
+          "endpoint"
+        ]
+      },
+      {
+        "roles": [
+          "risk",
+          "auth",
+          "endpoint",
+          "platform"
+        ],
+        "core": [
+          "risk",
+          "auth"
+        ]
+      }
+    ],
+    "status": "Editorial role proxy; not verified product capabilities or analyst scores"
+  },
+  "findings": []
+}

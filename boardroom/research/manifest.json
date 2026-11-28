@@ -1,0 +1,121 @@
+[
+  {
+    "id": "hid--yubico",
+    "companies": [
+      "hid",
+      "yubico"
+    ],
+    "title": "HID \u00d7 Yubico",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Yubico-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "a9fc56c5320c4b60cd53290d1c60edaf958b1f53fcd462224d62962008307a35"
+  },
+  {
+    "id": "hid--thales",
+    "companies": [
+      "hid",
+      "thales"
+    ],
+    "title": "HID \u00d7 Thales",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Thales-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "943e239888c7a8a5cb630f87e774ee357c8fe59a67033472c29d511046431b5e"
+  },
+  {
+    "id": "thales--yubico",
+    "companies": [
+      "thales",
+      "yubico"
+    ],
+    "title": "Thales \u00d7 Yubico",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-Thales-Yubico-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "0ad6d864f0e69e6deb157f6c885bd0753ec1ae760d1cb15fb3b3832ecab1c182"
+  },
+  {
+    "id": "hid--thales--yubico",
+    "companies": [
+      "hid",
+      "thales",
+      "yubico"
+    ],
+    "title": "HID \u00d7 Thales \u00d7 Yubico",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Thales-Yubico-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "6054fcacff0380012b95f8853909092038541d916ac76c18877df884a10ef05f"
+  },
+  {
+    "id": "hid--microsoft",
+    "companies": [
+      "hid",
+      "microsoft"
+    ],
+    "title": "HID \u00d7 Microsoft",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Microsoft-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "8b1034359d463ea7e88881ad586105f4ce2a267464e0a7393d6948e8cf52137d"
+  },
+  {
+    "id": "hid--hypr--microsoft",
+    "companies": [
+      "hid",
+      "hypr",
+      "microsoft"
+    ],
+    "title": "HID \u00d7 HYPR \u00d7 Microsoft",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-HYPR-Microsoft-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "b1966915cbfb1fc0f1c2043ad4881ddb95b680c18053edd746a97ff802cc2944"
+  },
+  {
+    "id": "hid--hypr",
+    "companies": [
+      "hid",
+      "hypr"
+    ],
+    "title": "HID \u00d7 HYPR",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-HYPR-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "ef865383a0dda65a5054bf495a58fa2069f6d8b3334dccf5a652911ebdb7099d"
+  },
+  {
+    "id": "hid--ping",
+    "companies": [
+      "hid",
+      "ping"
+    ],
+    "title": "HID \u00d7 Ping Identity",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Ping-Identity-2026-11-28.html",
+    "content_origin": "regenerated illustrative draft",
+    "sha256": "4be762124559298cbbde75dc5f2b3a2d3aad2a417bbf8385105cc7e8647084b7"
+  },
+  {
+    "id": "hid--okta",
+    "companies": [
+      "hid",
+      "okta"
+    ],
+    "title": "HID \u00d7 Okta",
+    "initiative": "passwordless",
+    "publication_status": "private-staging",
+    "report_file": "AI-analysis-Passwordless-HID-Okta-2026-11-28.html",
+    "content_origin": "condensed sample",
+    "sha256": "e5ee43d83ab2396120f17444961ba93268d4224b365fb20d8f412c0e0490093f"
+  }
+]
