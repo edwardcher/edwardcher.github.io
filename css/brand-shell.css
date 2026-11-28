@@ -40,3 +40,5 @@ main.wrap > .header-actions .toolbox-panel{left:0;right:auto;width:min(340px,cal
 .terminal-home{color:inherit;text-decoration:none;position:relative;display:inline-block}.terminal-home::before{content:"";position:absolute;inset:-10px -2px}.terminal-home:hover,.terminal-home:focus-visible{text-decoration:underline}.terminal-home:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
 .ec-shell a.ec-brand,.ec-shell a.ec-brand:hover,.ec-shell a.ec-brand:visited,.ec-shell a.ec-brand:active,.ec-shell a.ec-brand *{text-decoration:none}.ec-shell a.ec-brand:focus-visible{outline:2px solid #91e6b6;outline-offset:4px}
+
+.ec-shell.ec-standalone.ec-workspace{padding-inline:16px;min-height:60px}

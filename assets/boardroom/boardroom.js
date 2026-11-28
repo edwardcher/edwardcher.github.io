@@ -128,7 +128,7 @@
     function quoteUrl(ticker) { const parts=ticker.split(':'); return 'https://www.google.com/finance/quote/'+encodeURIComponent(parts.length===2?parts[1]+':'+parts[0]:ticker); }
     function productArt(name) {
         const kind=/card|key|token|crescendo|yubikey/i.test(name)?'key':/mobile|approve|push|phone/i.test(name)?'mobile':/finger|biometric|persona/i.test(name)?'bio':'platform';
-        const img=el('img'); img.src='../assets/boardroom/illustrations/'+kind+'.svg'; img.alt=''; img.loading='lazy'; return img;
+        const img=el('img'); img.src='/assets/boardroom/illustrations/'+kind+'.svg'; img.alt=''; img.loading='lazy'; return img;
     }
     const defaultPositioning = {"version": 1, "axes": ["Mapped role breadth within initiative", "Mapped core role coverage"], "threshold": 0.5, "initiatives": [{"roles": ["auth", "platform", "credential", "proofing", "endpoint", "federation"], "core": ["auth", "credential", "endpoint", "proofing"]}, {"roles": ["physical", "credential", "auth", "platform", "endpoint", "key protection"], "core": ["physical", "credential", "auth"]}, {"roles": ["auth", "platform", "endpoint", "credential", "risk", "transaction signing", "privileged"], "core": ["auth", "platform", "endpoint"]}, {"roles": ["risk", "auth", "endpoint", "platform"], "core": ["risk", "auth"]}], "status": "Editorial role proxy; not verified product capabilities or analyst scores"};
     function positioning(v){return BoardroomIntelligence.assess({...D,positioning_model:D.positioning_model||defaultPositioning},v,$('lens').selectedIndex,researchMode);}
@@ -520,11 +520,11 @@
         $('panel').textContent='Select a planet to inspect its intelligence.'; rebuild(); $('projectStatus').textContent='Project loaded · '+D.vendors.length+' companies · local processing'; $('saveProject').disabled=false; $('defaultProject').disabled=false;
     }
     const limit=1024*1024;
-    async function loadDefault(){const r=await fetch('./projects/default.json',{credentials:'omit',redirect:'error'}); if(!r.ok)throw Error('Project unavailable'); const b=await r.blob(); if(b.size>limit)throw Error('Project too large'); apply(JSON.parse(await b.text()));}
+    async function loadDefault(){const r=await fetch('/boardroom/projects/default.json',{credentials:'omit',redirect:'error'}); if(!r.ok)throw Error('Project unavailable'); const b=await r.blob(); if(b.size>limit)throw Error('Project too large'); apply(JSON.parse(await b.text()));}
     $('projectFile').addEventListener('change',async e=>{try{const f=e.target.files[0]; if(!f)return; if(f.size>limit)throw Error('Too large'); apply(JSON.parse(await f.text()));}catch{ $('projectStatus').textContent='Project rejected · invalid format or size (1 MiB maximum)'; }finally{e.target.value='';}});
     $('defaultProject').onclick=async()=>{try{await loadDefault();}catch{$('projectStatus').textContent='Default project unavailable';}};
     $('saveProject').onclick=()=>{const data={...D,organisation:$('org').value.trim(),initiative:$('lens').selectedIndex}; const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})); const a=el('a'); a.href=url;a.download='starmap-project.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-    try { await loadDefault(); requestAnimationFrame(frame); } catch { $('projectStatus').textContent='Default project failed to load · serve over HTTP; static preview remains available'; }
+    try { await loadDefault(); requestAnimationFrame(frame); } catch (error) { console.error('Boardroom startup failed:', error); $('projectStatus').textContent='Default project failed to load · serve over HTTP; static preview remains available'; $('researchBaseline').textContent='Research could not be loaded. Reload the page or inspect the browser console.'; }
 })();
 
 // Start with the research disclosure collapsed, including restored browser state.
